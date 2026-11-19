@@ -1,0 +1,93 @@
+import { program } from '../data/program'
+import type { TemplateActivity } from '../data/types'
+
+/** A calendar day in local time, written YYYY-MM-DD. */
+export type DayKey = string
+
+/** The Friday session is resolved to A or B, and deload weeks swap the intervals for a long walk. */
+export type Activity = Exclude<TemplateActivity, 'renfo_A_ou_B'> | 'marche_longue'
+
+export const TOTAL_WEEKS = 12
+
+export type ProgramDay =
+  | { phase: 'before'; daysUntilStart: number }
+  | { phase: 'after' }
+  | { phase: 'during'; week: number; month: number; weekday: number; activity: Activity; deload: boolean }
+
+export function toDayKey(date: Date): DayKey {
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${date.getFullYear()}-${month}-${day}`
+}
+
+// Day keys are compared as UTC dates so that a daylight saving change never adds or removes a day.
+function toUtc(key: DayKey): number {
+  const [year, month, day] = key.split('-').map(Number)
+  return Date.UTC(year, month - 1, day)
+}
+
+const DAY_MS = 86_400_000
+
+export function daysBetween(from: DayKey, to: DayKey): number {
+  return Math.round((toUtc(to) - toUtc(from)) / DAY_MS)
+}
+
+export function addDays(key: DayKey, days: number): DayKey {
+  return new Date(toUtc(key) + days * DAY_MS).toISOString().slice(0, 10)
+}
+
+/** 0 for Monday, 6 for Sunday. */
+export function weekdayOf(key: DayKey): number {
+  return (new Date(toUtc(key)).getUTCDay() + 6) % 7
+}
+
+/** Today if it is a Monday, otherwise the next Monday. */
+export function upcomingMonday(today: DayKey): DayKey {
+  return addDays(today, (7 - weekdayOf(today)) % 7)
+}
+
+export function monthOfWeek(week: number): number {
+  return Math.ceil(week / 4)
+}
+
+export function isDeloadWeek(week: number): boolean {
+  return program.rules.deload_weeks.includes(week)
+}
+
+export function activityFor(week: number, weekday: number): Activity {
+  const planned = program.week_template[weekday].activity
+  if (planned === 'renfo_A_ou_B') return week % 2 === 1 ? 'renfo_A' : 'renfo_B'
+  if (planned === 'fractionne' && isDeloadWeek(week)) return 'marche_longue'
+  return planned
+}
+
+export function weekPlan(week: number): Activity[] {
+  return program.week_template.map((_, weekday) => activityFor(week, weekday))
+}
+
+export function stepsGoal(month: number): number {
+  return program.rules.steps_per_day_by_month[month - 1]
+}
+
+export function programDay(startDate: DayKey, today: DayKey): ProgramDay {
+  const elapsed = daysBetween(startDate, today)
+  if (elapsed < 0) return { phase: 'before', daysUntilStart: -elapsed }
+
+  const week = Math.floor(elapsed / 7) + 1
+  if (week > TOTAL_WEEKS) return { phase: 'after' }
+
+  const weekday = weekdayOf(today)
+  return {
+    phase: 'during',
+    week,
+    month: monthOfWeek(week),
+    weekday,
+    activity: activityFor(week, weekday),
+    deload: isDeloadWeek(week),
+  }
+}
+
+/** First day (Monday) of a given program week. */
+export function weekStart(startDate: DayKey, week: number): DayKey {
+  return addDays(startDate, (week - 1) * 7)
+}
