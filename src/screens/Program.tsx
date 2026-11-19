@@ -1,6 +1,7 @@
 import { ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 import { program } from '../data/program'
+import type { TemplateActivity } from '../data/types'
 import { describeIntervals, describeRun, LONG_WALK_S } from '../lib/activities'
 import { formatNumber } from '../lib/format'
 import { isDeloadWeek, monthOfWeek, sessionContext, stepsGoal, TOTAL_WEEKS } from '../lib/schedule'
@@ -9,7 +10,7 @@ import { useAppState } from '../state/appStateContext'
 import { MonthSessions } from './MonthSessions'
 import styles from './Program.module.css'
 
-const weekTemplateLabels: Record<string, string> = {
+const weekTemplateLabels: Record<TemplateActivity, string> = {
   renfo_A: 'Séance A',
   renfo_B: 'Séance B',
   renfo_A_ou_B: 'Séance A ou B',
@@ -21,12 +22,17 @@ const weekTemplateLabels: Record<string, string> = {
 
 const allWeeks = Array.from({ length: TOTAL_WEEKS }, (_, index) => index + 1)
 
+function weeksOfMonth(month: number): number[] {
+  return allWeeks.filter((week) => monthOfWeek(week) === month)
+}
+
 export function Program() {
   const { state } = useAppState()
   const today = useToday()
   const current = state.startDate ? sessionContext(state.startDate, today) : null
   const [month, setMonth] = useState(current?.month ?? 1)
-  const monthWeeks = allWeeks.filter((week) => monthOfWeek(week) === month)
+  const monthWeeks = weeksOfMonth(month)
+  const deloadWeek = monthWeeks.find(isDeloadWeek)
 
   return (
     <div className={styles.page}>
@@ -47,18 +53,16 @@ export function Program() {
                 Mois {gridMonth}
                 <span className="visually-hidden">, semaines</span>
               </span>
-              {allWeeks
-                .filter((week) => monthOfWeek(week) === gridMonth)
-                .map((week) => (
-                  <span
-                    key={week}
-                    className={styles.week}
-                    data-current={current?.week === week || undefined}
-                    data-deload={isDeloadWeek(week) || undefined}
-                  >
-                    {week}
-                  </span>
-                ))}
+              {weeksOfMonth(gridMonth).map((week) => (
+                <span
+                  key={week}
+                  className={styles.week}
+                  data-current={current?.week === week || undefined}
+                  data-deload={isDeloadWeek(week) || undefined}
+                >
+                  {week}
+                </span>
+              ))}
             </button>
           ))}
         </div>
@@ -96,9 +100,9 @@ export function Program() {
         <div>
           <h3>Fractionné du samedi</h3>
           <p>{describeIntervals(month)}</p>
-          {monthWeeks.some(isDeloadWeek) && (
+          {deloadWeek !== undefined && (
             <p className={styles.muted}>
-              Semaine {monthWeeks.find(isDeloadWeek)}&nbsp;: marche de {LONG_WALK_S / 60} min à la place.
+              Semaine {deloadWeek}&nbsp;: marche de {LONG_WALK_S / 60} min à la place.
             </p>
           )}
         </div>

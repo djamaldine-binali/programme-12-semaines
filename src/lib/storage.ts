@@ -1,4 +1,4 @@
-import type { DayKey } from './schedule'
+import { isDayKey, isValidStartDate, type DayKey } from './schedule'
 
 export type SessionKind = 'renfo_A' | 'renfo_B' | 'course' | 'fractionne' | 'marche_longue' | 'posture' | 'etirements'
 
@@ -50,7 +50,6 @@ const sessionKinds: SessionKind[] = [
   'etirements',
 ]
 const feelings: Feeling[] = ['facile', 'ok', 'dur']
-const dayKeyPattern = /^\d{4}-\d{2}-\d{2}$/
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
@@ -60,7 +59,7 @@ function isLogEntry(value: unknown): value is LogEntry {
   return (
     isRecord(value) &&
     typeof value.day === 'string' &&
-    dayKeyPattern.test(value.day) &&
+    isDayKey(value.day) &&
     sessionKinds.includes(value.kind as SessionKind) &&
     (value.feeling === undefined || feelings.includes(value.feeling as Feeling)) &&
     typeof value.finishedAt === 'string'
@@ -93,7 +92,7 @@ export function parseState(raw: string): SavedState | null {
   }
   if (!isRecord(data) || data.version !== 1) return null
 
-  const startDate = typeof data.startDate === 'string' && dayKeyPattern.test(data.startDate) ? data.startDate : null
+  const startDate = typeof data.startDate === 'string' && isValidStartDate(data.startDate) ? data.startDate : null
   const log = Array.isArray(data.log) ? data.log.filter(isLogEntry) : []
   const runShift = Number.isInteger(data.runShift) && (data.runShift as number) >= 0 ? (data.runShift as number) : 0
 

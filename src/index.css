@@ -43,6 +43,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Keeps focused elements clear of the tab bar and the sticky session actions. */
+  scroll-padding-bottom: 12rem;
 }
 
 body {

@@ -31,14 +31,36 @@ function downloadProgress(state: SavedState, today: string) {
   link.href = url
   link.download = `programme-12-semaines-${today}.json`
   link.click()
-  URL.revokeObjectURL(url)
+  // Revoking right away can cancel the download on iOS Safari.
+  setTimeout(() => URL.revokeObjectURL(url), 10_000)
+}
+
+// Keyed on the saved date so the field resets after an import or a reset.
+function StartDateSection() {
+  const { state, update } = useAppState()
+  const today = useToday()
+  const [startDate, setStartDate] = useState(state.startDate ?? upcomingMonday(today))
+
+  return (
+    <section className={styles.section} aria-labelledby="start-title">
+      <h2 id="start-title">Début du programme</h2>
+      <StartDateField value={startDate} onChange={setStartDate} />
+      <button
+        type="button"
+        className={`${buttons.button} ${buttons.secondary}`}
+        disabled={!isValidStartDate(startDate) || startDate === state.startDate}
+        onClick={() => update((previous) => ({ ...previous, startDate }))}
+      >
+        Enregistrer la date
+      </button>
+    </section>
+  )
 }
 
 export function Settings() {
   const { state, update } = useAppState()
   const today = useToday()
   const { settings } = state
-  const [startDate, setStartDate] = useState(state.startDate ?? upcomingMonday(today))
   const [pendingImport, setPendingImport] = useState<SavedState | null>(null)
   const [importError, setImportError] = useState('')
   const [askingReset, setAskingReset] = useState(false)
@@ -69,18 +91,7 @@ export function Settings() {
       </a>
       <h1>Réglages</h1>
 
-      <section className={styles.section} aria-labelledby="start-title">
-        <h2 id="start-title">Début du programme</h2>
-        <StartDateField value={startDate} onChange={setStartDate} />
-        <button
-          type="button"
-          className={`${buttons.button} ${buttons.secondary}`}
-          disabled={!isValidStartDate(startDate) || startDate === state.startDate}
-          onClick={() => update((previous) => ({ ...previous, startDate }))}
-        >
-          Enregistrer la date
-        </button>
-      </section>
+      <StartDateSection key={state.startDate ?? 'none'} />
 
       <section className={styles.section} aria-labelledby="session-title">
         <h2 id="session-title">Pendant les séances</h2>
@@ -176,7 +187,7 @@ export function Settings() {
 
       <ConfirmDialog
         open={pendingImport !== null}
-        title="Remplacer ta progression ?"
+        title="Remplacer ta progression ?"
         message="Les séances et réglages de ce fichier remplaceront ceux de ce téléphone."
         confirmLabel="Remplacer"
         cancelLabel="Annuler"
@@ -188,7 +199,7 @@ export function Settings() {
       />
       <ConfirmDialog
         open={askingReset}
-        title="Tout remettre à zéro ?"
+        title="Tout remettre à zéro ?"
         message="La date de début, les séances faites et les réglages seront effacés. Exporte d'abord si tu veux les garder."
         confirmLabel="Effacer"
         cancelLabel="Annuler"

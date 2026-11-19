@@ -6,8 +6,7 @@ import { appearancesOf, describeMonths } from '../lib/library'
 import styles from './Library.module.css'
 
 export function ExerciseSheet({ id }: { id: string }) {
-  const exercise = program.exercises[id]
-  if (!exercise) {
+  if (!Object.hasOwn(program.exercises, id)) {
     return (
       <div className={styles.page}>
         <h1>Fiche introuvable</h1>
@@ -16,6 +15,7 @@ export function ExerciseSheet({ id }: { id: string }) {
     )
   }
 
+  const exercise = program.exercises[id]
   return (
     <article className={styles.page}>
       <a href="#/bibliotheque" className={styles.back}>

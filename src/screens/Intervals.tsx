@@ -6,6 +6,7 @@ import styles from '../components/GuidedSession.module.css'
 import { VideoFacade } from '../components/VideoFacade'
 import { program } from '../data/program'
 import { describeIntervals, LONG_WALK_S } from '../lib/activities'
+import { formatDuration } from '../lib/format'
 import { intervalPhases } from '../lib/guidedPhases'
 import { sessionContext } from '../lib/schedule'
 import { useToday } from '../lib/useToday'
@@ -46,7 +47,7 @@ export function Intervals() {
             </>
           ) : (
             <>
-              <p>5 min de marche rapide avant et après.</p>
+              <p>{formatDuration(program.running.warmup_walk_s)} de marche avant et après.</p>
               <div className={styles.safety}>
                 <strong>Trop dur ou douloureux</strong>
                 {program.rules.running_pain_rule}

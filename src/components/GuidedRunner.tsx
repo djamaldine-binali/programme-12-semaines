@@ -3,7 +3,7 @@ import { formatDuration } from '../lib/format'
 import { totalDurationMs, type GuidedPhase } from '../lib/guidedPhases'
 import { useCue } from '../lib/useCue'
 import { useSequenceTimer } from '../lib/useSequenceTimer'
-import buttons from './buttons.module.css'
+import { TimerControls } from './TimerControls'
 import { TimerDisplay } from './TimerDisplay'
 import styles from './timerLayout.module.css'
 
@@ -18,7 +18,6 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
   const cue = useCue()
   const [markReached, setMarkReached] = useState(false)
   const timer = useSequenceTimer(phases, {
-    autoStart: true,
     onPhaseStart: (index) => cue(phases[index].cue),
     onMark: () => {
       setMarkReached(true)
@@ -35,6 +34,7 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
   const afterCurrentMs = totalDurationMs(phases.slice(index + 1))
   const totalLeftS = Math.ceil((remainingMs + afterCurrentMs) / 60_000) * 60
   const isLast = index === phases.length - 1
+  const showMark = markReached && markMessage !== undefined
 
   return (
     <div className={styles.hold}>
@@ -45,22 +45,12 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
         next={next?.label}
         tone={phase.tone}
       />
-      <p className={styles.mark} aria-live="polite">
-        {markReached && markMessage ? markMessage : `Fin dans ${formatDuration(totalLeftS)} environ`}
+      <p className={styles.mark}>
+        <span aria-live="polite">{showMark && markMessage}</span>
+        {!showMark && `Fin dans ${formatDuration(totalLeftS)} environ`}
       </p>
       {children}
-      <div className={styles.controls}>
-        <button
-          type="button"
-          className={`${buttons.button} ${buttons.secondary}`}
-          onClick={timer.running ? timer.pause : timer.start}
-        >
-          {timer.running ? 'Pause' : 'Reprendre'}
-        </button>
-        <button type="button" className={`${buttons.button} ${buttons.recup}`} onClick={timer.skipPhase}>
-          {isLast ? 'Terminer' : 'Phase suivante'}
-        </button>
-      </div>
+      <TimerControls timer={timer} skipLabel={isLast ? 'Terminer' : 'Phase suivante'} />
     </div>
   )
 }

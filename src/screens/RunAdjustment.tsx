@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import buttons from '../components/buttons.module.css'
 import styles from '../components/GuidedSession.module.css'
+import { elapsedWeek } from '../lib/schedule'
+import { useToday } from '../lib/useToday'
 import { useAppState } from '../state/appStateContext'
 
 type Choice = 'repeat' | 'step-back'
@@ -13,13 +15,16 @@ const confirmations: Record<Choice, string> = {
 /** Nothing changes on its own: she decides after a hard run or a pain signal. */
 export function RunAdjustment({ finishedAt }: { finishedAt: string }) {
   const { state, update } = useAppState()
+  const today = useToday()
   const [choice, setChoice] = useState<Choice | null>(null)
   const feeling = state.log.find((entry) => entry.finishedAt === finishedAt)?.feeling
 
   function choose(next: Choice) {
     // Repeating holds next week on this step; stepping back goes one further.
     const extraShift = next === 'repeat' ? 1 : 2
-    update((previous) => ({ ...previous, runShift: previous.runShift + extraShift }))
+    // Never go below step 1 next week: the shift can't exceed the current week.
+    const currentWeek = state.startDate ? Math.max(1, elapsedWeek(state.startDate, today)) : 1
+    update((previous) => ({ ...previous, runShift: Math.min(previous.runShift + extraShift, currentWeek) }))
     setChoice(next)
   }
 

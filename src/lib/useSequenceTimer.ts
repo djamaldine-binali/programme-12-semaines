@@ -1,4 +1,5 @@
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
+import { unlockAudio } from './sound'
 import {
   advanceClock,
   elapsedMs,
@@ -12,7 +13,6 @@ import {
 } from './timer'
 
 interface SequenceOptions {
-  autoStart?: boolean
   onPhaseStart?: (index: number) => void
   onMark?: (index: number) => void
   onDone?: () => void
@@ -21,20 +21,19 @@ interface SequenceOptions {
 export interface SequenceTimer {
   position: Position
   running: boolean
-  started: boolean
-  start: () => void
+  resume: () => void
   pause: () => void
   skipPhase: () => void
 }
 
 const TICK_MS = 200
 
+/** Starts as soon as it is mounted: every timer screen is opened by a tap on "start". */
 export function useSequenceTimer(phases: TimedPhase[], options: SequenceOptions = {}): SequenceTimer {
-  const [clock, setClock] = useState<Clock>(() => (options.autoStart ? startClock(idleClock, Date.now()) : idleClock))
+  const [clock, setClock] = useState<Clock>(() => startClock(idleClock, Date.now()))
   const [now, setNow] = useState(() => Date.now())
   const position = locate(phases, elapsedMs(clock, now))
   const running = clock.runningSince !== null && !position.done
-  const started = clock.runningSince !== null || clock.bankedMs > 0
 
   useEffect(() => {
     if (!running) return
@@ -67,15 +66,14 @@ export function useSequenceTimer(phases: TimedPhase[], options: SequenceOptions 
     }
   })
 
-  useEffect(() => {
-    if (started) announce(position)
-  }, [started, position])
+  useEffect(() => announce(position), [position])
 
   return {
     position,
     running,
-    started,
-    start: () => {
+    resume: () => {
+      // A call or a locked screen can suspend audio on iOS; this tap lets it play again.
+      unlockAudio()
       const time = Date.now()
       setNow(time)
       setClock((previous) => startClock(previous, time))

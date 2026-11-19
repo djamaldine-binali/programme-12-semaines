@@ -1,10 +1,9 @@
 import { useState, type ReactNode } from 'react'
 import type { GuidedPhase } from '../lib/guidedPhases'
 import { unlockAudio } from '../lib/sound'
-import { withLogEntry, type SessionKind } from '../lib/storage'
-import { useToday } from '../lib/useToday'
+import type { SessionKind } from '../lib/storage'
 import { useWakeLock } from '../lib/useWakeLock'
-import { useAppState } from '../state/appStateContext'
+import { useLogSession } from '../state/useLogSession'
 import buttons from './buttons.module.css'
 import { FinishPanel } from './FinishPanel'
 import { GuidedRunner } from './GuidedRunner'
@@ -27,16 +26,13 @@ interface GuidedSessionProps {
 }
 
 export function GuidedSession(props: GuidedSessionProps) {
-  const { update } = useAppState()
-  const today = useToday()
+  const logSession = useLogSession()
   const [stage, setStage] = useState<'intro' | 'running' | 'finished'>('intro')
   const [finishedAt, setFinishedAt] = useState<string | null>(null)
   useWakeLock(stage === 'running')
 
   function finish() {
-    const time = new Date().toISOString()
-    update((previous) => withLogEntry(previous, { day: today, kind: props.kind, finishedAt: time }))
-    setFinishedAt(time)
+    setFinishedAt(logSession(props.kind))
     setStage('finished')
   }
 
