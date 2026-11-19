@@ -17,3 +17,10 @@ App perso, sans compte ni serveur, utilisée sur téléphone pendant les séance
 ## Sources (consultées le 2026-11-19)
 - Offres GitHub : https://docs.github.com/en/get-started/learning-about-github/githubs-plans (« GitHub Pages in public repositories » pour GitHub Free).
 - Versions : registre npm (`npm view <paquet> time`).
+
+## Mise à jour du service worker
+- Options : `autoUpdate` (la page se recharge dès qu'une version arrive) ou `prompt`.
+- Choix : `prompt` sans bouton. Un rechargement automatique pendant une course ou un maintien ferait perdre la séance ; la nouvelle version s'active au prochain lancement complet.
+
+## Vérification des vidéos (2026-11-19)
+- Les 33 URL répondent 200 sur `https://www.youtube.com/oembed?url=…&format=json` (intégration autorisée), et les 33 miniatures `hqdefault.jpg` existent.
