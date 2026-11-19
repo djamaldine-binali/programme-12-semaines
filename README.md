@@ -1,32 +1,67 @@
-# React + TypeScript + Vite
+# Programme 12 semaines
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Application web (PWA) qui guide un programme sportif de 12 semaines à la maison : séances de renfo A et B, course du mardi, fractionné du samedi, routines de posture et d'étirements, conseils. Tout reste sur le téléphone : pas de compte, pas de serveur.
 
-Currently, two official plugins are available:
+Le contenu du programme est dans `src/data/program.json` et fait foi. Le brief complet est dans `docs/brief.md`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation
 
-## React Compiler
+Node 20.19 ou plus récent (testé avec Node 24).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Lancement
+
+```bash
+npm run dev
+```
+
+L'app est servie sous `/programme-12-semaines/` : http://localhost:5173/programme-12-semaines/
+
+Les vidéos intégrées ne marchent qu'en http(s), pas en ouvrant le fichier directement (`file://`).
+
+## Commandes
+
+| Commande | Rôle |
+| --- | --- |
+| `npm run dev` | Serveur de développement |
+| `npm test` | Tests Vitest (planning, minuteur, dosages, suivi, cohérence du JSON) |
+| `npm run build` | Typecheck puis build de production dans `dist/`, avec le service worker |
+| `npm run preview` | Sert `dist/` en local pour tester l'installation et le hors ligne |
+| `npm run lint` | oxlint |
+| `npm run format` | Prettier |
+
+Aucune variable d'environnement.
+
+## Déploiement (GitHub Pages)
+
+Le workflow `.github/workflows/deploy.yml` lance les tests, construit l'app et la publie à chaque push sur `main`.
+
+Une seule fois, activer Pages avec GitHub Actions comme source :
+
+```bash
+gh api -X POST repos/<compte>/programme-12-semaines/pages -f build_type=workflow
+```
+
+(ou dans le dépôt : Settings, Pages, Source : GitHub Actions). L'app est ensuite en ligne sur `https://<compte>.github.io/programme-12-semaines/`.
+
+Pour héberger ailleurs ou sous un autre nom de dépôt, changer `base` dans `vite.config.ts`.
+
+## Structure
+
+```
+src/
+  data/         program.json et ses types
+  lib/          logique sans interface : planning, minuteur, sons, stockage, dosages, suivi
+  state/        état de l'app (contexte React) relié au stockage local
+  components/   briques d'interface : schéma, vidéo, minuteurs, barre d'onglets…
+  screens/      un écran par route : Aujourd'hui, séances, Programme, Suivi, Conseils, Réglages
+docs/           brief et fiches de décision
+reference/      version web et PDF d'origine du programme
+```
+
+## Données
+
+La progression (date de début, séances faites, ressenti, réglages) est enregistrée dans le `localStorage` du navigateur, sous une seule clé versionnée (`p12`). Elle s'exporte et s'importe en JSON depuis les réglages.
