@@ -1,0 +1,9 @@
+.link {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -10px -10px 0 0;
+  color: var(--ink);
+  border-radius: 50%;
+}

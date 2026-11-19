@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { activityFor, addDays, programDay, toDayKey, upcomingMonday, weekPlan } from './schedule'
+import {
+  activityFor,
+  addDays,
+  elapsedWeek,
+  programDay,
+  runStepFor,
+  toDayKey,
+  upcomingMonday,
+  weekPlan,
+} from './schedule'
 
 // 2027-01-04 is a Monday.
 const START = '2027-01-04'
@@ -113,5 +122,18 @@ describe('upcomingMonday', () => {
     expect(upcomingMonday('2027-01-04')).toBe('2027-01-04')
     expect(upcomingMonday('2027-01-05')).toBe('2027-01-11')
     expect(upcomingMonday('2027-01-10')).toBe('2027-01-11')
+  })
+})
+
+describe('runStepFor', () => {
+  it('follows the week until a step is repeated, then lags behind', () => {
+    expect(runStepFor(5, 0)).toBe(5)
+    expect(runStepFor(5, 1)).toBe(4)
+    expect(runStepFor(1, 2)).toBe(1)
+  })
+
+  it('lets a lagging run plan continue after week 12', () => {
+    expect(runStepFor(elapsedWeek(START, addDays(START, 7 * 13)), 2)).toBe(12)
+    expect(runStepFor(elapsedWeek(START, addDays(START, 7 * 12)), 2)).toBe(11)
   })
 })
