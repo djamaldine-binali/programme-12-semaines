@@ -8,17 +8,19 @@ import { holdSteps } from '../lib/holdSteps'
 import { parseTarget, setsFor } from '../lib/dose'
 import { sessionContext } from '../lib/schedule'
 import { unlockAudio } from '../lib/sound'
-import { withLogEntry } from '../lib/storage'
+import { navigate } from '../lib/router'
 import { useToday } from '../lib/useToday'
 import { useWakeLock } from '../lib/useWakeLock'
 import { useAppState } from '../state/appStateContext'
+import { useLogSession } from '../state/useLogSession'
 import { ExerciseStep } from './ExerciseStep'
 import layout from '../components/sessionLayout.module.css'
 
 type Stage = 'ready' | 'holding' | 'resting' | 'finished'
 
 export function Workout({ sessionId }: { sessionId: 'A' | 'B' }) {
-  const { state, update } = useAppState()
+  const { state } = useAppState()
+  const logSession = useLogSession()
   const today = useToday()
   const [context] = useState(() => sessionContext(state.startDate, today))
   const session = program.sessions[sessionId]
@@ -37,9 +39,12 @@ export function Workout({ sessionId }: { sessionId: 'A' | 'B' }) {
   const holdTarget = step.dose.unit === 'seconds' ? parseTarget(step.dose.target) : null
 
   function finish() {
-    const time = new Date().toISOString()
-    update((previous) => withLogEntry(previous, { day: today, kind: `renfo_${sessionId}`, finishedAt: time }))
-    setFinishedAt(time)
+    // Skipping every exercise is not a session done.
+    if (setsDone.every((count) => count === 0)) {
+      navigate('/', { replace: true })
+      return
+    }
+    setFinishedAt(logSession(`renfo_${sessionId}`))
     setStage('finished')
   }
 
@@ -72,7 +77,7 @@ export function Workout({ sessionId }: { sessionId: 'A' | 'B' }) {
       <SessionHeader
         title={session.title}
         progress={`Exercice ${index + 1} sur ${steps.length}`}
-        confirmQuit={index > 0 || doneSets > 0}
+        confirmQuit={index > 0 || doneSets > 0 || stage !== 'ready'}
       />
 
       {stage === 'holding' && holdTarget && (

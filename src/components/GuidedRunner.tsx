@@ -18,7 +18,6 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
   const cue = useCue()
   const [markReached, setMarkReached] = useState(false)
   const timer = useSequenceTimer(phases, {
-    autoStart: true,
     onPhaseStart: (index) => cue(phases[index].cue),
     onMark: () => {
       setMarkReached(true)
@@ -53,7 +52,7 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
         <button
           type="button"
           className={`${buttons.button} ${buttons.secondary}`}
-          onClick={timer.running ? timer.pause : timer.start}
+          onClick={timer.running ? timer.pause : timer.resume}
         >
           {timer.running ? 'Pause' : 'Reprendre'}
         </button>

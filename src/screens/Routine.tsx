@@ -9,10 +9,9 @@ import { program } from '../data/program'
 import { routineHoldSteps } from '../lib/holdSteps'
 import { parseRoutineHold } from '../lib/routineDose'
 import { unlockAudio } from '../lib/sound'
-import { withLogEntry } from '../lib/storage'
-import { useToday } from '../lib/useToday'
+import { navigate } from '../lib/router'
 import { useWakeLock } from '../lib/useWakeLock'
-import { useAppState } from '../state/appStateContext'
+import { useLogSession } from '../state/useLogSession'
 import { RoutineStep } from './RoutineStep'
 
 type Stage = 'intro' | 'step' | 'holding' | 'finished'
@@ -31,11 +30,11 @@ const routines = {
 }
 
 export function Routine({ kind }: { kind: 'posture' | 'etirements' }) {
-  const { update } = useAppState()
-  const today = useToday()
+  const logSession = useLogSession()
   const { title, routine, durationText } = routines[kind]
   const holdNote = 'hold_note' in routine ? routine.hold_note : undefined
   const [index, setIndex] = useState(0)
+  const [doneCount, setDoneCount] = useState(0)
   const [stage, setStage] = useState<Stage>('intro')
   const [finishedAt, setFinishedAt] = useState<string | null>(null)
   useWakeLock(stage === 'step' || stage === 'holding')
@@ -43,15 +42,25 @@ export function Routine({ kind }: { kind: 'posture' | 'etirements' }) {
   const item = routine.items[index]
   const hold = parseRoutineHold(item.dose)
 
-  function goTo(nextIndex: number) {
-    if (nextIndex < routine.items.length) {
-      setIndex(nextIndex)
-      setStage('step')
+  function showStep(stepIndex: number) {
+    setIndex(stepIndex)
+    setStage('step')
+  }
+
+  /** `done` is false when the exercise was skipped. */
+  function advance(done: boolean) {
+    const completed = doneCount + (done ? 1 : 0)
+    setDoneCount(completed)
+    if (index + 1 < routine.items.length) {
+      showStep(index + 1)
       return
     }
-    const time = new Date().toISOString()
-    update((previous) => withLogEntry(previous, { day: today, kind, finishedAt: time }))
-    setFinishedAt(time)
+    // Skipping every exercise is not a routine done.
+    if (completed === 0) {
+      navigate('/', { replace: true })
+      return
+    }
+    setFinishedAt(logSession(kind))
     setStage('finished')
   }
 
@@ -108,7 +117,7 @@ export function Routine({ kind }: { kind: 'posture' | 'etirements' }) {
         confirmQuit={index > 0 || stage === 'holding'}
       />
       {stage === 'holding' && hold ? (
-        <HoldTimer steps={routineHoldSteps(hold)} tone="recup" onDone={() => goTo(index + 1)} />
+        <HoldTimer steps={routineHoldSteps(hold)} tone="recup" onDone={() => advance(true)} />
       ) : (
         <RoutineStep
           key={index}
@@ -122,8 +131,9 @@ export function Routine({ kind }: { kind: 'posture' | 'etirements' }) {
             unlockAudio()
             setStage('holding')
           }}
-          onPrevious={() => goTo(index - 1)}
-          onNext={() => goTo(index + 1)}
+          onPrevious={() => showStep(index - 1)}
+          onDone={() => advance(true)}
+          onSkip={() => advance(false)}
         />
       )}
     </div>

@@ -39,11 +39,21 @@ let context: AudioContext | null = null
 export function unlockAudio(): void {
   if (typeof AudioContext === 'undefined') return
   context ??= new AudioContext()
-  if (context.state === 'suspended') void context.resume()
+  if (context.state !== 'running') void context.resume()
 }
 
 function playTones(cue: Cue): void {
-  if (!context || context.state !== 'running') return
+  if (!context) return
+  // After a lock screen or a call, iOS leaves the context suspended: try to resume before playing.
+  if (context.state !== 'running') {
+    void context.resume().then(() => scheduleTones(cue))
+    return
+  }
+  scheduleTones(cue)
+}
+
+function scheduleTones(cue: Cue): void {
+  if (!context) return
   const start = context.currentTime
   for (const tone of tones[cue]) {
     const oscillator = context.createOscillator()

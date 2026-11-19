@@ -15,7 +15,8 @@ interface RoutineStepProps {
   isLast: boolean
   onStartHold: () => void
   onPrevious: () => void
-  onNext: () => void
+  onDone: () => void
+  onSkip: () => void
 }
 
 export function RoutineStep({ exercise, dose, note, timed, isFirst, isLast, ...actions }: RoutineStepProps) {
@@ -45,7 +46,7 @@ export function RoutineStep({ exercise, dose, note, timed, isFirst, isLast, ...a
           <button
             type="button"
             className={`${buttons.button} ${buttons.recup} ${buttons.block}`}
-            onClick={actions.onNext}
+            onClick={actions.onDone}
           >
             {isLast ? 'Fait, terminer' : 'Fait, suivant'}
           </button>
@@ -55,7 +56,7 @@ export function RoutineStep({ exercise, dose, note, timed, isFirst, isLast, ...a
             <ChevronLeft size={20} aria-hidden="true" />
             Précédent
           </button>
-          <button type="button" className={styles.navButton} onClick={actions.onNext}>
+          <button type="button" className={styles.navButton} onClick={actions.onSkip}>
             Passer
             <SkipForward size={20} aria-hidden="true" />
           </button>

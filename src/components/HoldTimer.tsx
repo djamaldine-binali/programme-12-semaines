@@ -16,7 +16,6 @@ export function HoldTimer({ steps, tone, onDone }: HoldTimerProps) {
   const cue = useCue()
   const [markReached, setMarkReached] = useState(-1)
   const timer = useSequenceTimer(steps, {
-    autoStart: true,
     onPhaseStart: (index) => cue(steps[index].isHold ? 'work' : 'switch'),
     onMark: (index) => {
       setMarkReached(index)
@@ -41,7 +40,7 @@ export function HoldTimer({ steps, tone, onDone }: HoldTimerProps) {
         <button
           type="button"
           className={`${buttons.button} ${buttons.secondary}`}
-          onClick={timer.running ? timer.pause : timer.start}
+          onClick={timer.running ? timer.pause : timer.resume}
         >
           {timer.running ? 'Pause' : 'Reprendre'}
         </button>

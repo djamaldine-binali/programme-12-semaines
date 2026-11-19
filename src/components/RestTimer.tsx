@@ -13,7 +13,6 @@ interface RestTimerProps {
 export function RestTimer({ seconds, next, onDone }: RestTimerProps) {
   const cue = useCue()
   const timer = useSequenceTimer([{ durationMs: seconds * 1000 }], {
-    autoStart: true,
     onDone: () => {
       cue('work')
       onDone()
@@ -27,7 +26,7 @@ export function RestTimer({ seconds, next, onDone }: RestTimerProps) {
         <button
           type="button"
           className={`${buttons.button} ${buttons.secondary}`}
-          onClick={timer.running ? timer.pause : timer.start}
+          onClick={timer.running ? timer.pause : timer.resume}
         >
           {timer.running ? 'Pause' : 'Reprendre'}
         </button>

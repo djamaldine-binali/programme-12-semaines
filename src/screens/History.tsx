@@ -3,13 +3,11 @@ import { sessionKindLabels, sessionKindTones } from '../lib/activities'
 import { formatLongDate } from '../lib/format'
 import { SESSIONS_PER_WEEK, startedWeeks } from '../lib/progress'
 import { TOTAL_WEEKS } from '../lib/schedule'
-import type { Feeling } from '../lib/storage'
 import { useToday } from '../lib/useToday'
 import { useAppState } from '../state/appStateContext'
 import styles from './History.module.css'
 
 const dayLetters = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
-const feelingLabels: Record<Feeling, string> = { facile: 'facile', ok: 'ok', dur: 'dur' }
 
 export function History() {
   const { state } = useAppState()
@@ -85,7 +83,7 @@ export function History() {
               <span className={styles.logName}>{sessionKindLabels[entry.kind]}</span>
               <span className={styles.muted}>
                 {formatLongDate(entry.day)}
-                {entry.feeling && `, ${feelingLabels[entry.feeling]}`}
+                {entry.feeling && `, ${entry.feeling}`}
               </span>
             </li>
           ))}
