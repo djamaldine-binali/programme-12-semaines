@@ -69,11 +69,16 @@ export function stepsGoal(month: number): number {
   return program.rules.steps_per_day_by_month[month - 1]
 }
 
+/** Week number since the start, without the 12-week cap (runs can continue after the program). */
+export function elapsedWeek(startDate: DayKey, today: DayKey): number {
+  return Math.floor(daysBetween(startDate, today) / 7) + 1
+}
+
 export function programDay(startDate: DayKey, today: DayKey): ProgramDay {
   const elapsed = daysBetween(startDate, today)
   if (elapsed < 0) return { phase: 'before', daysUntilStart: -elapsed }
 
-  const week = Math.floor(elapsed / 7) + 1
+  const week = elapsedWeek(startDate, today)
   if (week > TOTAL_WEEKS) return { phase: 'after' }
 
   const weekday = weekdayOf(today)
@@ -85,6 +90,11 @@ export function programDay(startDate: DayKey, today: DayKey): ProgramDay {
     activity: activityFor(week, weekday),
     deload: isDeloadWeek(week),
   }
+}
+
+/** The Tuesday run step for a week, once repeated or stepped-back weeks are taken into account. */
+export function runStepFor(week: number, runShift: number): number {
+  return Math.min(TOTAL_WEEKS, Math.max(1, week - runShift))
 }
 
 /** First day (Monday) of a given program week. */

@@ -1,0 +1,162 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.dateLine {
+  color: var(--mute);
+}
+
+.capitalize {
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.capitalize::first-letter {
+  text-transform: uppercase;
+}
+
+.welcomeTitle {
+  font-size: 2.75rem;
+  font-stretch: 90%;
+}
+
+.lead {
+  font-size: 1.125rem;
+  max-width: 34ch;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 20px 20px;
+  border-radius: var(--radius);
+}
+
+.renfo {
+  background: var(--coral-soft);
+}
+
+.course {
+  background: var(--blue-soft);
+}
+
+.recup {
+  background: var(--sand);
+}
+
+.activityTitle {
+  font-size: clamp(2.75rem, 13vw, 3.75rem);
+  font-stretch: 82%;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.summary {
+  font-size: 1.125rem;
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  font-weight: 600;
+}
+
+.note {
+  max-width: 60ch;
+}
+
+.smallTitle {
+  margin-bottom: 8px;
+  font-size: 1.125rem;
+}
+
+.plainList {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input {
+  min-height: 52px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  font-size: 1.125rem;
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--coral-strong);
+}
+
+.hint {
+  color: var(--mute);
+}
+
+.error {
+  color: var(--coral-strong);
+  font-weight: 600;
+}
+
+.other summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.other summary::-webkit-details-marker {
+  display: none;
+}
+
+.other summary svg {
+  transition: rotate 0.15s ease-out;
+}
+
+.other[open] summary svg {
+  rotate: 180deg;
+}
+
+.linkList {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.linkList a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
