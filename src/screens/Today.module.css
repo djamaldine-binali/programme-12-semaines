@@ -89,10 +89,6 @@
   padding-left: 1.25em;
 }
 
-.hint {
-  color: var(--mute);
-}
-
 .other summary {
   display: flex;
   justify-content: space-between;

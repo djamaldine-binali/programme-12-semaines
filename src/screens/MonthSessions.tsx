@@ -16,7 +16,7 @@ export function MonthSessions({ month }: { month: number }) {
                 const previous = month > 1 ? item.months[month - 2] : null
                 const exercise = program.exercises[version.exercise]
                 const isNewExercise = previous !== null && previous.exercise !== version.exercise
-                const isHarder = previous !== null && !isNewExercise && previous.dose.text !== version.dose.text
+                const isNewDose = previous !== null && !isNewExercise && previous.dose.text !== version.dose.text
                 return (
                   <li key={version.exercise + version.month}>
                     <a href={`#/bibliotheque/${exercise.id}`} className={styles.exerciseLink}>
@@ -25,7 +25,7 @@ export function MonthSessions({ month }: { month: number }) {
                     </a>
                     <span className={styles.dose}>
                       {version.dose.text}
-                      {isHarder && (
+                      {isNewDose && (
                         <span className={styles.detail}>
                           Mois {month - 1}&nbsp;: {previous.dose.text}
                         </span>

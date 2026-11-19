@@ -1,5 +1,4 @@
-import type { SessionKind } from '../lib/storage'
-import { withLogEntry } from '../lib/storage'
+import { withLogEntry, type SessionKind } from '../lib/storage'
 import { useToday } from '../lib/useToday'
 import { useAppState } from './appStateContext'
 

@@ -3,7 +3,7 @@ import { formatDuration } from '../lib/format'
 import { totalDurationMs, type GuidedPhase } from '../lib/guidedPhases'
 import { useCue } from '../lib/useCue'
 import { useSequenceTimer } from '../lib/useSequenceTimer'
-import buttons from './buttons.module.css'
+import { TimerControls } from './TimerControls'
 import { TimerDisplay } from './TimerDisplay'
 import styles from './timerLayout.module.css'
 
@@ -50,18 +50,7 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
         {!showMark && `Fin dans ${formatDuration(totalLeftS)} environ`}
       </p>
       {children}
-      <div className={styles.controls}>
-        <button
-          type="button"
-          className={`${buttons.button} ${buttons.secondary}`}
-          onClick={timer.running ? timer.pause : timer.resume}
-        >
-          {timer.running ? 'Pause' : 'Reprendre'}
-        </button>
-        <button type="button" className={`${buttons.button} ${buttons.recup}`} onClick={timer.skipPhase}>
-          {isLast ? 'Terminer' : 'Phase suivante'}
-        </button>
-      </div>
+      <TimerControls timer={timer} skipLabel={isLast ? 'Terminer' : 'Phase suivante'} />
     </div>
   )
 }
