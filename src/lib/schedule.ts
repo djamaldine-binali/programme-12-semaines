@@ -109,6 +109,11 @@ export function runStepFor(week: number, runShift: number): number {
   return Math.min(TOTAL_WEEKS, Math.max(1, week - runShift))
 }
 
+/** Run step to do today; it keeps progressing after week 12 when steps were repeated. */
+export function currentRunStep(startDate: DayKey | null, today: DayKey, runShift: number): number {
+  return startDate ? runStepFor(Math.max(1, elapsedWeek(startDate, today)), runShift) : 1
+}
+
 /** First day (Monday) of a given program week. */
 export function weekStart(startDate: DayKey, week: number): DayKey {
   return addDays(startDate, (week - 1) * 7)

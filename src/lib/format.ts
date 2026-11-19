@@ -16,9 +16,9 @@ export function formatNumber(value: number): string {
 export function formatDuration(totalSeconds: number): string {
   const minutes = Math.floor(totalSeconds / 60)
   const seconds = totalSeconds % 60
-  if (minutes === 0) return `${seconds} s`
-  if (seconds === 0) return `${minutes} min`
-  return `${minutes} min ${String(seconds).padStart(2, '0')}`
+  if (minutes === 0) return `${seconds}\u00a0s`
+  if (seconds === 0) return `${minutes}\u00a0min`
+  return `${minutes}\u00a0min\u00a0${String(seconds).padStart(2, '0')}`
 }
 
 /** Clock display for timers: 75 → "1:15" */

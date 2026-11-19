@@ -1,0 +1,40 @@
+.intro {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 16px;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  font-stretch: 85%;
+}
+
+.plan {
+  font-family: var(--font-title);
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--mute);
+}
+
+.safety {
+  padding: 16px;
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  box-shadow: inset 4px 0 0 var(--coral);
+}
+
+.safety strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

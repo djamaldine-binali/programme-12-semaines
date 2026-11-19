@@ -5,6 +5,7 @@ import { SetCounter } from '../components/SetCounter'
 import { VideoFacade } from '../components/VideoFacade'
 import type { Dose, Exercise } from '../data/types'
 import { doseText, setGoal, sideLabel } from '../lib/dose'
+import layout from '../components/sessionLayout.module.css'
 import styles from './Workout.module.css'
 
 interface ExerciseStepProps {
@@ -41,7 +42,7 @@ export function ExerciseStep(props: ExerciseStepProps) {
         <VideoFacade exercise={exercise} />
       </div>
 
-      <div className={styles.actions}>
+      <div className={layout.actions}>
         <SetCounter done={doneSets} total={totalSets} />
         {allSetsDone ? (
           <button

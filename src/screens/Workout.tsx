@@ -13,7 +13,7 @@ import { useToday } from '../lib/useToday'
 import { useWakeLock } from '../lib/useWakeLock'
 import { useAppState } from '../state/appStateContext'
 import { ExerciseStep } from './ExerciseStep'
-import styles from './Workout.module.css'
+import layout from '../components/sessionLayout.module.css'
 
 type Stage = 'ready' | 'holding' | 'resting' | 'finished'
 
@@ -61,14 +61,14 @@ export function Workout({ sessionId }: { sessionId: 'A' | 'B' }) {
 
   if (stage === 'finished' && finishedAt) {
     return (
-      <div className={styles.screen}>
+      <div className={layout.screen}>
         <FinishPanel title={`${session.title} terminée`} finishedAt={finishedAt} offerStretch />
       </div>
     )
   }
 
   return (
-    <div className={styles.screen}>
+    <div className={layout.screen}>
       <SessionHeader
         title={session.title}
         progress={`Exercice ${index + 1} sur ${steps.length}`}
