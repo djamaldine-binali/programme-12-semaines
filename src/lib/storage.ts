@@ -1,13 +1,6 @@
 import type { DayKey } from './schedule'
 
-export type SessionKind =
-  | 'renfo_A'
-  | 'renfo_B'
-  | 'course'
-  | 'fractionne'
-  | 'marche_longue'
-  | 'posture'
-  | 'etirements'
+export type SessionKind = 'renfo_A' | 'renfo_B' | 'course' | 'fractionne' | 'marche_longue' | 'posture' | 'etirements'
 
 export type Feeling = 'facile' | 'ok' | 'dur'
 
@@ -47,7 +40,15 @@ export const defaultState: SavedState = {
   runShift: 0,
 }
 
-const sessionKinds: SessionKind[] = ['renfo_A', 'renfo_B', 'course', 'fractionne', 'marche_longue', 'posture', 'etirements']
+const sessionKinds: SessionKind[] = [
+  'renfo_A',
+  'renfo_B',
+  'course',
+  'fractionne',
+  'marche_longue',
+  'posture',
+  'etirements',
+]
 const feelings: Feeling[] = ['facile', 'ok', 'dur']
 const dayKeyPattern = /^\d{4}-\d{2}-\d{2}$/
 
@@ -70,7 +71,9 @@ function parseSettings(value: unknown): Settings {
   const defaults = defaultState.settings
   if (!isRecord(value)) return defaults
   return {
-    restSeconds: [60, 75, 90].includes(value.restSeconds as number) ? (value.restSeconds as RestSeconds) : defaults.restSeconds,
+    restSeconds: [60, 75, 90].includes(value.restSeconds as number)
+      ? (value.restSeconds as RestSeconds)
+      : defaults.restSeconds,
     sound: typeof value.sound === 'boolean' ? value.sound : defaults.sound,
     vibration: typeof value.vibration === 'boolean' ? value.vibration : defaults.vibration,
     theme: ['auto', 'light', 'dark'].includes(value.theme as string) ? (value.theme as Theme) : defaults.theme,

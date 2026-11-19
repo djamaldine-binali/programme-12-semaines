@@ -1,13 +1,7 @@
 export type DayName = 'lundi' | 'mardi' | 'mercredi' | 'jeudi' | 'vendredi' | 'samedi' | 'dimanche'
 
 export type TemplateActivity =
-  | 'renfo_A'
-  | 'renfo_B'
-  | 'renfo_A_ou_B'
-  | 'course'
-  | 'marche_posture'
-  | 'fractionne'
-  | 'posture_ou_repos'
+  'renfo_A' | 'renfo_B' | 'renfo_A_ou_B' | 'course' | 'marche_posture' | 'fractionne' | 'posture_ou_repos'
 
 export interface Meta {
   title: string

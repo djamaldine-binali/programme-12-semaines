@@ -13,7 +13,15 @@ describe('program.json matches the types', () => {
   })
 
   it('has one known activity per weekday', () => {
-    const activities = ['renfo_A', 'renfo_B', 'renfo_A_ou_B', 'course', 'marche_posture', 'fractionne', 'posture_ou_repos']
+    const activities = [
+      'renfo_A',
+      'renfo_B',
+      'renfo_A_ou_B',
+      'course',
+      'marche_posture',
+      'fractionne',
+      'posture_ou_repos',
+    ]
     expect(program.week_template).toHaveLength(7)
     for (const day of program.week_template) expect(activities).toContain(day.activity)
   })

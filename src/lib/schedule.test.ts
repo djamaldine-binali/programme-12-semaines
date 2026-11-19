@@ -63,11 +63,32 @@ describe('deload weeks', () => {
 describe('Friday session', () => {
   it('is A on odd weeks and B on even weeks', () => {
     const fridays = Array.from({ length: 12 }, (_, index) => activityFor(index + 1, 4))
-    expect(fridays).toEqual(['renfo_A', 'renfo_B', 'renfo_A', 'renfo_B', 'renfo_A', 'renfo_B', 'renfo_A', 'renfo_B', 'renfo_A', 'renfo_B', 'renfo_A', 'renfo_B'])
+    expect(fridays).toEqual([
+      'renfo_A',
+      'renfo_B',
+      'renfo_A',
+      'renfo_B',
+      'renfo_A',
+      'renfo_B',
+      'renfo_A',
+      'renfo_B',
+      'renfo_A',
+      'renfo_B',
+      'renfo_A',
+      'renfo_B',
+    ])
   })
 
   it('appears in the full week plan', () => {
-    expect(weekPlan(2)).toEqual(['renfo_A', 'course', 'renfo_B', 'marche_posture', 'renfo_B', 'fractionne', 'posture_ou_repos'])
+    expect(weekPlan(2)).toEqual([
+      'renfo_A',
+      'course',
+      'renfo_B',
+      'marche_posture',
+      'renfo_B',
+      'fractionne',
+      'posture_ou_repos',
+    ])
   })
 })
 
