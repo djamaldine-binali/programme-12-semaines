@@ -50,6 +50,10 @@ export function FinishPanel({ title, finishedAt, offerStretch, children }: Finis
 
       {children}
 
+      <p className={styles.note}>
+        <strong>Écoute ton corps.</strong> {program.rules.listen_to_body}
+      </p>
+
       <div className={styles.actions}>
         {offerStretch && (
           <>

@@ -1,6 +1,6 @@
 import { program } from '../data/program'
 import type { SaturdayIntervals, TuesdayRun } from '../data/types'
-import type { Tone } from './activities'
+import { describeRun, type Tone } from './activities'
 import type { Cue } from './sound'
 import type { TimedPhase } from './timer'
 
@@ -16,7 +16,7 @@ const { warmup_walk_s: warmupS, cooldown_walk_s: cooldownS } = program.running
 
 const warmup: GuidedPhase = {
   label: 'Échauffement',
-  detail: 'Marche rapide',
+  detail: 'Marche',
   tone: 'recup',
   cue: 'rest',
   durationMs: warmupS * 1000,
@@ -38,7 +38,7 @@ export function runPhases(run: TuesdayRun): GuidedPhase[] {
   if (run.continuous && run.run_s_max) {
     const main: GuidedPhase = {
       label: 'Course',
-      detail: `${run.run_s / 60} à ${run.run_s_max / 60} min sans t'arrêter`,
+      detail: describeRun(run.week),
       tone: 'course',
       cue: 'work',
       durationMs: run.run_s_max * 1000,

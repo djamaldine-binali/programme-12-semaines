@@ -14,7 +14,7 @@ export function VideoFacade({ exercise }: { exercise: Exercise }) {
         {playing ? (
           <iframe
             src={embedUrl}
-            title={`Vidéo : ${exercise.name}`}
+            title={`Vidéo : ${exercise.name}`}
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
           />
         ) : (

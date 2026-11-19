@@ -35,7 +35,7 @@ export function HoldTimer({ steps, tone, onDone }: HoldTimerProps) {
     <div className={styles.hold}>
       <TimerDisplay remainingMs={timer.position.remainingMs} phase={step.label} next={nextStep?.label} tone={tone} />
       <p className={styles.mark} aria-live="polite">
-        {markReached === timer.position.index ? 'Tu as fait le minimum : continue si tu peux, ou arrête-toi.' : ''}
+        {markReached === timer.position.index ? 'Tu as fait le minimum : continue si tu peux, ou arrête-toi.' : ''}
       </p>
       <div className={styles.controls}>
         <button

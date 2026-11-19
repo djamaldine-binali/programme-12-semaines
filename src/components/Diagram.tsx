@@ -17,7 +17,7 @@ export function Diagram({ exercise, size = 'small' }: DiagramProps) {
     <div
       className={`${styles.frame} ${styles[size]}`}
       role="img"
-      aria-label={`Schéma : ${exercise.name}. En gris la position de départ, en noir l'arrivée.`}
+      aria-label={`Schéma : ${exercise.name}`}
       dangerouslySetInnerHTML={{ __html: decorativeSvg(exercise.diagram_svg) }}
     />
   )

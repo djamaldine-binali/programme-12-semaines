@@ -187,7 +187,7 @@ export function Settings() {
 
       <ConfirmDialog
         open={pendingImport !== null}
-        title="Remplacer ta progression ?"
+        title="Remplacer ta progression ?"
         message="Les séances et réglages de ce fichier remplaceront ceux de ce téléphone."
         confirmLabel="Remplacer"
         cancelLabel="Annuler"
@@ -199,7 +199,7 @@ export function Settings() {
       />
       <ConfirmDialog
         open={askingReset}
-        title="Tout remettre à zéro ?"
+        title="Tout remettre à zéro ?"
         message="La date de début, les séances faites et les réglages seront effacés. Exporte d'abord si tu veux les garder."
         confirmLabel="Effacer"
         cancelLabel="Annuler"

@@ -49,6 +49,14 @@
   box-shadow: none;
 }
 
+.note {
+  color: var(--mute);
+}
+
+.note strong {
+  color: var(--ink);
+}
+
 .actions {
   display: flex;
   flex-direction: column;

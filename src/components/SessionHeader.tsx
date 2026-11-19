@@ -28,7 +28,7 @@ export function SessionHeader({ title, progress, confirmQuit }: SessionHeaderPro
       {progress && <p className={styles.progress}>{progress}</p>}
       <ConfirmDialog
         open={asking}
-        title="Quitter la séance ?"
+        title="Quitter la séance ?"
         message="Elle ne sera pas enregistrée comme faite."
         confirmLabel="Quitter"
         cancelLabel="Continuer"

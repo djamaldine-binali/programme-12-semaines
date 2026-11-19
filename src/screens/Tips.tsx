@@ -38,6 +38,11 @@ export function Tips() {
         </div>
       </section>
 
+      <section aria-labelledby="body-title" className={styles.body}>
+        <h2 id="body-title">Écouter son corps</h2>
+        <p>{program.rules.listen_to_body}</p>
+      </section>
+
       <section aria-labelledby="daily-title">
         <h2 id="daily-title">Au quotidien</h2>
         <TipList tips={program.daily_life} />

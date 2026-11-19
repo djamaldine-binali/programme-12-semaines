@@ -40,8 +40,8 @@ export function Run() {
           </div>
           <p className={styles.plan}>{describeRun(step)}</p>
           <p>
-            5 min de marche rapide avant et après, soit {formatDuration(totalDurationMs(phases) / 1000)} en tout.{' '}
-            {program.running.pace_note}
+            {formatDuration(program.running.warmup_walk_s)} de marche avant et après, soit{' '}
+            {formatDuration(totalDurationMs(phases) / 1000)} en tout. {program.running.pace_note}
           </p>
           <div className={styles.safety}>
             <strong>Trop dur ou douloureux</strong>

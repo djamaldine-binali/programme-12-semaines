@@ -28,7 +28,6 @@ export function OtherSessions({ week }: { week: number }) {
         Faire une autre séance
         <ChevronDown size={20} aria-hidden="true" />
       </summary>
-      <p className={styles.hint}>Pratique si tu as décalé un jour.</p>
       <ul className={styles.linkList}>
         {links.map((link) => (
           <li key={link.path + link.title}>
