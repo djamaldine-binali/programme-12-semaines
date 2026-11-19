@@ -117,3 +117,14 @@ export function saveState(state: SavedState): void {
     // Nothing useful to do: the state stays in memory for this visit.
   }
 }
+
+export function withLogEntry(state: SavedState, entry: LogEntry): SavedState {
+  return { ...state, log: [...state.log, entry] }
+}
+
+export function withFeeling(state: SavedState, finishedAt: string, feeling: Feeling): SavedState {
+  return {
+    ...state,
+    log: state.log.map((entry) => (entry.finishedAt === finishedAt ? { ...entry, feeling } : entry)),
+  }
+}

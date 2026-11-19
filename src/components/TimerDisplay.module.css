@@ -1,0 +1,47 @@
+.display {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  max-height: 32rem;
+  padding: 32px 16px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.renfo {
+  background: var(--coral-soft);
+}
+
+.course {
+  background: var(--blue-soft);
+}
+
+.recup {
+  background: var(--sand);
+}
+
+.phase {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 800;
+  font-stretch: 85%;
+  line-height: 1.1;
+}
+
+.digits {
+  font-family: var(--font-title);
+  font-size: clamp(6rem, 34vw, 11rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.next {
+  font-size: 1.125rem;
+  color: var(--mute);
+}

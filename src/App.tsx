@@ -6,7 +6,20 @@ import { Program } from './screens/Program'
 import { Settings } from './screens/Settings'
 import { Tips } from './screens/Tips'
 import { Today } from './screens/Today'
+import { Workout } from './screens/Workout'
 import styles from './App.module.css'
+
+/** Session screens take the whole screen, without the tab bar. */
+function sessionFor(route: string): ReactNode | null {
+  switch (route) {
+    case '/seance/A':
+      return <Workout key="A" sessionId="A" />
+    case '/seance/B':
+      return <Workout key="B" sessionId="B" />
+    default:
+      return null
+  }
+}
 
 function screenFor(route: string): ReactNode {
   switch (route) {
@@ -25,6 +38,8 @@ function screenFor(route: string): ReactNode {
 
 export function App() {
   const route = useRoute()
+  const session = sessionFor(route)
+  if (session) return <main>{session}</main>
 
   // The tab bar comes after the content so keyboard and screen reader users reach the screen first.
   return (
