@@ -17,7 +17,7 @@
   font-weight: 650;
 }
 
-.deload {
+.muted {
   color: var(--mute);
   font-weight: 500;
 }
@@ -50,4 +50,8 @@
 
 .navButton:disabled {
   visibility: hidden;
+}
+
+.doseRecup {
+  color: var(--ink);
 }

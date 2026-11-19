@@ -35,7 +35,7 @@ export function ExerciseStep(props: ExerciseStepProps) {
           <h1 className={styles.name}>{exercise.name}</h1>
           <p className={styles.dose}>
             {doseText(dose, deload)}
-            {deload && <span className={styles.deload}> · semaine allégée</span>}
+            {deload && <span className={styles.muted}> · semaine allégée</span>}
           </p>
         </div>
         <p className={styles.cue}>{exercise.cue}</p>
