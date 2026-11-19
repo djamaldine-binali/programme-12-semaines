@@ -90,3 +90,23 @@ export function activityInfo(activity: Activity, week: number, runShift: number)
       }
   }
 }
+
+export const sessionKindLabels: Record<SessionKind, string> = {
+  renfo_A: 'Séance A',
+  renfo_B: 'Séance B',
+  course: 'Course',
+  fractionne: 'Fractionné',
+  marche_longue: `Marche de ${LONG_WALK_S / 60} min`,
+  posture: 'Posture',
+  etirements: 'Étirements',
+}
+
+export const sessionKindTones: Record<SessionKind, Tone> = {
+  renfo_A: 'renfo',
+  renfo_B: 'renfo',
+  course: 'course',
+  fractionne: 'course',
+  marche_longue: 'recup',
+  posture: 'recup',
+  etirements: 'recup',
+}

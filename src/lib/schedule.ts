@@ -41,6 +41,11 @@ export function weekdayOf(key: DayKey): number {
   return (new Date(toUtc(key)).getUTCDay() + 6) % 7
 }
 
+/** The program follows Monday-to-Sunday weeks, so it has to start on a Monday. */
+export function isValidStartDate(value: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) && weekdayOf(value) === 0
+}
+
 /** Today if it is a Monday, otherwise the next Monday. */
 export function upcomingMonday(today: DayKey): DayKey {
   return addDays(today, (7 - weekdayOf(today)) % 7)
