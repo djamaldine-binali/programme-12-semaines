@@ -4,6 +4,7 @@ import { Diagram } from '../components/Diagram'
 import layout from '../components/sessionLayout.module.css'
 import { VideoFacade } from '../components/VideoFacade'
 import type { Exercise } from '../data/types'
+import { useFocusOnMount } from '../lib/useFocusOnMount'
 import styles from './Workout.module.css'
 
 interface RoutineStepProps {
@@ -20,12 +21,15 @@ interface RoutineStepProps {
 }
 
 export function RoutineStep({ exercise, dose, note, timed, isFirst, isLast, ...actions }: RoutineStepProps) {
+  const headingRef = useFocusOnMount<HTMLHeadingElement>()
   return (
     <>
       <div className={styles.content}>
         <Diagram exercise={exercise} size="large" />
         <div>
-          <h1 className={styles.name}>{exercise.name}</h1>
+          <h1 ref={headingRef} tabIndex={-1} className={styles.name}>
+            {exercise.name}
+          </h1>
           <p className={`${styles.dose} ${styles.doseRecup}`}>{dose}</p>
         </div>
         <p className={styles.cue}>{exercise.cue}</p>

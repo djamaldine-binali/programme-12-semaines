@@ -2,6 +2,7 @@ import { Check } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { program } from '../data/program'
 import { navigate } from '../lib/router'
+import { useFocusOnMount } from '../lib/useFocusOnMount'
 import { withFeeling, type Feeling } from '../lib/storage'
 import { useAppState } from '../state/appStateContext'
 import buttons from './buttons.module.css'
@@ -22,13 +23,16 @@ interface FinishPanelProps {
 
 export function FinishPanel({ title, finishedAt, offerStretch, children }: FinishPanelProps) {
   const { state, update } = useAppState()
+  const headingRef = useFocusOnMount<HTMLHeadingElement>()
   const feeling = state.log.find((entry) => entry.finishedAt === finishedAt)?.feeling
 
   return (
     <div className={styles.panel}>
       <div className={styles.heading}>
         <Check size={40} strokeWidth={2.6} aria-hidden="true" />
-        <h1>{title}</h1>
+        <h1 ref={headingRef} tabIndex={-1}>
+          {title}
+        </h1>
         <p>C'est noté dans ton suivi.</p>
       </div>
 

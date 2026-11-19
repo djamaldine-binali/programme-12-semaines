@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
@@ -58,6 +58,14 @@ function screenFor(route: string): ReactNode {
 
 export function App() {
   const route = useRoute()
+
+  // Each new screen announces itself: focus its title, like a page load would.
+  useEffect(() => {
+    const heading = document.querySelector<HTMLElement>('main h1')
+    if (!heading) return
+    heading.tabIndex = -1
+    heading.focus()
+  }, [route])
   const session = sessionFor(route)
   if (session) return <main>{session}</main>
 

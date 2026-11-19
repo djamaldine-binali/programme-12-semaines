@@ -34,6 +34,7 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
   const afterCurrentMs = totalDurationMs(phases.slice(index + 1))
   const totalLeftS = Math.ceil((remainingMs + afterCurrentMs) / 60_000) * 60
   const isLast = index === phases.length - 1
+  const showMark = markReached && markMessage !== undefined
 
   return (
     <div className={styles.hold}>
@@ -44,8 +45,9 @@ export function GuidedRunner({ phases, markMessage, onDone, children }: GuidedRu
         next={next?.label}
         tone={phase.tone}
       />
-      <p className={styles.mark} aria-live="polite">
-        {markReached && markMessage ? markMessage : `Fin dans ${formatDuration(totalLeftS)} environ`}
+      <p className={styles.mark}>
+        <span aria-live="polite">{showMark && markMessage}</span>
+        {!showMark && `Fin dans ${formatDuration(totalLeftS)} environ`}
       </p>
       {children}
       <div className={styles.controls}>

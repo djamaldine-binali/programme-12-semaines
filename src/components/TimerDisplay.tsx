@@ -1,5 +1,6 @@
 import { formatClock } from '../lib/format'
 import { displaySeconds } from '../lib/timer'
+import { useFocusOnMount } from '../lib/useFocusOnMount'
 import styles from './TimerDisplay.module.css'
 
 interface TimerDisplayProps {
@@ -11,9 +12,10 @@ interface TimerDisplayProps {
 }
 
 export function TimerDisplay({ remainingMs, phase, detail, next, tone }: TimerDisplayProps) {
+  const phaseRef = useFocusOnMount<HTMLParagraphElement>()
   return (
     <div className={`${styles.display} ${styles[tone]}`}>
-      <p className={styles.phase} aria-live="polite">
+      <p ref={phaseRef} tabIndex={-1} className={styles.phase} aria-live="polite">
         {phase}
       </p>
       <p className={styles.digits} role="timer" aria-label={`${displaySeconds(remainingMs)} secondes restantes`}>

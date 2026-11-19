@@ -5,6 +5,7 @@ import { SetCounter } from '../components/SetCounter'
 import { VideoFacade } from '../components/VideoFacade'
 import type { Dose, Exercise } from '../data/types'
 import { doseText, setGoal, sideLabel } from '../lib/dose'
+import { useFocusOnMount } from '../lib/useFocusOnMount'
 import layout from '../components/sessionLayout.module.css'
 import styles from './Workout.module.css'
 
@@ -26,13 +27,16 @@ export function ExerciseStep(props: ExerciseStepProps) {
   const { exercise, dose, deload, doneSets, totalSets, isFirst, isLast } = props
   const allSetsDone = doneSets >= totalSets
   const side = sideLabel(dose)
+  const headingRef = useFocusOnMount<HTMLHeadingElement>()
 
   return (
     <>
       <div className={styles.content}>
         <Diagram exercise={exercise} size="large" />
         <div>
-          <h1 className={styles.name}>{exercise.name}</h1>
+          <h1 ref={headingRef} tabIndex={-1} className={styles.name}>
+            {exercise.name}
+          </h1>
           <p className={styles.dose}>
             {doseText(dose, deload)}
             {deload && <span className={styles.muted}> · semaine allégée</span>}

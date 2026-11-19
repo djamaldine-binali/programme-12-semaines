@@ -1,6 +1,7 @@
 import { X } from 'lucide-react'
 import { useState } from 'react'
 import { goBack } from '../lib/router'
+import { useLeaveGuard } from '../lib/useLeaveGuard'
 import { ConfirmDialog } from './ConfirmDialog'
 import styles from './SessionHeader.module.css'
 
@@ -13,6 +14,7 @@ interface SessionHeaderProps {
 
 export function SessionHeader({ title, progress, confirmQuit }: SessionHeaderProps) {
   const [asking, setAsking] = useState(false)
+  const leave = useLeaveGuard(confirmQuit, () => setAsking(true))
 
   return (
     <header className={styles.header}>
@@ -32,7 +34,7 @@ export function SessionHeader({ title, progress, confirmQuit }: SessionHeaderPro
         message="Elle ne sera pas enregistrée comme faite."
         confirmLabel="Quitter"
         cancelLabel="Continuer"
-        onConfirm={() => goBack()}
+        onConfirm={leave}
         onCancel={() => setAsking(false)}
       />
     </header>
