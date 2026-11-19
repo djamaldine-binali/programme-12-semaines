@@ -41,10 +41,12 @@ export function Program() {
               type="button"
               className={styles.monthRow}
               aria-pressed={month === gridMonth}
-              aria-label={`Mois ${gridMonth}, semaines ${gridMonth * 4 - 3} à ${gridMonth * 4}`}
               onClick={() => setMonth(gridMonth)}
             >
-              <span className={styles.monthLabel}>Mois {gridMonth}</span>
+              <span className={styles.monthLabel}>
+                Mois {gridMonth}
+                <span className="visually-hidden">, semaines</span>
+              </span>
               {allWeeks
                 .filter((week) => monthOfWeek(week) === gridMonth)
                 .map((week) => (
