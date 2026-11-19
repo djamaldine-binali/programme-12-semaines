@@ -5,6 +5,7 @@ import {
   elapsedWeek,
   programDay,
   runStepFor,
+  sessionContext,
   toDayKey,
   upcomingMonday,
   weekPlan,
@@ -135,5 +136,17 @@ describe('runStepFor', () => {
   it('lets a lagging run plan continue after week 12', () => {
     expect(runStepFor(elapsedWeek(START, addDays(START, 7 * 13)), 2)).toBe(12)
     expect(runStepFor(elapsedWeek(START, addDays(START, 7 * 12)), 2)).toBe(11)
+  })
+})
+
+describe('sessionContext', () => {
+  it('uses the current week during the program', () => {
+    expect(sessionContext(START, addDays(START, 7 * 7 + 2))).toEqual({ week: 8, month: 2, deload: true })
+  })
+
+  it('falls back to week 1 before the start or without a start date, and week 12 after', () => {
+    expect(sessionContext(START, '2026-12-01')).toEqual({ week: 1, month: 1, deload: false })
+    expect(sessionContext(null, '2027-06-01')).toEqual({ week: 1, month: 1, deload: false })
+    expect(sessionContext(START, addDays(START, 7 * 20))).toEqual({ week: 12, month: 3, deload: false })
   })
 })

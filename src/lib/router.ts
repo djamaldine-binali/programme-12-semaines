@@ -14,8 +14,10 @@ export function useRoute(): string {
   return useSyncExternalStore(subscribe, currentPath)
 }
 
-export function navigate(path: string): void {
-  window.location.hash = path
+/** `replace` swaps the current history entry, so Back skips a finished session screen. */
+export function navigate(path: string, { replace = false } = {}): void {
+  if (replace) window.location.replace(`#${path}`)
+  else window.location.hash = path
 }
 
 export function goBack(fallback = '/'): void {

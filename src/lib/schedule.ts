@@ -92,6 +92,18 @@ export function programDay(startDate: DayKey, today: DayKey): ProgramDay {
   }
 }
 
+export interface SessionContext {
+  week: number
+  month: number
+  deload: boolean
+}
+
+/** Week used to pick doses: week 1 before the start, week 12 after the end. */
+export function sessionContext(startDate: DayKey | null, today: DayKey): SessionContext {
+  const week = startDate ? Math.min(TOTAL_WEEKS, Math.max(1, elapsedWeek(startDate, today))) : 1
+  return { week, month: monthOfWeek(week), deload: isDeloadWeek(week) }
+}
+
 /** The Tuesday run step for a week, once repeated or stepped-back weeks are taken into account. */
 export function runStepFor(week: number, runShift: number): number {
   return Math.min(TOTAL_WEEKS, Math.max(1, week - runShift))

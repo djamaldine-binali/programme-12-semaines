@@ -11,7 +11,8 @@ import {
   type TimedPhase,
 } from './timer'
 
-interface SequenceCallbacks {
+interface SequenceOptions {
+  autoStart?: boolean
   onPhaseStart?: (index: number) => void
   onMark?: (index: number) => void
   onDone?: () => void
@@ -28,8 +29,8 @@ export interface SequenceTimer {
 
 const TICK_MS = 200
 
-export function useSequenceTimer(phases: TimedPhase[], callbacks: SequenceCallbacks = {}): SequenceTimer {
-  const [clock, setClock] = useState<Clock>(idleClock)
+export function useSequenceTimer(phases: TimedPhase[], options: SequenceOptions = {}): SequenceTimer {
+  const [clock, setClock] = useState<Clock>(() => (options.autoStart ? startClock(idleClock, Date.now()) : idleClock))
   const [now, setNow] = useState(() => Date.now())
   const position = locate(phases, elapsedMs(clock, now))
   const running = clock.runningSince !== null && !position.done
@@ -51,18 +52,18 @@ export function useSequenceTimer(phases: TimedPhase[], callbacks: SequenceCallba
   const announce = useEffectEvent((current: Position) => {
     const seen = announced.current
     if (current.done) {
-      if (!seen.done) callbacks.onDone?.()
+      if (!seen.done) options.onDone?.()
       seen.done = true
       return
     }
     if (current.index !== seen.index) {
       seen.index = current.index
-      callbacks.onPhaseStart?.(current.index)
+      options.onPhaseStart?.(current.index)
     }
     const markMs = phases[current.index].markMs
     if (markMs !== undefined && current.phaseElapsedMs >= markMs && seen.mark !== current.index) {
       seen.mark = current.index
-      callbacks.onMark?.(current.index)
+      options.onMark?.(current.index)
     }
   })
 

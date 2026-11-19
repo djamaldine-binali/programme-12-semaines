@@ -1,0 +1,23 @@
+.dialog {
+  width: min(100% - 32px, 26rem);
+  padding: 24px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.dialog::backdrop {
+  background: rgb(29 26 24 / 0.55);
+}
+
+.dialog p {
+  margin-top: 8px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}

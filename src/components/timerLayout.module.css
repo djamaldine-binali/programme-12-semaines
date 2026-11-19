@@ -1,0 +1,21 @@
+.hold {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 16px);
+}
+
+.mark {
+  min-height: 3em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: auto;
+}
