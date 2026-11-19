@@ -1,0 +1,103 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page h2 {
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: var(--mute);
+}
+
+.summary {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-stretch: 85%;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.weeks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weekHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.weekName {
+  font-weight: 650;
+}
+
+.complete {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.days li {
+  display: grid;
+  place-items: center;
+  height: 36px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--mute);
+  font-size: 1rem;
+}
+
+.days li.renfo {
+  background: var(--coral-strong);
+  box-shadow: none;
+  color: var(--on-accent);
+}
+
+.days li.course {
+  background: var(--blue);
+  box-shadow: none;
+  color: var(--on-accent);
+}
+
+.days li.recup {
+  background: var(--sand);
+  box-shadow: none;
+  color: var(--ink);
+}
+
+.log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.log li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.logName {
+  font-weight: 600;
+}
