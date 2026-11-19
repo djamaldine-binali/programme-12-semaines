@@ -2,7 +2,9 @@ import type { ReactNode } from 'react'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
+import { ExerciseSheet } from './screens/ExerciseSheet'
 import { Intervals } from './screens/Intervals'
+import { Library } from './screens/Library'
 import { LongWalk } from './screens/LongWalk'
 import { Program } from './screens/Program'
 import { Routine } from './screens/Routine'
@@ -36,7 +38,11 @@ function sessionFor(route: string): ReactNode | null {
 }
 
 function screenFor(route: string): ReactNode {
+  const sheet = route.match(/^\/bibliotheque\/([\w-]+)$/)
+  if (sheet) return <ExerciseSheet key={sheet[1]} id={sheet[1]} />
   switch (route) {
+    case '/bibliotheque':
+      return <Library />
     case '/programme':
       return <Program />
     case '/suivi':

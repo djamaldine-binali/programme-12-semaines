@@ -16,7 +16,6 @@ export function VideoFacade({ exercise }: { exercise: Exercise }) {
             src={embedUrl}
             title={`Vidéo : ${exercise.name}`}
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowFullScreen
           />
         ) : (
           <button type="button" className={styles.poster} onClick={() => setPlaying(true)}>
