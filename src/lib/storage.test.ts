@@ -30,4 +30,18 @@ describe('parseState', () => {
     )
     expect(parsed).toEqual({ ...defaultState, settings: { ...defaultState.settings, sound: false } })
   })
+
+  it('rejects impossible dates and a start date that is not a Monday', () => {
+    const parsed = parseState(
+      JSON.stringify({
+        version: 1,
+        startDate: '2027-01-05',
+        log: [
+          { day: '2026-13-01', kind: 'course', finishedAt: 'x' },
+          { day: '2027-02-30', kind: 'course', finishedAt: 'y' },
+        ],
+      }),
+    )
+    expect(parsed).toMatchObject({ startDate: null, log: [] })
+  })
 })

@@ -41,9 +41,14 @@ export function weekdayOf(key: DayKey): number {
   return (new Date(toUtc(key)).getUTCDay() + 6) % 7
 }
 
+/** A real calendar day: "2026-13-01" matches the pattern but is not one. */
+export function isDayKey(value: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) && addDays(value, 0) === value
+}
+
 /** The program follows Monday-to-Sunday weeks, so it has to start on a Monday. */
 export function isValidStartDate(value: string): boolean {
-  return /^\d{4}-\d{2}-\d{2}$/.test(value) && weekdayOf(value) === 0
+  return isDayKey(value) && weekdayOf(value) === 0
 }
 
 /** Today if it is a Monday, otherwise the next Monday. */
