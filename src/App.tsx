@@ -5,6 +5,7 @@ import { History } from './screens/History'
 import { Intervals } from './screens/Intervals'
 import { LongWalk } from './screens/LongWalk'
 import { Program } from './screens/Program'
+import { Routine } from './screens/Routine'
 import { Run } from './screens/Run'
 import { Settings } from './screens/Settings'
 import { Tips } from './screens/Tips'
@@ -25,6 +26,10 @@ function sessionFor(route: string): ReactNode | null {
       return <Intervals />
     case '/marche':
       return <LongWalk />
+    case '/routine/posture':
+      return <Routine key="posture" kind="posture" />
+    case '/routine/etirements':
+      return <Routine key="etirements" kind="etirements" />
     default:
       return null
   }
