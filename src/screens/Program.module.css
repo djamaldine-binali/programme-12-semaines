@@ -1,0 +1,163 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.page h2 {
+  margin-bottom: 12px;
+}
+
+.page h3 {
+  margin-bottom: 4px;
+}
+
+.muted {
+  color: var(--mute);
+}
+
+.detail {
+  display: block;
+  color: var(--mute);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* One row per month, four squares per week, echoing the app icon. */
+.monthRow {
+  display: grid;
+  grid-template-columns: 4.5rem repeat(4, 1fr);
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: none;
+  text-align: left;
+}
+
+.monthRow[aria-pressed='true'] {
+  background: var(--surface);
+}
+
+.monthLabel {
+  font-weight: 650;
+}
+
+.week {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--sand);
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.monthRow[aria-pressed='true'] .week {
+  background: var(--coral-soft);
+}
+
+.week[data-deload] {
+  background: none;
+  outline: 2px dashed var(--mute);
+  outline-offset: -2px;
+}
+
+.week[data-current] {
+  box-shadow: 0 0 0 3px var(--ink);
+}
+
+.legend {
+  margin-top: 8px;
+  color: var(--mute);
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rows {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.rows li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rowLabel {
+  flex: none;
+  width: 6.5rem;
+  color: var(--mute);
+}
+
+.rowValue {
+  flex: 1;
+}
+
+.exerciseLink {
+  display: flex;
+  flex-direction: column;
+  min-height: 24px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.change {
+  color: var(--coral-strong);
+  font-weight: 600;
+}
+
+.dose {
+  flex: none;
+  max-width: 50%;
+  color: var(--coral-strong);
+  font-weight: 600;
+  text-align: right;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
