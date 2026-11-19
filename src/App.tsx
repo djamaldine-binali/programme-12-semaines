@@ -2,7 +2,10 @@ import type { ReactNode } from 'react'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
+import { Intervals } from './screens/Intervals'
+import { LongWalk } from './screens/LongWalk'
 import { Program } from './screens/Program'
+import { Run } from './screens/Run'
 import { Settings } from './screens/Settings'
 import { Tips } from './screens/Tips'
 import { Today } from './screens/Today'
@@ -16,6 +19,12 @@ function sessionFor(route: string): ReactNode | null {
       return <Workout key="A" sessionId="A" />
     case '/seance/B':
       return <Workout key="B" sessionId="B" />
+    case '/course':
+      return <Run />
+    case '/fractionne':
+      return <Intervals />
+    case '/marche':
+      return <LongWalk />
     default:
       return null
   }

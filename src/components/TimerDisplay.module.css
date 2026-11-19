@@ -16,7 +16,12 @@
 }
 
 .course {
-  background: var(--blue-soft);
+  background: var(--blue);
+  color: var(--on-accent);
+}
+
+.course .next {
+  color: inherit;
 }
 
 .recup {
@@ -39,6 +44,15 @@
   font-variant-numeric: tabular-nums;
   line-height: 1;
   letter-spacing: -0.02em;
+}
+
+.phase::first-letter {
+  text-transform: uppercase;
+}
+
+.detail {
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .next {
