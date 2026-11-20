@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
@@ -60,7 +60,13 @@ export function App() {
   const route = useRoute()
 
   // Each new screen announces itself: focus its title, like a page load would.
+  // Not on the first load, where the browser already starts at the top of the page.
+  const firstRoute = useRef(true)
   useEffect(() => {
+    if (firstRoute.current) {
+      firstRoute.current = false
+      return
+    }
     const heading = document.querySelector<HTMLElement>('main h1')
     if (!heading) return
     heading.tabIndex = -1
