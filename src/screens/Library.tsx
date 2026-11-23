@@ -14,9 +14,9 @@ export function Library() {
       <h1>Les fiches</h1>
       <p className={styles.muted}>En gris la position de départ, en noir l'arrivée.</p>
 
-      {exercisesByGroup().map(({ group, ids }) => (
-        <section key={group} aria-labelledby={`group-${group}`}>
-          <h2 id={`group-${group}`}>{group}</h2>
+      {exercisesByGroup().map(({ group, ids }, index) => (
+        <section key={group} aria-labelledby={`group-${index}`}>
+          <h2 id={`group-${index}`}>{group}</h2>
           <ul className={styles.grid}>
             {ids.map((id) => {
               const exercise = program.exercises[id]
@@ -28,7 +28,7 @@ export function Library() {
                     <span className={styles.muted}>
                       {appearancesOf(id)
                         .map((appearance) => `${appearance.place}, ${describeMonths(appearance.months)}`)
-                        .join(' · ')}
+                        .join(' · ') || 'Version plus dure'}
                     </span>
                   </a>
                 </li>

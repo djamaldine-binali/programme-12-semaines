@@ -10,16 +10,16 @@ describe('runPhases', () => {
     const phases = runPhases(runs[0])
     expect(phases).toHaveLength(1 + 8 * 2 + 1)
     expect(phases[0]).toMatchObject({ label: 'Échauffement', durationMs: 300_000 })
-    expect(phases[1]).toMatchObject({ label: 'Course', durationMs: 60_000, detail: '1 sur 8' })
-    expect(phases[2]).toMatchObject({ label: 'Marche', durationMs: 120_000 })
+    expect(phases[1]).toMatchObject({ label: 'Course', durationMs: 90_000, detail: '1 sur 8' })
+    expect(phases[2]).toMatchObject({ label: 'Marche', durationMs: 60_000 })
     expect(phases.at(-1)).toMatchObject({ label: 'Retour au calme', durationMs: 300_000 })
-    expect(totalDurationMs(phases)).toBe((300 + 8 * 180 + 300) * 1000)
+    expect(totalDurationMs(phases)).toBe((300 + 8 * 150 + 300) * 1000)
   })
 
-  it('runs weeks 11 and 12 in one go, up to 30 min with a signal at 25 min', () => {
+  it('runs week 11 in one go, up to 20 min with a signal at 15 min', () => {
     const phases = runPhases(runs[10])
     expect(phases).toHaveLength(3)
-    expect(phases[1]).toMatchObject({ label: 'Course', durationMs: 1_800_000, markMs: 1_500_000 })
+    expect(phases[1]).toMatchObject({ label: 'Course', durationMs: 1_200_000, markMs: 900_000 })
   })
 })
 
@@ -35,13 +35,13 @@ describe('intervalPhases', () => {
       'montées de genoux',
       'jumping jacks',
     ])
-    expect(totalDurationMs(phases)).toBe(6 * (30 + 90) * 1000)
+    expect(totalDurationMs(phases)).toBe(6 * (20 + 90) * 1000)
   })
 
   it('runs with walking recovery and a warm-up in months 2 and 3', () => {
     const month3 = intervalPhases(intervals[2])
-    expect(month3).toHaveLength(1 + 10 * 2 + 1)
+    expect(month3).toHaveLength(1 + 8 * 2 + 1)
     expect(month3[1]).toMatchObject({ label: 'Vite', durationMs: 30_000 })
-    expect(month3[2]).toMatchObject({ label: 'Marche', durationMs: 60_000 })
+    expect(month3[2]).toMatchObject({ label: 'Marche', durationMs: 75_000 })
   })
 })

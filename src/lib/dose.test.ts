@@ -40,9 +40,18 @@ describe('parseTarget', () => {
 describe('labels', () => {
   it('describe the goal of one set', () => {
     const squat = program.sessions.A.items[0].months[0].dose
-    expect(setGoal(squat)).toBe('12–15 répétitions')
-    const pushUps = program.sessions.A.items[4].months[2].dose
-    expect(setGoal(pushUps)).toBe('Le maximum, propre')
+    expect(setGoal(squat)).toBe('10 répétitions')
+    const plank = program.sessions.A.items[5].months[0].dose
+    expect(setGoal(plank)).toBe('15–20 secondes')
+    const maxPushUps = {
+      text: '4 séries, max propre',
+      sets: 4,
+      target: 'max',
+      unit: 'reps',
+      per_side: false,
+      note: null,
+    } as const
+    expect(setGoal(maxPushUps)).toBe('Le maximum, propre')
   })
 
   it('say leg or side for per-side doses', () => {
