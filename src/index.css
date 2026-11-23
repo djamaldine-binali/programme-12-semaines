@@ -1,23 +1,29 @@
 :root {
   color-scheme: light dark;
 
-  /* Pebble background, white cards: what can be tapped sits on a card. */
-  --bg: light-dark(#f1efec, #1b1918);
-  --ink: light-dark(#2e2b29, #f3efea);
-  --mute: light-dark(#625b57, #aba29c);
-  --line: light-dark(#e4ddd5, #34302d);
-  --surface: light-dark(#ffffff, #262321);
+  /* Soleil levant: warm white, plum ink, a sunrise gradient for the moments that matter. */
+  --bg: light-dark(#fff8f1, #1a1220);
+  --surface: light-dark(#ffffff, #261b2e);
+  --ink: light-dark(#2b1b3d, #fff3ea);
+  --mute: light-dark(#6e5f78, #b7a9c0);
+  --line: light-dark(#f1e4da, #3a2c44);
   /* Diagrams keep a light background in both themes. */
-  --pic: #fbf8f4;
+  --pic: #fff5ec;
 
-  /* #d9482f is too light for small text on white, so text and buttons use a deeper coral. */
-  --coral: light-dark(#d9482f, #f0745c);
-  --coral-strong: light-dark(#c23b23, #f0745c);
-  --coral-soft: light-dark(#f9ddd4, #3a221c);
-  --blue: light-dark(#2b5aa6, #86a9e6);
-  --blue-soft: light-dark(#e2eaf7, #1d2638);
-  --sand: light-dark(#e4ddd5, #2f2b28);
-  --on-accent: light-dark(#ffffff, #151413);
+  /* #ff5a3c is for fills and big numbers; text and buttons use the deeper coral. */
+  --coral: light-dark(#ff5a3c, #ff7a5c);
+  --coral-strong: light-dark(#c8361b, #ff7a5c);
+  --coral-soft: light-dark(#ffe3dc, #3d1f22);
+  /* Run days: amber, the sun's colour. The old names stay so every screen picks it up. */
+  --blue: light-dark(#a35400, #ffb74d);
+  --blue-soft: light-dark(#fff0c7, #3a2a12);
+  --sand: light-dark(#efe7f5, #2e2338);
+  --sun: #ffc23c;
+  --water: light-dark(#1a6fbf, #7cc4ff);
+  --water-soft: light-dark(#e3f2ff, #16283b);
+  --on-accent: light-dark(#ffffff, #1a1220);
+  --sunrise: linear-gradient(135deg, #ff5a3c 0%, #ff8a3d 50%, #ffc23c 100%);
+  --shadow: 0 1px 2px rgb(43 27 61 / 6%), 0 8px 24px rgb(43 27 61 / 7%);
 
   --otter: #6b6461;
   --otter-bib: #f7f3ee;
@@ -29,8 +35,8 @@
 
   --gutter: 16px;
   --tabbar-height: 64px;
-  --radius-small: 10px;
-  --radius: 18px;
+  --radius-small: 12px;
+  --radius: 22px;
 }
 
 :root[data-theme='light'] {
@@ -72,8 +78,8 @@ h3 {
 
 h1 {
   font-size: 2.25rem;
-  font-stretch: 88%;
-  font-weight: 800;
+  font-stretch: 90%;
+  font-weight: 850;
   letter-spacing: -0.02em;
 }
 
@@ -100,11 +106,11 @@ a:not([class]) {
   font-weight: 600;
 }
 
-/* A white block on the pebble background. */
 .card {
-  padding: 16px 18px;
+  padding: 18px;
   border-radius: var(--radius);
   background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 button,
@@ -119,7 +125,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--water);
   outline-offset: 2px;
 }
 

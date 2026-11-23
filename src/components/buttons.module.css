@@ -6,7 +6,7 @@
   min-height: 52px;
   padding: 0 20px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--ink);
   color: var(--bg);
   font-family: var(--font-title);
@@ -48,4 +48,12 @@
 
 .block {
   width: 100%;
+}
+
+/* The main call to action, painted like the sunrise. */
+.sunrise {
+  background: var(--sunrise);
+  color: #2b1b3d;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgb(255 90 60 / 30%);
 }

@@ -13,3 +13,10 @@ Trois directions proposées : « Bord de rivière » (vert d'eau et saumon), « 
 
 ## Icônes PNG
 Rendues depuis le SVG de la loutre (le contenu de `OtterMark`, couleurs en dur) avec Chrome sans interface : une page HTML de la taille de l'icône, fond #d9482f, loutre posée en bas et centrée, à 86 % de la largeur (70 % pour `pwa-maskable-512.png`, zone sûre Android), puis `chrome --headless=new --screenshot=<fichier> --window-size=<taille>,<taille>`.
+
+## Mise à jour : « Soleil levant »
+Le premier style (galet et corail) restait trop sage : l'utilisateur voulait une app colorée, solaire, plus pro et vivante. Nouvelle direction choisie parmi trois (« Soleil levant », « Agrumes sportifs », « Corail et soleil ») :
+- fond blanc chaud #fff8f1, encre prune #2b1b3d, cartes blanches avec une ombre chaude ;
+- dégradé corail → orange → jaune (#ff5a3c, #ff8a3d, #ffc23c) réservé au bandeau du jour et au bouton principal, texte prune dessus (5:1 au pire) ;
+- ambre pour les jours de course, lavande pour la récup, bleu ciel pour l'eau ;
+- anneau de progression des 12 semaines, icônes par activité et par repas, barre d'onglets flottante.

@@ -1,7 +1,9 @@
-import { Check } from 'lucide-react'
+import { Apple, Check, ChevronRight, Coffee, Footprints, Salad, UtensilsCrossed, type LucideIcon } from 'lucide-react'
+import { ActivityIcon } from '../components/ActivityIcon'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
-import { meals } from '../data/meals'
+import { WeekRing } from '../components/WeekRing'
+import { meals, type MealSlot } from '../data/meals'
 import { program } from '../data/program'
 import { activityInfo } from '../lib/activities'
 import { formatLongDate, formatNumber } from '../lib/format'
@@ -12,10 +14,17 @@ import styles from './Today.module.css'
 
 type DuringDay = Extract<ProgramDay, { phase: 'during' }>
 
-function weekState(week: number, current: number): 'done' | 'current' | undefined {
-  if (week < current) return 'done'
-  if (week === current) return 'current'
-  return undefined
+const mealIcons: Record<MealSlot, LucideIcon> = {
+  'Petit-déjeuner': Coffee,
+  Déjeuner: Salad,
+  Collation: Apple,
+  Dîner: UtensilsCrossed,
+}
+
+function greeting(hour: number): string {
+  if (hour < 12) return 'Bonjour Amélia'
+  if (hour < 18) return 'Bon après-midi Amélia'
+  return 'Bonsoir Amélia'
 }
 
 interface TodayPlanProps {
@@ -34,38 +43,47 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
   return (
     <div className={styles.stack}>
       <header className={styles.hero}>
-        <p className={styles.capitalize}>{formatLongDate(today)}</p>
-        <p className={styles.weekLine}>
-          <span className="visually-hidden">Semaine </span>
-          <span className={styles.weekNumber}>{day.week}</span>
-          <span>
-            sur 12 semaines
+        <div className={styles.heroText}>
+          <p className={styles.greeting}>{greeting(new Date().getHours())}</p>
+          <p className={styles.capitalize}>{formatLongDate(today)}</p>
+          <p className={styles.weekText}>
+            Semaine {day.week} sur 12
             <br />
-            mois {day.month}
-          </span>
-        </p>
-        <ol className={styles.weekBar} aria-hidden="true">
-          {Array.from({ length: 12 }, (_, index) => (
-            <li key={index} data-state={weekState(index + 1, day.week)} />
-          ))}
-        </ol>
+            Mois {day.month}
+            {day.deload && ', semaine allégée'}
+          </p>
+        </div>
+        <WeekRing week={day.week} />
       </header>
 
-      <section className={`${styles.panel} ${styles[info.tone]}`} aria-labelledby="today-activity">
+      <section className={`card ${styles.session}`} aria-labelledby="today-activity">
+        <div className={styles.sessionHead}>
+          <span className={`${styles.badge} ${styles[info.tone]}`}>
+            <ActivityIcon kind={info.kind} />
+          </span>
+          <p className={styles.eyebrow}>Ta séance du jour</p>
+        </div>
         <h1 id="today-activity" className={styles.activityTitle}>
           {info.title}
         </h1>
         <p className={styles.summary}>{info.summary}</p>
         {doneToday ? (
           <p className={styles.done}>
-            <Check size={22} aria-hidden="true" /> C'est fait pour aujourd'hui.
+            <Check size={22} aria-hidden="true" /> C'est fait pour aujourd'hui, bravo.
           </p>
         ) : (
-          <a href={`#${info.path}`} className={`${buttons.button} ${buttons[info.tone]} ${buttons.block}`}>
+          <a href={`#${info.path}`} className={`${buttons.button} ${buttons.sunrise} ${buttons.block}`}>
             {isPostureOrRest ? 'Faire la routine posture' : 'Démarrer'}
           </a>
         )}
       </section>
+
+      <p className={styles.steps}>
+        <Footprints size={20} aria-hidden="true" />
+        <span>
+          <strong>{formatNumber(stepsGoal(day.month))} pas</strong> par jour ce mois-ci
+        </span>
+      </p>
 
       {day.deload && (
         <p className={styles.note}>
@@ -73,20 +91,30 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
         </p>
       )}
 
-      <p className={styles.note}>
-        <strong>Pas du mois {day.month}&nbsp;:</strong> {formatNumber(stepsGoal(day.month))} par jour.
-      </p>
-
-      <section aria-labelledby="menu-title" className={`card ${styles.menu}`}>
-        <h2 id="menu-title">Au menu aujourd'hui</h2>
-        <ul>
-          {todayMeals.map((meal) => (
-            <li key={meal.slot}>
-              <span className={styles.menuSlot}>{meal.slot}</span> {meals.recipes[meal.recipe].title}
-            </li>
-          ))}
+      <section aria-labelledby="menu-title" className="card">
+        <div className={styles.cardHead}>
+          <h2 id="menu-title">Au menu</h2>
+          <a href="#/repas">Recettes et courses</a>
+        </div>
+        <ul className={styles.menuList}>
+          {todayMeals.map((meal) => {
+            const Icon = mealIcons[meal.slot]
+            return (
+              <li key={meal.slot}>
+                <a href={`#/repas/recette/${meal.recipe}`}>
+                  <span className={styles.menuIcon}>
+                    <Icon size={20} aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className={styles.menuSlot}>{meal.slot}</span>
+                    <span className={styles.menuTitle}>{meals.recipes[meal.recipe].title}</span>
+                  </span>
+                  <ChevronRight size={18} aria-hidden="true" className={styles.chevron} />
+                </a>
+              </li>
+            )
+          })}
         </ul>
-        <a href="#/repas">Recettes et courses</a>
       </section>
 
       <div className="card">
