@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { addDays } from './schedule'
-import { startedWeeks, weekProgress } from './progress'
+import { plannedDaysDone, startedWeeks, weekProgress } from './progress'
 import type { LogEntry, SessionKind } from './storage'
 
 const START = '2027-01-04'
@@ -52,5 +52,23 @@ describe('startedWeeks', () => {
 
   it('stops at week 12', () => {
     expect(startedWeeks(START, addDays(START, 200), [])).toHaveLength(12)
+  })
+})
+
+describe('plannedDaysDone', () => {
+  const week1: SessionKind[] = ['renfo_A', 'course', 'renfo_B', 'posture', 'renfo_A', 'fractionne', 'posture']
+
+  it("ticks Saturday when Saturday's session was done on Monday", () => {
+    const done = plannedDaysDone(START, 1, week1, [entry(0, 'fractionne')])
+    expect(done).toEqual([false, false, false, false, false, true, false])
+  })
+
+  it('gives a repeated session to the first planned day first', () => {
+    const done = plannedDaysDone(START, 1, week1, [entry(3, 'renfo_A')])
+    expect(done).toEqual([true, false, false, false, false, false, false])
+  })
+
+  it('ignores sessions from another week', () => {
+    expect(plannedDaysDone(START, 1, week1, [entry(7, 'course')]).some(Boolean)).toBe(false)
   })
 })
