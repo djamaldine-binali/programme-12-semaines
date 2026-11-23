@@ -32,36 +32,64 @@
   max-width: 34ch;
 }
 
-/* The sunrise: the one place the gradient lives on this screen. */
+/* The sun: one flat yellow block, the otter sitting on its edge. */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 20px 22px;
   border-radius: var(--radius);
-  background: var(--sunrise);
+  background: var(--sun);
   color: #2b1b3d;
-  box-shadow: 0 12px 32px rgb(255 90 60 / 25%);
 }
 
 .heroText {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  padding-right: 96px;
   font-weight: 600;
 }
 
 .greeting {
   font-family: var(--font-title);
-  font-size: 1.625rem;
+  font-size: 1.75rem;
+  font-stretch: 90%;
   font-weight: 850;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .weekText {
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 700;
+}
+
+.weekBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weekBar li {
+  height: 6px;
+  border-radius: 3px;
+  background: rgb(43 27 61 / 16%);
+}
+
+.weekBar li[data-state='done'] {
+  background: #2b1b3d;
+}
+
+.weekBar li[data-state='current'] {
+  background: #e8452c;
+}
+
+.heroOtter {
+  position: absolute;
+  right: 6px;
+  bottom: -8px;
 }
 
 .session {
@@ -96,7 +124,7 @@
 
 .recup {
   background: var(--sand);
-  color: var(--ink);
+  color: var(--violet);
 }
 
 .eyebrow {
@@ -187,8 +215,8 @@
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: var(--blue-soft);
-  color: var(--blue);
+  background: var(--sun-soft);
+  color: var(--sun-ink);
 }
 
 .menuList a > span:nth-child(2) {

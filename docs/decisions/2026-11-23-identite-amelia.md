@@ -20,3 +20,9 @@ Le premier style (galet et corail) restait trop sage : l'utilisateur voulait une
 - dégradé corail → orange → jaune (#ff5a3c, #ff8a3d, #ffc23c) réservé au bandeau du jour et au bouton principal, texte prune dessus (5:1 au pire) ;
 - ambre pour les jours de course, lavande pour la récup, bleu ciel pour l'eau ;
 - anneau de progression des 12 semaines, icônes par activité et par repas, barre d'onglets flottante.
+
+## Mise à jour : « Soleil franc »
+Le dégradé corail → jaune faisait amateur et « généré par IA ». Remplacé par des aplats :
+- bloc jaune soleil #ffc93c uni pour le bandeau du jour, la loutre assise sur son bord, texte prune #2b1b3d (10:1) ;
+- corail uni #d63a20 pour l'action principale (texte blanc 4,7:1), bleu #2459d6 pour la course, violet #6d3fd9 pour la récup ;
+- cartes blanches bordées d'un filet, sans ombre ; le mode sombre suit le téléphone et garde le bloc jaune.

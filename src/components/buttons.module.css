@@ -36,8 +36,8 @@
 }
 
 .recup {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--violet);
+  color: var(--on-accent);
 }
 
 .secondary {
@@ -50,10 +50,9 @@
   width: 100%;
 }
 
-/* The main call to action, painted like the sunrise. */
-.sunrise {
-  background: var(--sunrise);
-  color: #2b1b3d;
-  font-weight: 800;
-  box-shadow: 0 6px 18px rgb(255 90 60 / 30%);
+/* The main call to action: plain coral, nothing else on the screen looks like it. */
+.primary {
+  background: var(--coral-strong);
+  color: var(--on-accent);
+  font-weight: 750;
 }

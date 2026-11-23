@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { ActivityIcon } from '../components/ActivityIcon'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
-import { WeekRing } from '../components/WeekRing'
+import { OtterMark } from '../components/OtterMark'
 import { meals, type MealSlot } from '../data/meals'
 import { program } from '../data/program'
 import { activityInfo } from '../lib/activities'
@@ -14,6 +14,12 @@ import { OtherSessions } from './OtherSessions'
 import styles from './Today.module.css'
 
 type DuringDay = Extract<ProgramDay, { phase: 'during' }>
+
+function weekState(week: number, current: number): 'done' | 'current' | undefined {
+  if (week < current) return 'done'
+  if (week === current) return 'current'
+  return undefined
+}
 
 const mealIcons: Record<MealSlot, LucideIcon> = {
   'Petit-déjeuner': Coffee,
@@ -49,13 +55,18 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
           <p className={styles.greeting}>{greeting(hour)}</p>
           <p className={styles.capitalize}>{formatLongDate(today)}</p>
           <p className={styles.weekText}>
-            Semaine {day.week} sur 12
-            <br />
-            Mois {day.month}
+            Semaine {day.week} sur 12, mois {day.month}
             {day.deload && ', semaine allégée'}
           </p>
+          <ol className={styles.weekBar} aria-hidden="true">
+            {Array.from({ length: 12 }, (_, index) => (
+              <li key={index} data-state={weekState(index + 1, day.week)} />
+            ))}
+          </ol>
         </div>
-        <WeekRing week={day.week} />
+        <div className={styles.heroOtter}>
+          <OtterMark size={108} />
+        </div>
       </header>
 
       <section className={`card ${styles.session}`} aria-labelledby="today-activity">
@@ -74,7 +85,7 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
             <Check size={22} aria-hidden="true" /> C'est fait pour aujourd'hui, bravo.
           </p>
         ) : (
-          <a href={`#${info.path}`} className={`${buttons.button} ${buttons.sunrise} ${buttons.block}`}>
+          <a href={`#${info.path}`} className={`${buttons.button} ${buttons.primary} ${buttons.block}`}>
             {isPostureOrRest ? 'Faire la routine posture' : 'Démarrer'}
           </a>
         )}

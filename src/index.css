@@ -1,29 +1,31 @@
 :root {
   color-scheme: light dark;
 
-  /* Soleil levant: warm white, plum ink, a sunrise gradient for the moments that matter. */
-  --bg: light-dark(#fff8f1, #1a1220);
-  --surface: light-dark(#ffffff, #261b2e);
-  --ink: light-dark(#2b1b3d, #fff3ea);
-  --mute: light-dark(#6e5f78, #b7a9c0);
-  --line: light-dark(#f1e4da, #3a2c44);
+  /* Soleil franc: flat sun yellow, plain coral for actions, plum ink. No gradients. */
+  --bg: light-dark(#fffaf3, #1e1527);
+  --surface: light-dark(#ffffff, #2a1f35);
+  --ink: light-dark(#2b1b3d, #fff6ec);
+  --mute: light-dark(#6e5f78, #bbaec6);
+  --line: light-dark(#f1e6da, #3c2f49);
   /* Diagrams keep a light background in both themes. */
   --pic: #fff5ec;
 
-  /* #ff5a3c is for fills and big numbers; text and buttons use the deeper coral. */
-  --coral: light-dark(#ff5a3c, #ff7a5c);
-  --coral-strong: light-dark(#c8361b, #ff7a5c);
-  --coral-soft: light-dark(#ffe3dc, #3d1f22);
-  /* Run days: amber, the sun's colour. The old names stay so every screen picks it up. */
-  --blue: light-dark(#a35400, #ffb74d);
-  --blue-soft: light-dark(#fff0c7, #3a2a12);
-  --sand: light-dark(#efe7f5, #2e2338);
-  --sun: #ffc23c;
-  --water: light-dark(#1a6fbf, #7cc4ff);
-  --water-soft: light-dark(#e3f2ff, #16283b);
-  --on-accent: light-dark(#ffffff, #1a1220);
-  --sunrise: linear-gradient(135deg, #ff5a3c 0%, #ff8a3d 50%, #ffc23c 100%);
-  --shadow: 0 1px 2px rgb(43 27 61 / 6%), 0 8px 24px rgb(43 27 61 / 7%);
+  --sun: #ffc93c;
+  --sun-soft: light-dark(#fff1c7, #3d3016);
+  --sun-ink: light-dark(#8a5a00, #ffd66b);
+  /* #e8452c is too light under white text, so buttons and small text use the deeper coral. */
+  --coral: light-dark(#e8452c, #ff6a4d);
+  --coral-strong: light-dark(#d63a20, #ff8a70);
+  --coral-soft: light-dark(#ffe1d9, #4a2320);
+  /* Run days. The old names stay so every screen picks the colour up. */
+  --blue: light-dark(#2459d6, #7eb0ff);
+  --blue-soft: light-dark(#e1ecff, #1d2b4a);
+  /* Recovery days: soft violet. */
+  --violet: light-dark(#6d3fd9, #b79bff);
+  --sand: light-dark(#eee6fd, #2f2446);
+  --water: light-dark(#2459d6, #7eb0ff);
+  --water-soft: light-dark(#e1ecff, #1d2b4a);
+  --on-accent: light-dark(#ffffff, #1e1527);
 
   --otter: #6b6461;
   --otter-bib: #f7f3ee;
@@ -36,7 +38,7 @@
   --gutter: 16px;
   --tabbar-height: 64px;
   --radius-small: 12px;
-  --radius: 22px;
+  --radius: 20px;
 }
 
 :root[data-theme='light'] {
@@ -108,9 +110,9 @@ a:not([class]) {
 
 .card {
   padding: 18px;
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  box-shadow: var(--shadow);
 }
 
 button,
