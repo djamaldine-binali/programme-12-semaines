@@ -31,7 +31,7 @@ export function StartDatePicker({ today }: { today: DayKey }) {
 
       <button
         type="button"
-        className={`${buttons.button} ${buttons.sunrise} ${buttons.block}`}
+        className={`${buttons.button} ${buttons.primary} ${buttons.block}`}
         disabled={!isDayKey(startDate)}
         onClick={() => update((state) => ({ ...state, startDate: mondayOf(startDate) }))}
       >
