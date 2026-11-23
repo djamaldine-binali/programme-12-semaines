@@ -6,8 +6,8 @@
   grid-template-columns: repeat(4, minmax(0, 9rem));
   justify-content: center;
   padding-bottom: env(safe-area-inset-bottom);
-  background: var(--bg);
-  border-top: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 -1px 0 var(--line);
 }
 
 .tab {
@@ -25,9 +25,24 @@
   text-decoration: none;
 }
 
+.tab {
+  position: relative;
+}
+
+/* A coral notch above the current tab, echoing the week bar on the Today screen. */
 .tab[aria-current='page'] {
-  color: var(--ink);
-  font-weight: 650;
+  color: var(--coral-strong);
+  font-weight: 700;
+}
+
+.tab[aria-current='page']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: var(--coral);
 }
 
 .tab:focus-visible {

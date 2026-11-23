@@ -35,7 +35,7 @@ export function Recipe({ id }: { id: string }) {
 
       <ServingsChoice />
 
-      <section aria-labelledby="ingredients-title">
+      <section aria-labelledby="ingredients-title" className="card">
         <h2 id="ingredients-title">Ingrédients</h2>
         {recipe.yield && <p className={styles.muted}>{forServings(recipe.yield, servings)}</p>}
         <ul className={styles.ingredients}>
@@ -46,7 +46,7 @@ export function Recipe({ id }: { id: string }) {
       </section>
 
       {recipe.steps.length > 0 && (
-        <section aria-labelledby="steps-title">
+        <section aria-labelledby="steps-title" className="card">
           <h2 id="steps-title">Étapes</h2>
           <ol className={styles.steps}>
             {recipe.steps.map((step) => (

@@ -58,7 +58,9 @@ export function Pantry() {
         À acheter une fois&nbsp;: ça sert pour plusieurs recettes et ça dure plusieurs semaines. Le sel et le poivre ne
         sont pas comptés.
       </p>
-      <Items items={meals.pantry.map((item) => ({ ...item, quantity: 1 }))} />
+      <div className="card">
+        <Items items={meals.pantry.map((item) => ({ ...item, quantity: 1 }))} />
+      </div>
       <p className={styles.total}>
         <span>Total</span>
         <span>{formatEuros(pantryTotalCents())}</span>
@@ -78,7 +80,7 @@ export function Shopping() {
       <h1>Courses de la semaine</h1>
       <ServingsChoice />
       {list.sections.map((section, index) => (
-        <section key={section.title} aria-labelledby={`aisle-${index}`}>
+        <section key={section.title} aria-labelledby={`aisle-${index}`} className="card">
           <h2 id={`aisle-${index}`}>{section.title}</h2>
           <Items items={section.items} />
         </section>
@@ -87,7 +89,7 @@ export function Shopping() {
         <span>Total</span>
         <span>{formatEuros(weeklyTotalCents(list))}</span>
       </p>
-      <section aria-labelledby="tips-title">
+      <section aria-labelledby="tips-title" className="card">
         <h2 id="tips-title">Pour que tout tienne la semaine</h2>
         <ul className={styles.ingredients}>
           {meals.shopping.tips.map((tip) => (
@@ -96,7 +98,7 @@ export function Shopping() {
         </ul>
       </section>
       {list.leftovers.length > 0 && (
-        <section aria-labelledby="leftovers-title">
+        <section aria-labelledby="leftovers-title" className="card">
           <h2 id="leftovers-title">Ce qui te restera pour la semaine d'après</h2>
           <ul className={styles.ingredients}>
             {list.leftovers.map((leftover) => (

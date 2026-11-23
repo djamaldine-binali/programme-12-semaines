@@ -154,3 +154,52 @@
   color: var(--coral-strong);
   font-weight: 600;
 }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weekLine {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  color: var(--mute);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* The one big number of the app: where she is in the 12 weeks. */
+.weekNumber {
+  color: var(--coral);
+  font-family: var(--font-title);
+  font-size: clamp(5rem, 26vw, 6.5rem);
+  font-stretch: 80%;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.weekBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weekBar li {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--sand);
+}
+
+.weekBar li[data-state='done'] {
+  background: var(--ink);
+}
+
+.weekBar li[data-state='current'] {
+  background: var(--coral);
+}

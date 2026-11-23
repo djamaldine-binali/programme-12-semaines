@@ -1,22 +1,28 @@
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#ffffff, #151413);
-  --ink: light-dark(#1d1a18, #f3efea);
-  --mute: light-dark(#6d6560, #a9a19b);
-  --line: light-dark(#e7e1da, #2f2b28);
-  --surface: light-dark(#f6f3ef, #201d1b);
+  /* Pebble background, white cards: what can be tapped sits on a card. */
+  --bg: light-dark(#f1efec, #1b1918);
+  --ink: light-dark(#2e2b29, #f3efea);
+  --mute: light-dark(#625b57, #aba29c);
+  --line: light-dark(#e4ddd5, #34302d);
+  --surface: light-dark(#ffffff, #262321);
   /* Diagrams keep a light background in both themes. */
-  --pic: #efe9e1;
+  --pic: #fbf8f4;
 
   /* #d9482f is too light for small text on white, so text and buttons use a deeper coral. */
   --coral: light-dark(#d9482f, #f0745c);
   --coral-strong: light-dark(#c23b23, #f0745c);
-  --coral-soft: light-dark(#fbe4dd, #3a221c);
+  --coral-soft: light-dark(#f9ddd4, #3a221c);
   --blue: light-dark(#2b5aa6, #86a9e6);
   --blue-soft: light-dark(#e2eaf7, #1d2638);
-  --sand: light-dark(#efe9e1, #2a2622);
+  --sand: light-dark(#e4ddd5, #2f2b28);
   --on-accent: light-dark(#ffffff, #151413);
+
+  --otter: #6b6461;
+  --otter-bib: #f7f3ee;
+  --muzzle: #cbb59e;
+  --muzzle-dark: #a8876d;
 
   --font-title: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
   --font-text: 'Inter Variable', 'Inter', system-ui, sans-serif;
@@ -24,7 +30,7 @@
   --gutter: 16px;
   --tabbar-height: 64px;
   --radius-small: 10px;
-  --radius: 16px;
+  --radius: 18px;
 }
 
 :root[data-theme='light'] {
@@ -65,7 +71,8 @@ h3 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  font-stretch: 88%;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -82,6 +89,22 @@ h3 {
 
 p {
   margin: 0;
+}
+
+a {
+  color: var(--coral-strong);
+  text-underline-offset: 3px;
+}
+
+a:not([class]) {
+  font-weight: 600;
+}
+
+/* A white block on the pebble background. */
+.card {
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
 }
 
 button,

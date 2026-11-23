@@ -7,7 +7,7 @@ export function MonthSessions({ month }: { month: number }) {
       {(['A', 'B'] as const).map((id) => {
         const session = program.sessions[id]
         return (
-          <div key={id}>
+          <div key={id} className="card">
             <h3>{session.title}</h3>
             <p className={styles.muted}>{session.focus}</p>
             <ul className={styles.rows}>

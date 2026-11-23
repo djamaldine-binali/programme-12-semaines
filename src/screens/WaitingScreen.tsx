@@ -1,5 +1,4 @@
 import buttons from '../components/buttons.module.css'
-import { SettingsLink } from '../components/SettingsLink'
 import { program } from '../data/program'
 import { formatLongDate } from '../lib/format'
 import type { DayKey } from '../lib/schedule'
@@ -15,7 +14,6 @@ export function WaitingScreen({ startDate, daysUntilStart }: WaitingScreenProps)
     <div className={styles.stack}>
       <header className={styles.header}>
         <p className={styles.dateLine}>Bientôt</p>
-        <SettingsLink />
       </header>
 
       <section className={`${styles.panel} ${styles.recup}`}>

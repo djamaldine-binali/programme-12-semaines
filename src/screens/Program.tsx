@@ -38,7 +38,7 @@ export function Program() {
     <div className={styles.page}>
       <h1>Programme</h1>
 
-      <section aria-labelledby="weeks-title">
+      <section aria-labelledby="weeks-title" className="card">
         <h2 id="weeks-title">12 semaines, 3 mois</h2>
         <div className={styles.grid}>
           {[1, 2, 3].map((gridMonth) => (
@@ -82,7 +82,7 @@ export function Program() {
 
         <MonthSessions month={month} />
 
-        <div>
+        <div className="card">
           <h3>Course du mardi</h3>
           <ul className={styles.rows}>
             {monthWeeks.map((week) => (
@@ -97,7 +97,7 @@ export function Program() {
           </ul>
         </div>
 
-        <div>
+        <div className="card">
           <h3>Fractionné du samedi</h3>
           <p>{describeIntervals(month)}</p>
           {deloadWeek !== undefined && (
@@ -108,7 +108,7 @@ export function Program() {
         </div>
       </section>
 
-      <section aria-labelledby="template-title">
+      <section aria-labelledby="template-title" className="card">
         <h2 id="template-title">La semaine type</h2>
         <ul className={styles.rows}>
           {program.week_template.map((day) => (
@@ -123,7 +123,7 @@ export function Program() {
         </ul>
       </section>
 
-      <section aria-labelledby="rules-title" className={styles.rules}>
+      <section aria-labelledby="rules-title" className={`card ${styles.rules}`}>
         <h2 id="rules-title">Les règles</h2>
         <p>{program.rules.progression_rule}</p>
         <p>{program.rules.deload_rule}</p>
@@ -131,7 +131,7 @@ export function Program() {
         <p>Repos entre les séries&nbsp;: {program.rules.rest_between_sets_s.join(' à ')} s.</p>
       </section>
 
-      <nav aria-label="Routines et fiches" className={styles.links}>
+      <nav aria-label="Routines et fiches" className={`card ${styles.links}`}>
         <a href="#/routine/posture">
           Routine posture <ChevronRight size={20} aria-hidden="true" />
         </a>

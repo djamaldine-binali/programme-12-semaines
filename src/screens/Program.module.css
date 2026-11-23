@@ -47,7 +47,7 @@
 }
 
 .monthRow[aria-pressed='true'] {
-  background: var(--surface);
+  background: var(--bg);
 }
 
 .monthLabel {

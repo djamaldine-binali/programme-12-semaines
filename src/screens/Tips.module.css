@@ -83,23 +83,24 @@
 
 .mealsLink {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 14px;
   padding: 16px 18px;
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--coral-soft);
   color: var(--ink);
   text-decoration: none;
 }
 
 .mealsLink > span {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 2px;
+  font-weight: 500;
 }
 
-.mealsLink > span > span {
-  color: var(--mute);
+.mealsLink strong {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
 }

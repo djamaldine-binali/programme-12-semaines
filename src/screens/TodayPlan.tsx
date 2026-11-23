@@ -1,6 +1,5 @@
 import { Check } from 'lucide-react'
 import buttons from '../components/buttons.module.css'
-import { SettingsLink } from '../components/SettingsLink'
 import { WeekList } from '../components/WeekList'
 import { meals } from '../data/meals'
 import { program } from '../data/program'
@@ -12,6 +11,12 @@ import { OtherSessions } from './OtherSessions'
 import styles from './Today.module.css'
 
 type DuringDay = Extract<ProgramDay, { phase: 'during' }>
+
+function weekState(week: number, current: number): 'done' | 'current' | undefined {
+  if (week < current) return 'done'
+  if (week === current) return 'current'
+  return undefined
+}
 
 interface TodayPlanProps {
   startDate: DayKey
@@ -28,13 +33,22 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
 
   return (
     <div className={styles.stack}>
-      <header className={styles.header}>
-        <p className={styles.dateLine}>
-          <span className={styles.capitalize}>{formatLongDate(today)}</span>
-          <br />
-          Semaine {day.week} sur 12, mois {day.month}
+      <header className={styles.hero}>
+        <p className={styles.capitalize}>{formatLongDate(today)}</p>
+        <p className={styles.weekLine}>
+          <span className="visually-hidden">Semaine </span>
+          <span className={styles.weekNumber}>{day.week}</span>
+          <span>
+            sur 12 semaines
+            <br />
+            mois {day.month}
+          </span>
         </p>
-        <SettingsLink />
+        <ol className={styles.weekBar} aria-hidden="true">
+          {Array.from({ length: 12 }, (_, index) => (
+            <li key={index} data-state={weekState(index + 1, day.week)} />
+          ))}
+        </ol>
       </header>
 
       <section className={`${styles.panel} ${styles[info.tone]}`} aria-labelledby="today-activity">
@@ -63,7 +77,7 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
         <strong>Pas du mois {day.month}&nbsp;:</strong> {formatNumber(stepsGoal(day.month))} par jour.
       </p>
 
-      <section aria-labelledby="menu-title" className={styles.menu}>
+      <section aria-labelledby="menu-title" className={`card ${styles.menu}`}>
         <h2 id="menu-title">Au menu aujourd'hui</h2>
         <ul>
           {todayMeals.map((meal) => (
@@ -75,9 +89,13 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
         <a href="#/repas">Recettes et courses</a>
       </section>
 
-      <WeekList startDate={startDate} week={day.week} today={today} />
+      <div className="card">
+        <WeekList startDate={startDate} week={day.week} today={today} />
+      </div>
 
-      <OtherSessions week={day.week} />
+      <div className="card">
+        <OtherSessions week={day.week} />
+      </div>
 
       <p className={styles.note}>
         <strong>Écoute ton corps.</strong> {program.rules.listen_to_body}

@@ -1,3 +1,5 @@
+import buttons from '../components/buttons.module.css'
+import { OtterMark } from '../components/OtterMark'
 import { Check } from 'lucide-react'
 import { sessionKindLabels, sessionKindTones } from '../lib/activities'
 import { formatLongDate } from '../lib/format'
@@ -20,8 +22,13 @@ export function History() {
     return (
       <div className={styles.page}>
         <h1>Suivi</h1>
-        <p>Rien pour l'instant. Chaque séance terminée apparaîtra ici, avec ton ressenti.</p>
-        <a href="#/">Voir la séance du jour</a>
+        <div className={`card ${styles.empty}`}>
+          <OtterMark size={96} />
+          <p>Rien pour l'instant. Chaque séance terminée apparaîtra ici, avec ton ressenti.</p>
+          <a href="#/" className={`${buttons.button} ${buttons.renfo}`}>
+            Voir la séance du jour
+          </a>
+        </div>
       </div>
     )
   }
@@ -38,7 +45,7 @@ export function History() {
       </p>
 
       {weeks.length > 0 && (
-        <section aria-labelledby="weeks-title">
+        <section aria-labelledby="weeks-title" className="card">
           <h2 id="weeks-title">Semaine par semaine</h2>
           <ul className={styles.weeks}>
             {weeks.map((week) => (
@@ -75,7 +82,7 @@ export function History() {
         </section>
       )}
 
-      <section aria-labelledby="log-title">
+      <section aria-labelledby="log-title" className="card">
         <h2 id="log-title">Séances faites</h2>
         <ul className={styles.log}>
           {entries.map((entry) => (

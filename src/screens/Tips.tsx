@@ -1,4 +1,5 @@
 import { ChevronRight } from 'lucide-react'
+import { OtterMark } from '../components/OtterMark'
 import { program } from '../data/program'
 import type { Tip } from '../data/types'
 import { formatNumber } from '../lib/format'
@@ -25,6 +26,15 @@ export function Tips() {
     <div className={styles.page}>
       <h1>Conseils</h1>
 
+      <a href="#/repas" className={styles.mealsLink}>
+        <OtterMark size={52} />
+        <span>
+          <strong>Repas de la semaine</strong>
+          <span>Les menus du jour, les recettes et la liste de courses.</span>
+        </span>
+        <ChevronRight size={22} aria-hidden="true" />
+      </a>
+
       <section aria-labelledby="goals-title" className={styles.goals}>
         <h2 id="goals-title" className="visually-hidden">
           Tes objectifs
@@ -44,7 +54,7 @@ export function Tips() {
         <p>{program.rules.listen_to_body}</p>
       </section>
 
-      <section aria-labelledby="daily-title">
+      <section aria-labelledby="daily-title" className="card">
         <h2 id="daily-title">Au quotidien</h2>
         <TipList tips={program.daily_life} />
         <p className={styles.steps}>
@@ -52,19 +62,12 @@ export function Tips() {
         </p>
       </section>
 
-      <section aria-labelledby="food-title">
+      <section aria-labelledby="food-title" className="card">
         <h2 id="food-title">Bien manger, simplement</h2>
-        <a href="#/repas" className={styles.mealsLink}>
-          <span>
-            <strong>Repas de la semaine</strong>
-            <span>Menus jour par jour, recettes et listes de courses avec les prix.</span>
-          </span>
-          <ChevronRight size={22} aria-hidden="true" />
-        </a>
         <TipList tips={program.nutrition} />
       </section>
 
-      <section aria-labelledby="run-title">
+      <section aria-labelledby="run-title" className="card">
         <h2 id="run-title">En course</h2>
         <p>{program.running.pace_note}</p>
         <p>{program.rules.running_pain_rule}</p>
