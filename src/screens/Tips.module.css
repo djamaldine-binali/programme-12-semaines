@@ -80,3 +80,26 @@
 .steps {
   margin-top: 12px;
 }
+
+.mealsLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mealsLink > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mealsLink > span > span {
+  color: var(--mute);
+}

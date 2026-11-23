@@ -31,6 +31,14 @@ describe('parseState', () => {
     expect(parsed).toEqual({ ...defaultState, settings: { ...defaultState.settings, sound: false } })
   })
 
+  it('keeps the meal servings, and reads older files without it as one person', () => {
+    const saved = (servings: unknown) =>
+      parseState(JSON.stringify({ version: 1, startDate: null, settings: { servings }, log: [], runShift: 0 }))
+    expect(saved(2)?.settings.servings).toBe(2)
+    expect(saved(undefined)?.settings.servings).toBe(1)
+    expect(saved(3)?.settings.servings).toBe(1)
+  })
+
   it('rejects impossible dates and a start date that is not a Monday', () => {
     const parsed = parseState(
       JSON.stringify({

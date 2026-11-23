@@ -12,7 +12,7 @@ const tabs: Tab[] = [
   { label: "Aujourd'hui", icon: Sun, paths: ['/', '/reglages'] },
   { label: 'Programme', icon: CalendarRange, paths: ['/programme', '/bibliotheque'] },
   { label: 'Suivi', icon: ListChecks, paths: ['/suivi'] },
-  { label: 'Conseils', icon: BookOpen, paths: ['/conseils'] },
+  { label: 'Conseils', icon: BookOpen, paths: ['/conseils', '/repas'] },
 ]
 
 function isActive(tab: Tab, route: string): boolean {
