@@ -19,7 +19,7 @@
 }
 
 .row[aria-current='date'] {
-  background: var(--surface);
+  background: var(--bg);
   font-weight: 650;
 }
 

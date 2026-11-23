@@ -42,7 +42,7 @@ function StartDateSection() {
   const [startDate, setStartDate] = useState(state.startDate ?? upcomingMonday(today))
 
   return (
-    <section className={styles.section} aria-labelledby="start-title">
+    <section className={`card ${styles.section}`} aria-labelledby="start-title">
       <h2 id="start-title">Début du programme</h2>
       <StartDateField value={startDate} onChange={setStartDate} />
       <button
@@ -93,7 +93,7 @@ export function Settings() {
 
       <StartDateSection key={state.startDate ?? 'none'} />
 
-      <section className={styles.section} aria-labelledby="session-title">
+      <section className={`card ${styles.section}`} aria-labelledby="session-title">
         <h2 id="session-title">Pendant les séances</h2>
         <ChoiceGroup
           legend="Repos entre les séries"
@@ -132,7 +132,7 @@ export function Settings() {
         </button>
       </section>
 
-      <section className={styles.section} aria-labelledby="look-title">
+      <section className={`card ${styles.section}`} aria-labelledby="look-title">
         <h2 id="look-title">Affichage</h2>
         <ChoiceGroup
           legend="Thème"
@@ -143,7 +143,7 @@ export function Settings() {
       </section>
 
       {state.runShift > 0 && (
-        <section className={styles.section} aria-labelledby="run-title">
+        <section className={`card ${styles.section}`} aria-labelledby="run-title">
           <h2 id="run-title">Course</h2>
           <p>
             Ta course a {state.runShift} {state.runShift > 1 ? 'semaines' : 'semaine'} de décalage, parce que tu as
@@ -159,7 +159,7 @@ export function Settings() {
         </section>
       )}
 
-      <section className={styles.section} aria-labelledby="data-title">
+      <section className={`card ${styles.section}`} aria-labelledby="data-title">
         <h2 id="data-title">Ta progression</h2>
         <p className={styles.muted}>
           Elle reste sur ce téléphone. Exporte-la pour la garder ou la passer sur un autre appareil.

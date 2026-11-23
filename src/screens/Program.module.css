@@ -149,7 +149,11 @@
 .links {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--line);
+  padding-block: 4px;
+}
+
+.links a:last-child {
+  border-bottom: 0;
 }
 
 .links a {

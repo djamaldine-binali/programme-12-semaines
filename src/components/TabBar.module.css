@@ -11,6 +11,7 @@
 }
 
 .tab {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,10 +26,6 @@
   text-decoration: none;
 }
 
-.tab {
-  position: relative;
-}
-
 /* A coral notch above the current tab, echoing the week bar on the Today screen. */
 .tab[aria-current='page'] {
   color: var(--coral-strong);
@@ -39,6 +36,7 @@
   content: '';
   position: absolute;
   top: 0;
+  left: calc(50% - 16px);
   width: 32px;
   height: 4px;
   border-radius: 0 0 4px 4px;
