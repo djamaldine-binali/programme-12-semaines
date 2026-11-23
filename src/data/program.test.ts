@@ -4,8 +4,8 @@ import { program } from './program'
 const exerciseIds = new Set(Object.keys(program.exercises))
 
 describe('program.json matches the types', () => {
-  it('has 33 exercises keyed by their own id', () => {
-    expect(exerciseIds.size).toBe(33)
+  it('has 34 exercises keyed by their own id', () => {
+    expect(exerciseIds.size).toBe(34)
     for (const [key, exercise] of Object.entries(program.exercises)) {
       expect(exercise.id).toBe(key)
       expect(exercise.diagram_svg.startsWith('<svg')).toBe(true)
