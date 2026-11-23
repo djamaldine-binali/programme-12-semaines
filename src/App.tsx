@@ -16,6 +16,8 @@ import { Settings } from './screens/Settings'
 import { Pantry, Shopping } from './screens/Shopping'
 import { Tips } from './screens/Tips'
 import { Today } from './screens/Today'
+import { Water } from './screens/Water'
+import { WaterReminder } from './screens/WaterReminder'
 import { Workout } from './screens/Workout'
 import styles from './App.module.css'
 
@@ -44,6 +46,8 @@ function sessionFor(route: string): ReactNode | null {
 function screenFor(route: string): ReactNode {
   const sheet = route.match(/^\/bibliotheque\/([\w-]+)$/)
   if (sheet) return <ExerciseSheet key={sheet[1]} id={sheet[1]} />
+  const reminder = route.match(/^\/eau\/rappel\/(\d+)$/)
+  if (reminder) return <WaterReminder sipMl={Number(reminder[1])} />
   const recipe = route.match(/^\/repas\/recette\/([\w-]+)$/)
   if (recipe) return <Recipe key={recipe[1]} id={recipe[1]} />
   switch (route) {
@@ -55,6 +59,8 @@ function screenFor(route: string): ReactNode {
       return <History />
     case '/conseils':
       return <Tips />
+    case '/eau':
+      return <Water />
     case '/repas':
       return <Meals />
     case '/repas/courses':

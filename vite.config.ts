@@ -22,8 +22,8 @@ export default defineConfig({
         scope: '.',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#f1efec',
-        theme_color: '#f1efec',
+        background_color: '#fffaf3',
+        theme_color: '#fffaf3',
         icons: [
           { src: 'pwa-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512.png', sizes: '512x512', type: 'image/png' },
@@ -33,6 +33,8 @@ export default defineConfig({
       workbox: {
         // Only the Latin font subsets are used; the others never load.
         globPatterns: ['**/*.{js,css,html}', 'assets/*-latin-*.woff2'],
+        // Push and notification click handlers for the water reminders.
+        importScripts: ['push-sw.js'],
       },
     }),
   ],
