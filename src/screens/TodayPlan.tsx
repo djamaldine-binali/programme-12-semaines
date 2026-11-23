@@ -1,4 +1,5 @@
 import { Apple, Check, ChevronRight, Coffee, Footprints, Salad, UtensilsCrossed, type LucideIcon } from 'lucide-react'
+import { useState } from 'react'
 import { ActivityIcon } from '../components/ActivityIcon'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
@@ -39,12 +40,13 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
   const doneToday = state.log.some((entry) => entry.day === today && entry.kind === info.kind)
   const isPostureOrRest = day.activity === 'posture_ou_repos'
   const todayMeals = meals.days[weekdayOf(today)].meals
+  const [hour] = useState(() => new Date().getHours())
 
   return (
     <div className={styles.stack}>
       <header className={styles.hero}>
         <div className={styles.heroText}>
-          <p className={styles.greeting}>{greeting(new Date().getHours())}</p>
+          <p className={styles.greeting}>{greeting(hour)}</p>
           <p className={styles.capitalize}>{formatLongDate(today)}</p>
           <p className={styles.weekText}>
             Semaine {day.week} sur 12
