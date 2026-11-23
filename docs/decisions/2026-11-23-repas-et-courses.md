@@ -17,3 +17,10 @@ Demande : des menus pour tous les repas, adaptés à l'objectif et à la séance
 ## Sources
 - Prix relevés le 2026-11-23 sur intermarche.com, magasin Intermarché Super Septèmes-les-Vallons. Les produits en vrac sont comptés au prix d'une pièce moyenne affiché par le site.
 - À refaire de temps en temps : les prix changent avec les promotions, certains produits étaient en promo ce jour-là (haricots rouges Saint Eloi 250 g).
+
+## Mise à jour du 2026-11-23 : courses à la semaine
+- Une seule liste pour la semaine, rangée par rayon, pour 1 et 2 personnes, au conditionnement le moins cher. Le placard reste à part.
+- Les menus reprennent sa liste de plats préférés en versions économiques : poulet curry, chakchouka, shawarma et frites maison, chorba et bricks, all'assassina, patate douce et guacamole, steak sauce au poivre, cordon bleu, velouté.
+- Les recettes sont décrites avec leurs quantités dans le script générateur : la liste de courses en découle, donc chaque ingrédient est couvert.
+- Les portions sont calibrées sur une cible d'énergie donnée par l'utilisateur, qui n'apparaît ni dans l'app ni dans le dépôt.
+- Ce qui ne sert pas tout de suite (poulet de fin de semaine) se congèle le jour des courses ; ce qui reste pour la semaine suivante est listé.

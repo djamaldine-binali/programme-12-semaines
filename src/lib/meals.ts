@@ -1,4 +1,4 @@
-import { meals, type ForServings, type ShoppingBlock, type ShoppingItem, type ShoppingList } from '../data/meals'
+import { meals, type ForServings, type ShoppingItem, type ShoppingList } from '../data/meals'
 import type { Servings } from './storage'
 
 const euros = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' })
@@ -20,18 +20,16 @@ export function listTotalCents(items: ShoppingItem[]): number {
   return items.reduce((total, item) => total + itemTotalCents(item), 0)
 }
 
+export function weeklyList(servings: Servings): ShoppingList {
+  return servings === 2 ? meals.shopping.two : meals.shopping.one
+}
+
+export function weeklyTotalCents(list: ShoppingList): number {
+  return listTotalCents(list.sections.flatMap((section) => section.items))
+}
+
 export function pantryTotalCents(): number {
   return meals.pantry.reduce((total, item) => total + item.price_cents, 0)
-}
-
-export function listFor(block: ShoppingBlock, servings: Servings): ShoppingList {
-  return servings === 2 ? block.two : block.one
-}
-
-export function shoppingList(blockId: string, servings: Servings): { block: ShoppingBlock; list: ShoppingList } | null {
-  const block = meals.shopping.find((candidate) => candidate.id === blockId)
-  if (!block) return null
-  return { block, list: listFor(block, servings) }
 }
 
 const longDate = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })

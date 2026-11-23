@@ -29,14 +29,12 @@ describe('meals.json matches the types', () => {
     }
   })
 
-  it('splits the week into shopping lists that cover each day once', () => {
-    expect(meals.shopping.flatMap((block) => block.days)).toEqual(meals.days.map((day) => day.day))
-    for (const block of meals.shopping) {
-      for (const list of [block.one, block.two]) {
-        for (const item of list.items) {
-          expect(Number.isInteger(item.price_cents) && item.price_cents > 0).toBe(true)
-          expect(Number.isInteger(item.quantity) && item.quantity > 0).toBe(true)
-        }
+  it('prices every line of the weekly list, for one and for two people', () => {
+    for (const list of [meals.shopping.one, meals.shopping.two]) {
+      expect(list.sections.length).toBeGreaterThan(0)
+      for (const item of list.sections.flatMap((section) => section.items)) {
+        expect(Number.isInteger(item.price_cents) && item.price_cents > 0).toBe(true)
+        expect(Number.isInteger(item.quantity) && item.quantity > 0).toBe(true)
       }
     }
   })

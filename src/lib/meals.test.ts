@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { formatCheckedOn, formatEuros, forServings, listTotalCents, shoppingList } from './meals'
+import { meals } from '../data/meals'
+import { formatCheckedOn, formatEuros, forServings, listTotalCents, weeklyList, weeklyTotalCents } from './meals'
 
 describe('meals helpers', () => {
   it('formats prices in euros', () => {
@@ -20,10 +21,20 @@ describe('meals helpers', () => {
     expect(forServings(quantity, 2)).toBe('2 bananes')
   })
 
-  it('finds a shopping list by id, for one or two people', () => {
-    const found = shoppingList('lundi-mercredi', 2)
-    expect(found?.list).toBe(found?.block.two)
-    expect(shoppingList('inconnue', 1)).toBeNull()
+  it('picks the weekly list for the chosen number of people', () => {
+    expect(weeklyList(1)).toBe(meals.shopping.one)
+    expect(weeklyList(2)).toBe(meals.shopping.two)
+  })
+
+  it('adds up the weekly list across aisles', () => {
+    const list = {
+      sections: [
+        { title: 'Crèmerie', items: [{ product: 'Lait', pack: 'brique de 1 L', quantity: 1, price_cents: 101 }] },
+        { title: 'Épicerie', items: [{ product: 'Riz', pack: '1 kg', quantity: 2, price_cents: 180 }] },
+      ],
+      leftovers: [],
+    }
+    expect(weeklyTotalCents(list)).toBe(461)
   })
 
   it('writes the price date in words', () => {

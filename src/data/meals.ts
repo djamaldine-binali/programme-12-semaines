@@ -39,18 +39,22 @@ export interface ShoppingItem {
   price_cents: number
 }
 
-export interface ShoppingList {
+export interface ShoppingSection {
+  /** Aisle of the store: "Fruits et légumes", "Crèmerie"… */
+  title: string
   items: ShoppingItem[]
-  /** Products left over from the previous lists. */
-  already: string[]
 }
 
-export interface ShoppingBlock {
-  id: string
-  title: string
-  days: DayName[]
+export interface ShoppingList {
+  sections: ShoppingSection[]
+  /** What stays in the cupboard or the freezer for the next week. */
+  leftovers: string[]
+}
+
+export interface WeeklyShopping {
   one: ShoppingList
   two: ShoppingList
+  tips: string[]
 }
 
 export interface PantryItem {
@@ -63,7 +67,7 @@ export interface Meals {
   source: { store: string; checked_on: string }
   recipes: Record<string, Recipe>
   days: MealDay[]
-  shopping: ShoppingBlock[]
+  shopping: WeeklyShopping
   pantry: PantryItem[]
 }
 

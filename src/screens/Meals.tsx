@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 import { meals } from '../data/meals'
 import { activityInfo } from '../lib/activities'
-import { formatCheckedOn, formatEuros, listFor, listTotalCents, pantryTotalCents } from '../lib/meals'
+import { formatCheckedOn, formatEuros, pantryTotalCents, weeklyList, weeklyTotalCents } from '../lib/meals'
 import { activityFor, sessionContext, weekdayOf } from '../lib/schedule'
 import { useToday } from '../lib/useToday'
 import { useAppState } from '../state/appStateContext'
@@ -90,17 +90,16 @@ export function Meals() {
           avec les promos&nbsp;: prends les totaux comme un ordre d'idée.
         </p>
         <ul className={styles.meals}>
-          {meals.shopping.map((block) => (
-            <li key={block.id}>
-              <a href={`#/repas/courses/${block.id}`} className={styles.mealLink}>
-                <span className={styles.mealTitle}>{block.title}</span>
-                <span className={styles.price}>{formatEuros(listTotalCents(listFor(block, servings).items))}</span>
-                <ChevronRight size={20} aria-hidden="true" className={styles.chevron} />
-              </a>
-            </li>
-          ))}
           <li>
-            <a href="#/repas/courses/placard" className={styles.mealLink}>
+            <a href="#/repas/courses" className={styles.mealLink}>
+              <span className={styles.mealTitle}>Courses de la semaine</span>
+              <span className={styles.muted}>Une seule liste, rangée par rayon.</span>
+              <span className={styles.price}>{formatEuros(weeklyTotalCents(weeklyList(servings)))}</span>
+              <ChevronRight size={20} aria-hidden="true" className={styles.chevron} />
+            </a>
+          </li>
+          <li>
+            <a href="#/repas/placard" className={styles.mealLink}>
               <span className={styles.mealTitle}>Le placard</span>
               <span className={styles.muted}>À acheter une fois, ça dure plusieurs semaines.</span>
               <span className={styles.price}>{formatEuros(pantryTotalCents())}</span>

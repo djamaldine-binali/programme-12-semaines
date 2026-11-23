@@ -4,9 +4,9 @@ import {
   formatCheckedOn,
   formatEuros,
   itemTotalCents,
-  listTotalCents,
   pantryTotalCents,
-  shoppingList,
+  weeklyList,
+  weeklyTotalCents,
 } from '../lib/meals'
 import { useAppState } from '../state/appStateContext'
 import styles from './Meals.module.css'
@@ -49,7 +49,7 @@ function Items({ items }: { items: ShoppingItem[] }) {
   )
 }
 
-function Pantry() {
+export function Pantry() {
   return (
     <div className={styles.page}>
       <BackToMeals />
@@ -68,38 +68,44 @@ function Pantry() {
   )
 }
 
-export function Shopping({ id }: { id: string }) {
+export function Shopping() {
   const { state } = useAppState()
-  if (id === 'placard') return <Pantry />
+  const list = weeklyList(state.settings.servings)
 
-  const found = shoppingList(id, state.settings.servings)
-  if (!found) {
-    return (
-      <div className={styles.page}>
-        <h1>Liste introuvable</h1>
-        <a href="#/repas">Voir les repas de la semaine</a>
-      </div>
-    )
-  }
-
-  const { block, list } = found
   return (
     <div className={styles.page}>
       <BackToMeals />
-      <h1>Courses&nbsp;: {block.title.toLowerCase()}</h1>
+      <h1>Courses de la semaine</h1>
       <ServingsChoice />
-      <Items items={list.items} />
+      {list.sections.map((section, index) => (
+        <section key={section.title} aria-labelledby={`aisle-${index}`}>
+          <h2 id={`aisle-${index}`}>{section.title}</h2>
+          <Items items={section.items} />
+        </section>
+      ))}
       <p className={styles.total}>
         <span>Total</span>
-        <span>{formatEuros(listTotalCents(list.items))}</span>
+        <span>{formatEuros(weeklyTotalCents(list))}</span>
       </p>
-      {list.already.length > 0 && (
-        <section aria-labelledby="already-title">
-          <h2 id="already-title">Il t'en reste des courses d'avant</h2>
-          <p className={styles.muted}>{list.already.join(', ')}.</p>
+      <section aria-labelledby="tips-title">
+        <h2 id="tips-title">Pour que tout tienne la semaine</h2>
+        <ul className={styles.ingredients}>
+          {meals.shopping.tips.map((tip) => (
+            <li key={tip}>{tip}</li>
+          ))}
+        </ul>
+      </section>
+      {list.leftovers.length > 0 && (
+        <section aria-labelledby="leftovers-title">
+          <h2 id="leftovers-title">Ce qui te restera pour la semaine d'après</h2>
+          <ul className={styles.ingredients}>
+            {list.leftovers.map((leftover) => (
+              <li key={leftover}>{leftover}</li>
+            ))}
+          </ul>
         </section>
       )}
-      <p className={styles.muted}>Les épices, l'huile, le riz et les pâtes sont dans la liste du placard.</p>
+      <p className={styles.muted}>Les épices, l'huile, le riz et les spaghetti sont dans la liste du placard.</p>
       <Source />
     </div>
   )
