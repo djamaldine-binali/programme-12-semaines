@@ -1,9 +1,11 @@
 import { Apple, Check, ChevronRight, Coffee, Footprints, Salad, UtensilsCrossed, type LucideIcon } from 'lucide-react'
-import { useState } from 'react'
 import { ActivityIcon } from '../components/ActivityIcon'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
 import { OtterMark } from '../components/OtterMark'
+import { WaterTracker } from '../components/WaterTracker'
+import { useNow } from '../lib/useNow'
+import { useWater } from '../lib/useWater'
 import { meals, type MealSlot } from '../data/meals'
 import { program } from '../data/program'
 import { activityInfo } from '../lib/activities'
@@ -46,13 +48,14 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
   const doneToday = state.log.some((entry) => entry.day === today && entry.kind === info.kind)
   const isPostureOrRest = day.activity === 'posture_ou_repos'
   const todayMeals = meals.days[weekdayOf(today)].meals
-  const [hour] = useState(() => new Date().getHours())
+  const now = useNow()
+  const water = useWater(today)
 
   return (
     <div className={styles.stack}>
       <header className={styles.hero}>
         <div className={styles.heroText}>
-          <p className={styles.greeting}>{greeting(hour)}</p>
+          <p className={styles.greeting}>{greeting(now.getHours())}</p>
           <p className={styles.capitalize}>{formatLongDate(today)}</p>
           <p className={styles.weekText}>
             Semaine {day.week} sur 12, mois {day.month}
@@ -89,6 +92,14 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
             {isPostureOrRest ? 'Faire la routine posture' : 'Démarrer'}
           </a>
         )}
+      </section>
+
+      <section aria-labelledby="water-title" className="card">
+        <div className={styles.cardHead}>
+          <h2 id="water-title">Eau</h2>
+          <a href="#/eau">Rappels</a>
+        </div>
+        {water.ready && <WaterTracker water={water} now={now} />}
       </section>
 
       <p className={styles.steps}>
