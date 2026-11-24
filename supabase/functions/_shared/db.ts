@@ -4,7 +4,7 @@ const secretKeys = JSON.parse(Deno.env.get('SUPABASE_SECRET_KEYS') ?? '{}')
 
 export const db = createClient(Deno.env.get('SUPABASE_URL')!, secretKeys.default)
 
-// Only the app's own sites may call the public functions.
+// CORS only stops other websites in a browser; the abuse guards live in the functions themselves.
 const allowedOrigins = ['https://djamaldine-binali.github.io', 'http://localhost:5173', 'http://localhost:4173']
 
 export function corsHeaders(request: Request): HeadersInit {

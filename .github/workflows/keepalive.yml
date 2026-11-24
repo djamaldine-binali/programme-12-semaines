@@ -13,6 +13,8 @@ jobs:
     if: vars.VITE_PUSH_FUNCTIONS_URL != ''
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          curl --fail --silent --show-error -X POST "${{ vars.VITE_PUSH_FUNCTIONS_URL }}/unsubscribe" \
+      - env:
+          FUNCTIONS_URL: ${{ vars.VITE_PUSH_FUNCTIONS_URL }}
+        run: |
+          curl --fail --silent --show-error -X POST "$FUNCTIONS_URL/unsubscribe" \
             -H 'Content-Type: application/json' -d '{"endpoint":"keepalive"}'

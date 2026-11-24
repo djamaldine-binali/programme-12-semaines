@@ -8,7 +8,9 @@ import { formatCentilitres, formatLitres } from '../lib/water'
 import styles from './Water.module.css'
 
 /** Opened from a reminder on iPhone, where notifications have no buttons. */
-export function WaterReminder({ sipMl }: { sipMl: number }) {
+export function WaterReminder({ sipMl: asked }: { sipMl: number }) {
+  // The amount comes from the URL: keep it to something a person can drink.
+  const sipMl = Math.min(1000, Math.max(50, asked))
   const today = useToday()
   const water = useWater(today)
 
