@@ -2,5 +2,5 @@
   max-width: 36rem;
   margin: 0 auto;
   padding: calc(env(safe-area-inset-top) + 24px) var(--gutter)
-    calc(var(--tabbar-height) + env(safe-area-inset-bottom) + 32px);
+    calc(var(--tabbar-height) + env(safe-area-inset-bottom) + 48px);
 }

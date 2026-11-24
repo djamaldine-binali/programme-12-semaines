@@ -6,7 +6,7 @@
   min-height: 52px;
   padding: 0 20px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--ink);
   color: var(--bg);
   font-family: var(--font-title);
@@ -36,8 +36,8 @@
 }
 
 .recup {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--violet);
+  color: var(--on-accent);
 }
 
 .secondary {
@@ -48,4 +48,11 @@
 
 .block {
   width: 100%;
+}
+
+/* The main call to action: plain coral, nothing else on the screen looks like it. */
+.primary {
+  background: var(--coral-strong);
+  color: var(--on-accent);
+  font-weight: 750;
 }

@@ -1,5 +1,4 @@
 import buttons from '../components/buttons.module.css'
-import { SettingsLink } from '../components/SettingsLink'
 import { describeRun } from '../lib/activities'
 import { elapsedWeek, TOTAL_WEEKS, type DayKey } from '../lib/schedule'
 import { useAppState } from '../state/appStateContext'
@@ -16,7 +15,6 @@ export function FinishedScreen({ startDate, today }: { startDate: DayKey; today:
     <div className={styles.stack}>
       <header className={styles.header}>
         <p className={styles.dateLine}>Après la semaine 12</p>
-        <SettingsLink />
       </header>
 
       <section className={`${styles.panel} ${styles.renfo}`}>

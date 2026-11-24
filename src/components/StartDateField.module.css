@@ -11,9 +11,9 @@
 .field input {
   min-height: 52px;
   padding: 0 14px;
-  border: 1.5px solid var(--line);
+  border: 1.5px solid var(--mute);
   border-radius: var(--radius-small);
-  background: var(--bg);
+  background: var(--surface);
   font-size: 1.125rem;
 }
 

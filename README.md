@@ -1,6 +1,6 @@
-# Programme 12 semaines
+# Amélia
 
-Application web (PWA) qui guide un programme sportif de 12 semaines à la maison : séances de renfo A et B, course du mardi, fractionné du samedi, routines de posture et d'étirements, conseils. Tout reste sur le téléphone : pas de compte, pas de serveur.
+Application web (PWA) qui guide un programme sportif de 12 semaines à la maison : séances de renfo A et B, course du mardi, fractionné du samedi, routines de posture et d'étirements, conseils, repas de la semaine et liste de courses. Tout reste sur le téléphone : pas de compte, pas de serveur.
 
 Le contenu du programme est dans `src/data/program.json` et fait foi. Le brief complet est dans `docs/brief.md`.
 

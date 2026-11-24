@@ -1,30 +1,44 @@
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#ffffff, #151413);
-  --ink: light-dark(#1d1a18, #f3efea);
-  --mute: light-dark(#6d6560, #a9a19b);
-  --line: light-dark(#e7e1da, #2f2b28);
-  --surface: light-dark(#f6f3ef, #201d1b);
+  /* Soleil franc: flat sun yellow, plain coral for actions, plum ink. No gradients. */
+  --bg: light-dark(#fffaf3, #1e1527);
+  --surface: light-dark(#ffffff, #2a1f35);
+  --ink: light-dark(#2b1b3d, #fff6ec);
+  --mute: light-dark(#6e5f78, #bbaec6);
+  --line: light-dark(#f1e6da, #3c2f49);
   /* Diagrams keep a light background in both themes. */
-  --pic: #efe9e1;
+  --pic: #fff5ec;
 
-  /* #d9482f is too light for small text on white, so text and buttons use a deeper coral. */
-  --coral: light-dark(#d9482f, #f0745c);
-  --coral-strong: light-dark(#c23b23, #f0745c);
-  --coral-soft: light-dark(#fbe4dd, #3a221c);
-  --blue: light-dark(#2b5aa6, #86a9e6);
-  --blue-soft: light-dark(#e2eaf7, #1d2638);
-  --sand: light-dark(#efe9e1, #2a2622);
-  --on-accent: light-dark(#ffffff, #151413);
+  --sun: #ffc93c;
+  --sun-soft: light-dark(#fff1c7, #3d3016);
+  --sun-ink: light-dark(#8a5a00, #ffd66b);
+  /* #e8452c is too light under white text, so buttons and small text use the deeper coral. */
+  --coral: light-dark(#e8452c, #ff6a4d);
+  --coral-strong: light-dark(#d63a20, #ff8a70);
+  --coral-soft: light-dark(#ffe1d9, #4a2320);
+  /* Run days. The old names stay so every screen picks the colour up. */
+  --blue: light-dark(#2459d6, #7eb0ff);
+  --blue-soft: light-dark(#e1ecff, #1d2b4a);
+  /* Recovery days: soft violet. */
+  --violet: light-dark(#6d3fd9, #b79bff);
+  --sand: light-dark(#eee6fd, #2f2446);
+  --water: light-dark(#2459d6, #7eb0ff);
+  --water-soft: light-dark(#e1ecff, #1d2b4a);
+  --on-accent: light-dark(#ffffff, #1e1527);
+
+  --otter: #6b6461;
+  --otter-bib: #f7f3ee;
+  --muzzle: #cbb59e;
+  --muzzle-dark: #a8876d;
 
   --font-title: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
   --font-text: 'Inter Variable', 'Inter', system-ui, sans-serif;
 
   --gutter: 16px;
   --tabbar-height: 64px;
-  --radius-small: 10px;
-  --radius: 16px;
+  --radius-small: 12px;
+  --radius: 20px;
 }
 
 :root[data-theme='light'] {
@@ -65,8 +79,9 @@ h3 {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.25rem;
+  font-stretch: 90%;
+  font-weight: 850;
   letter-spacing: -0.02em;
 }
 
@@ -84,6 +99,22 @@ p {
   margin: 0;
 }
 
+a {
+  color: var(--coral-strong);
+  text-underline-offset: 3px;
+}
+
+a:not([class]) {
+  font-weight: 600;
+}
+
+.card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
 button,
 input,
 select {
@@ -96,7 +127,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--water);
   outline-offset: 2px;
 }
 

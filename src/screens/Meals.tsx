@@ -54,7 +54,7 @@ export function Meals() {
         ))}
       </div>
 
-      <section aria-labelledby="day-title" className={styles.day}>
+      <section aria-labelledby="day-title" className={`card ${styles.day}`}>
         <h2 id="day-title" className={styles.dayTitle}>
           {mealDay.day}
           {selectedIndex === todayIndex && <span className={styles.todayTag}>aujourd'hui</span>}
@@ -83,7 +83,7 @@ export function Meals() {
         </ul>
       </section>
 
-      <section aria-labelledby="shopping-title">
+      <section aria-labelledby="shopping-title" className="card">
         <h2 id="shopping-title">Courses</h2>
         <p className={styles.muted}>
           Prix relevés le {formatCheckedOn(meals.source.checked_on)} sur le site de l'{meals.source.store}. Ils bougent

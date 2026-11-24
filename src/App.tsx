@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
+import { BrandBar } from './components/BrandBar'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
@@ -83,7 +84,10 @@ export function App() {
   // The tab bar comes after the content so keyboard and screen reader users reach the screen first.
   return (
     <>
-      <main className={styles.main}>{screenFor(route)}</main>
+      <main className={styles.main}>
+        <BrandBar />
+        {screenFor(route)}
+      </main>
       <TabBar route={route} />
     </>
   )

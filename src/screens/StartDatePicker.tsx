@@ -13,7 +13,7 @@ export function StartDatePicker({ today }: { today: DayKey }) {
 
   return (
     <div className={styles.stack}>
-      <h1 className={styles.welcomeTitle}>{program.meta.title}</h1>
+      <h1 className={styles.welcomeTitle}>Ton programme de 12 semaines</h1>
       <p className={styles.lead}>
         Chaque semaine va du lundi au dimanche : renfo, course, fractionné et posture. Choisis le lundi où tu commences,
         l'app te dira chaque jour quoi faire.
