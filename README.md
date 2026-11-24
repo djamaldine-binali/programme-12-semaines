@@ -1,6 +1,6 @@
-# Programme 12 semaines
+# Amélia
 
-Application web (PWA) qui guide un programme sportif de 12 semaines à la maison : séances de renfo A et B, course du mardi, fractionné du samedi, routines de posture et d'étirements, conseils. Tout reste sur le téléphone : pas de compte, pas de serveur.
+Application web (PWA) qui guide un programme sportif de 12 semaines à la maison : séances de renfo A et B, course du mardi, fractionné du samedi, routines de posture et d'étirements, conseils, repas de la semaine et liste de courses. Tout reste sur le téléphone : pas de compte, pas de serveur.
 
 Le contenu du programme est dans `src/data/program.json` et fait foi. Le brief complet est dans `docs/brief.md`.
 
@@ -65,3 +65,7 @@ reference/      version web et PDF d'origine du programme
 ## Données
 
 La progression (date de début, séances faites, ressenti, réglages) est enregistrée dans le `localStorage` du navigateur, sous une seule clé versionnée (`p12`). Elle s'exporte et s'importe en JSON depuis les réglages.
+
+## Rappels d'eau (Supabase)
+
+Les rappels passent par un projet Supabase (`supabase/`). Sans les variables `VITE_PUSH_FUNCTIONS_URL` et `VITE_VAPID_PUBLIC_KEY` (voir `.env.example`), l'app marche sans rappels. Mise en place : `docs/decisions/2026-11-24-rappels-eau.md`.

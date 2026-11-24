@@ -13,12 +13,14 @@ export interface LogEntry {
 
 export type RestSeconds = 60 | 75 | 90
 export type Theme = 'auto' | 'light' | 'dark'
+export type Servings = 1 | 2
 
 export interface Settings {
   restSeconds: RestSeconds
   sound: boolean
   vibration: boolean
   theme: Theme
+  servings: Servings
 }
 
 export interface SavedState {
@@ -35,7 +37,7 @@ const STORAGE_KEY = 'p12'
 export const defaultState: SavedState = {
   version: 1,
   startDate: null,
-  settings: { restSeconds: 75, sound: true, vibration: true, theme: 'auto' },
+  settings: { restSeconds: 75, sound: true, vibration: true, theme: 'auto', servings: 1 },
   log: [],
   runShift: 0,
 }
@@ -76,6 +78,7 @@ function parseSettings(value: unknown): Settings {
     sound: typeof value.sound === 'boolean' ? value.sound : defaults.sound,
     vibration: typeof value.vibration === 'boolean' ? value.vibration : defaults.vibration,
     theme: ['auto', 'light', 'dark'].includes(value.theme as string) ? (value.theme as Theme) : defaults.theme,
+    servings: value.servings === 2 ? 2 : defaults.servings,
   }
 }
 

@@ -6,7 +6,7 @@ PWA perso (Vite, React, TypeScript) qui guide un programme sportif de 12 semaine
 - `npm run dev`, `npm run build`, `npm test` (Vitest), `npm run lint` (oxlint), `npm run format` (Prettier).
 
 ## Règles du projet
-- `src/data/program.json` fait foi : ne jamais modifier ni compléter son contenu. Signaler les incohérences.
+- `src/data/program.json` fait foi : ne le modifier que sur demande explicite. Doses adaptées à une vraie débutante le 2026-11-23 (voir `docs/decisions/`). Signaler les incohérences.
 - Jamais de poids, IMC, mensurations, calories ni photos (voir `meta.never_show`).
 - Pas de backend : tout passe par `src/lib/storage.ts` (une clé localStorage versionnée).
 - Interface en français, tutoiement ; code, noms et commits en anglais.

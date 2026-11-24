@@ -7,7 +7,7 @@ export interface Appearance {
   doses: string[]
 }
 
-export const libraryGroups = ['Séance A', 'Séance B', 'Posture', 'Étirements', 'Fractionné'] as const
+export const libraryGroups = ['Séance A', 'Séance B', 'Posture', 'Étirements', 'Fractionné', 'Pour plus tard'] as const
 
 function sessionAppearances(): Map<string, Appearance[]> {
   const byExercise = new Map<string, Appearance[]>()
@@ -55,11 +55,11 @@ export function describeMonths(months: number[]): string {
   return `mois ${months.slice(0, -1).join(', ')} et ${months.at(-1)}`
 }
 
-/** Exercises grouped by the first place they appear, in program order. */
+/** Exercises grouped by the first place they appear, in program order. Harder versions out of the program go last. */
 export function exercisesByGroup(): { group: (typeof libraryGroups)[number]; ids: string[] }[] {
   const ids = Object.keys(program.exercises)
   return libraryGroups.map((group) => ({
     group,
-    ids: ids.filter((id) => appearancesOf(id)[0]?.place === group),
+    ids: ids.filter((id) => (appearancesOf(id)[0]?.place ?? 'Pour plus tard') === group),
   }))
 }

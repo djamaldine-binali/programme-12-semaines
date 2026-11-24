@@ -1,15 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { program } from '../data/program'
 import { appearancesOf, describeMonths, exercisesByGroup } from './library'
 
 describe('appearancesOf', () => {
-  it('finds every exercise somewhere in the program', () => {
-    for (const id of Object.keys(program.exercises)) expect(appearancesOf(id).length).toBeGreaterThan(0)
-  })
-
   it('lists the months and doses of a session exercise', () => {
-    expect(appearancesOf('squat')).toEqual([
-      { place: 'Séance A', months: [2, 3], doses: ['Mois 2\u00a0: 4 × 15', 'Mois 3\u00a0: 4 × 12, descente sur 4 s'] },
+    expect(appearancesOf('squat_chaise')).toEqual([
+      { place: 'Séance A', months: [1, 2], doses: ['Mois 1\u00a0: 2 × 10', 'Mois 2\u00a0: 3 × 12'] },
     ])
   })
 
@@ -20,10 +15,15 @@ describe('appearancesOf', () => {
 })
 
 describe('exercisesByGroup', () => {
-  it('puts each of the 33 exercises in exactly one group', () => {
+  it('puts each of the 34 exercises in exactly one group', () => {
     const all = exercisesByGroup().flatMap((group) => group.ids)
-    expect(all).toHaveLength(33)
-    expect(new Set(all).size).toBe(33)
+    expect(all).toHaveLength(34)
+    expect(new Set(all).size).toBe(34)
+  })
+
+  it('keeps the harder versions that left the sessions in a last group', () => {
+    const later = exercisesByGroup().find((group) => group.group === 'Pour plus tard')
+    expect(later?.ids).toEqual(['pont_1j', 'bulgares', 'pompes', 'planche_touches', 'dips_tendues'])
   })
 })
 

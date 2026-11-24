@@ -4,7 +4,7 @@ import buttons from '../components/buttons.module.css'
 import { ConfirmDialog } from '../components/ConfirmDialog'
 import { StartDateField } from '../components/StartDateField'
 import { navigate } from '../lib/router'
-import { isValidStartDate, upcomingMonday } from '../lib/schedule'
+import { isDayKey, mondayOf } from '../lib/schedule'
 import { playCue, unlockAudio } from '../lib/sound'
 import { defaultState, parseState, type RestSeconds, type SavedState, type Theme } from '../lib/storage'
 import { useToday } from '../lib/useToday'
@@ -39,17 +39,17 @@ function downloadProgress(state: SavedState, today: string) {
 function StartDateSection() {
   const { state, update } = useAppState()
   const today = useToday()
-  const [startDate, setStartDate] = useState(state.startDate ?? upcomingMonday(today))
+  const [startDate, setStartDate] = useState(state.startDate ?? today)
 
   return (
-    <section className={styles.section} aria-labelledby="start-title">
+    <section className={`card ${styles.section}`} aria-labelledby="start-title">
       <h2 id="start-title">Début du programme</h2>
       <StartDateField value={startDate} onChange={setStartDate} />
       <button
         type="button"
         className={`${buttons.button} ${buttons.secondary}`}
-        disabled={!isValidStartDate(startDate) || startDate === state.startDate}
-        onClick={() => update((previous) => ({ ...previous, startDate }))}
+        disabled={!isDayKey(startDate) || mondayOf(startDate) === state.startDate}
+        onClick={() => update((previous) => ({ ...previous, startDate: mondayOf(startDate) }))}
       >
         Enregistrer la date
       </button>
@@ -93,7 +93,7 @@ export function Settings() {
 
       <StartDateSection key={state.startDate ?? 'none'} />
 
-      <section className={styles.section} aria-labelledby="session-title">
+      <section className={`card ${styles.section}`} aria-labelledby="session-title">
         <h2 id="session-title">Pendant les séances</h2>
         <ChoiceGroup
           legend="Repos entre les séries"
@@ -132,7 +132,7 @@ export function Settings() {
         </button>
       </section>
 
-      <section className={styles.section} aria-labelledby="look-title">
+      <section className={`card ${styles.section}`} aria-labelledby="look-title">
         <h2 id="look-title">Affichage</h2>
         <ChoiceGroup
           legend="Thème"
@@ -143,7 +143,7 @@ export function Settings() {
       </section>
 
       {state.runShift > 0 && (
-        <section className={styles.section} aria-labelledby="run-title">
+        <section className={`card ${styles.section}`} aria-labelledby="run-title">
           <h2 id="run-title">Course</h2>
           <p>
             Ta course a {state.runShift} {state.runShift > 1 ? 'semaines' : 'semaine'} de décalage, parce que tu as
@@ -159,7 +159,7 @@ export function Settings() {
         </section>
       )}
 
-      <section className={styles.section} aria-labelledby="data-title">
+      <section className={`card ${styles.section}`} aria-labelledby="data-title">
         <h2 id="data-title">Ta progression</h2>
         <p className={styles.muted}>
           Elle reste sur ce téléphone. Exporte-la pour la garder ou la passer sur un autre appareil.

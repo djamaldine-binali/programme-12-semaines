@@ -14,16 +14,16 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Programme 12 semaines',
-        short_name: '12 semaines',
-        description: 'Renfo, course et posture, séance par séance.',
+        name: 'Amélia',
+        short_name: 'Amélia',
+        description: 'Ton programme de 12 semaines : renfo, course, posture et repas, jour par jour.',
         lang: 'fr',
         start_url: '.',
         scope: '.',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        background_color: '#fffaf3',
+        theme_color: '#fffaf3',
         icons: [
           { src: 'pwa-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512.png', sizes: '512x512', type: 'image/png' },
@@ -33,6 +33,8 @@ export default defineConfig({
       workbox: {
         // Only the Latin font subsets are used; the others never load.
         globPatterns: ['**/*.{js,css,html}', 'assets/*-latin-*.woff2'],
+        // Push and notification click handlers for the water reminders.
+        importScripts: ['push-sw.js'],
       },
     }),
   ],

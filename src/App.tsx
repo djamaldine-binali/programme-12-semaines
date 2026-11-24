@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { BrandBar } from './components/BrandBar'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
 import { History } from './screens/History'
@@ -6,12 +7,17 @@ import { ExerciseSheet } from './screens/ExerciseSheet'
 import { Intervals } from './screens/Intervals'
 import { Library } from './screens/Library'
 import { LongWalk } from './screens/LongWalk'
+import { Meals } from './screens/Meals'
 import { Program } from './screens/Program'
+import { Recipe } from './screens/Recipe'
 import { Routine } from './screens/Routine'
 import { Run } from './screens/Run'
 import { Settings } from './screens/Settings'
+import { Pantry, Shopping } from './screens/Shopping'
 import { Tips } from './screens/Tips'
 import { Today } from './screens/Today'
+import { Water } from './screens/Water'
+import { WaterReminder } from './screens/WaterReminder'
 import { Workout } from './screens/Workout'
 import styles from './App.module.css'
 
@@ -40,6 +46,10 @@ function sessionFor(route: string): ReactNode | null {
 function screenFor(route: string): ReactNode {
   const sheet = route.match(/^\/bibliotheque\/([\w-]+)$/)
   if (sheet) return <ExerciseSheet key={sheet[1]} id={sheet[1]} />
+  const reminder = route.match(/^\/eau\/rappel\/(\d+)$/)
+  if (reminder) return <WaterReminder sipMl={Number(reminder[1])} />
+  const recipe = route.match(/^\/repas\/recette\/([\w-]+)$/)
+  if (recipe) return <Recipe key={recipe[1]} id={recipe[1]} />
   switch (route) {
     case '/bibliotheque':
       return <Library />
@@ -49,6 +59,14 @@ function screenFor(route: string): ReactNode {
       return <History />
     case '/conseils':
       return <Tips />
+    case '/eau':
+      return <Water />
+    case '/repas':
+      return <Meals />
+    case '/repas/courses':
+      return <Shopping />
+    case '/repas/placard':
+      return <Pantry />
     case '/reglages':
       return <Settings />
     default:
@@ -78,7 +96,10 @@ export function App() {
   // The tab bar comes after the content so keyboard and screen reader users reach the screen first.
   return (
     <>
-      <main className={styles.main}>{screenFor(route)}</main>
+      <main className={styles.main}>
+        <BrandBar />
+        {screenFor(route)}
+      </main>
       <TabBar route={route} />
     </>
   )

@@ -1,7 +1,7 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .header {
@@ -17,8 +17,6 @@
 
 .capitalize {
   display: inline-block;
-  color: var(--ink);
-  font-weight: 600;
 }
 
 .capitalize::first-letter {
@@ -27,7 +25,6 @@
 
 .welcomeTitle {
   font-size: 2.75rem;
-  font-stretch: 90%;
 }
 
 .lead {
@@ -35,36 +32,115 @@
   max-width: 34ch;
 }
 
-.panel {
+/* The sun: one flat yellow block, the otter sitting on its edge. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 20px 22px;
+  border-radius: var(--radius);
+  background: var(--sun);
+  color: #2b1b3d;
+}
+
+.heroText {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px 20px 20px;
-  border-radius: var(--radius);
+  gap: 2px;
+  padding-right: 96px;
+  font-weight: 600;
+}
+
+.greeting {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-stretch: 90%;
+  font-weight: 850;
+  line-height: 1.05;
+}
+
+.weekText {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.weekBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weekBar li {
+  height: 6px;
+  border-radius: 3px;
+  background: rgb(43 27 61 / 16%);
+}
+
+.weekBar li[data-state='done'] {
+  background: #2b1b3d;
+}
+
+.weekBar li[data-state='current'] {
+  background: #e8452c;
+}
+
+.heroOtter {
+  position: absolute;
+  right: 6px;
+  bottom: -8px;
+}
+
+.session {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sessionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
 }
 
 .renfo {
   background: var(--coral-soft);
+  color: var(--coral-strong);
 }
 
 .course {
   background: var(--blue-soft);
+  color: var(--blue);
 }
 
 .recup {
   background: var(--sand);
+  color: var(--violet);
+}
+
+.eyebrow {
+  color: var(--mute);
+  font-weight: 600;
 }
 
 .activityTitle {
-  font-size: clamp(2.75rem, 13vw, 3.75rem);
-  font-stretch: 82%;
-  font-weight: 800;
+  font-size: clamp(2.5rem, 12vw, 3.25rem);
+  font-stretch: 85%;
   line-height: 0.95;
-  letter-spacing: -0.01em;
 }
 
 .summary {
-  font-size: 1.125rem;
+  color: var(--mute);
+  font-size: 1.0625rem;
 }
 
 .done {
@@ -72,11 +148,94 @@
   align-items: center;
   gap: 8px;
   min-height: 52px;
-  font-weight: 600;
+  color: var(--coral-strong);
+  font-weight: 700;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 4px;
+  color: var(--mute);
+}
+
+.steps strong {
+  color: var(--ink);
 }
 
 .note {
   max-width: 60ch;
+  padding: 0 4px;
+  color: var(--mute);
+}
+
+.note strong {
+  color: var(--ink);
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cardHead a {
+  font-size: 0.9375rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.menuList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuList a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 6px 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.menuList li + li a {
+  border-top: 1px solid var(--line);
+}
+
+.menuIcon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+}
+
+.menuList a > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuSlot {
+  color: var(--mute);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.menuTitle {
+  font-weight: 650;
+}
+
+.chevron {
+  color: var(--mute);
 }
 
 .smallTitle {
@@ -89,12 +248,20 @@
   padding-left: 1.25em;
 }
 
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 20px 20px;
+  border-radius: var(--radius);
+}
+
 .other summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 48px;
-  font-weight: 600;
+  min-height: 44px;
+  font-weight: 650;
   list-style: none;
   cursor: pointer;
 }
@@ -115,7 +282,6 @@
   margin: 8px 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
 }
 
 .linkList a {
@@ -124,7 +290,8 @@
   align-items: center;
   min-height: 52px;
   padding: 0 4px;
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   color: var(--ink);
+  font-weight: 600;
   text-decoration: none;
 }

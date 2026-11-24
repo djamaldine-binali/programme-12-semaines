@@ -16,6 +16,7 @@ export function ExerciseSheet({ id }: { id: string }) {
   }
 
   const exercise = program.exercises[id]
+  const appearances = appearancesOf(id)
   return (
     <article className={styles.page}>
       <a href="#/bibliotheque" className={styles.back}>
@@ -29,18 +30,24 @@ export function ExerciseSheet({ id }: { id: string }) {
 
       <section aria-labelledby="where-title">
         <h2 id="where-title">Dans le programme</h2>
-        <ul className={styles.where}>
-          {appearancesOf(id).map((appearance) => (
-            <li key={appearance.place}>
-              <strong>
-                {appearance.place}, {describeMonths(appearance.months)}
-              </strong>
-              {appearance.doses.map((dose) => (
-                <span key={dose}>{dose}</span>
-              ))}
-            </li>
-          ))}
-        </ul>
+        {appearances.length === 0 ? (
+          <p className={styles.cue}>
+            Pas pour l'instant. C'est une version plus dure, pour quand les autres deviennent faciles.
+          </p>
+        ) : (
+          <ul className={styles.where}>
+            {appearances.map((appearance) => (
+              <li key={appearance.place}>
+                <strong>
+                  {appearance.place}, {describeMonths(appearance.months)}
+                </strong>
+                {appearance.doses.map((dose) => (
+                  <span key={dose}>{dose}</span>
+                ))}
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </article>
   )

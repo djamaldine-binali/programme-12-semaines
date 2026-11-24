@@ -6,20 +6,26 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
+}
+
+.hint {
+  margin-bottom: 8px;
+  color: var(--mute);
+  font-size: 0.9375rem;
 }
 
 .row {
+  color: var(--ink);
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 48px;
   padding: 0 8px;
-  border-bottom: 1px solid var(--line);
 }
 
 .row[aria-current='date'] {
-  background: var(--surface);
+  background: var(--bg);
   font-weight: 650;
 }
 
@@ -48,7 +54,7 @@
 }
 
 .recup {
-  background: var(--mute);
+  background: var(--violet);
 }
 
 .label {
@@ -59,5 +65,13 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  color: var(--mute);
+}
+
+.list li + li .row {
+  border-top: 1px solid var(--line);
+}
+
+.chevron {
   color: var(--mute);
 }

@@ -51,6 +51,11 @@ export function isValidStartDate(value: string): boolean {
   return isDayKey(value) && weekdayOf(value) === 0
 }
 
+/** The Monday of the week a day belongs to: the program can start any day, its weeks still begin on Monday. */
+export function mondayOf(key: DayKey): DayKey {
+  return addDays(key, -weekdayOf(key))
+}
+
 /** Today if it is a Monday, otherwise the next Monday. */
 export function upcomingMonday(today: DayKey): DayKey {
   return addDays(today, (7 - weekdayOf(today)) % 7)

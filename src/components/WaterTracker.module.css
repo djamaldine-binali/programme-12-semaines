@@ -1,0 +1,93 @@
+.tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--water);
+  font-weight: 600;
+}
+
+.amount span {
+  color: var(--mute);
+}
+
+.amount strong {
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 850;
+}
+
+.bar {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--water-soft);
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  background: var(--water);
+  transition: width 0.3s ease-out;
+}
+
+.status {
+  color: var(--mute);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.add {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-height: 56px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: var(--water-soft);
+  color: var(--water);
+  font-weight: 700;
+  transition: transform 0.1s ease-out;
+}
+
+.add:active {
+  transform: scale(0.97);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.small {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.undo {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mute);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}

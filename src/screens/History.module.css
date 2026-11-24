@@ -101,3 +101,12 @@
 .logName {
   font-weight: 600;
 }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 20px;
+  text-align: center;
+}

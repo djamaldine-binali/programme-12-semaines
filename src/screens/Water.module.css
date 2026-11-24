@@ -1,0 +1,56 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.page h2 {
+  margin-bottom: 10px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 4px;
+  min-height: 44px;
+  margin-left: -6px;
+  color: var(--mute);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.muted {
+  color: var(--mute);
+}
+
+.page section > * + * {
+  margin-top: 12px;
+}
+
+.error {
+  color: var(--coral-strong);
+  font-weight: 600;
+}
+
+.reminder {
+  align-items: center;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.reminderActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.later {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--mute);
+}

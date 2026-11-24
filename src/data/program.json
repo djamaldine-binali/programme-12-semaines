@@ -5,7 +5,7 @@
     "audience": "Une femme de 22 ans, débutante, qui s'entraîne à la maison avec une chaise et court dehors.",
     "goals": {
       "affiner": "Ventre, haut du dos, bras, mollets. Le corps choisit seul d'où part le gras : il part partout à la fois, petit à petit. Ce qui affine, c'est la course, les pas, l'assiette et le sommeil. Les exercices du haut du corps tonifient sans faire grossir les bras, et aucun exercice ne cible les mollets.",
-      "muscler": "Fessiers et cuisses. Ils sont au cœur des deux séances, avec une version plus dure chaque mois."
+      "muscler": "Fessiers et cuisses. Ils sont au cœur des deux séances, avec des doses qui montent chaque mois."
     },
     "equipment": [
       "une chaise solide (calée contre un mur pour les dips et les montées)",
@@ -136,6 +136,14 @@
       "youtube_id": "WtyQ6k-b03g",
       "youtube_url": "https://www.youtube.com/watch?v=WtyQ6k-b03g",
       "diagram_svg": "<svg viewBox=\"0 0 184.8 27.1\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" preserveAspectRatio=\"xMidYMid meet\"><line x1=\"3.4\" y1=\"25.1\" x2=\"181.4\" y2=\"25.1\" stroke=\"#d9cfc4\" stroke-width=\"0.80\" stroke-linecap=\"round\"/><line x1=\"47.6\" y1=\"20.1\" x2=\"64.6\" y2=\"20.9\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"64.6\" y1=\"20.9\" x2=\"81.6\" y2=\"21.6\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"81.6\" y1=\"21.6\" x2=\"86.1\" y2=\"21.6\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"25.6\" y1=\"20.1\" x2=\"15.6\" y2=\"23.3\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"15.6\" y1=\"23.3\" x2=\"6.7\" y2=\"20.1\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"47.6\" y1=\"20.1\" x2=\"25.6\" y2=\"20.1\" stroke=\"#a69a90\" stroke-width=\"3.12\" stroke-linecap=\"round\"/><circle cx=\"17.7\" cy=\"19.6\" r=\"4.60\" fill=\"#a69a90\"/><line x1=\"47.6\" y1=\"20.1\" x2=\"64.6\" y2=\"20.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"64.6\" y1=\"20.6\" x2=\"81.6\" y2=\"21.1\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"81.6\" y1=\"21.1\" x2=\"86.1\" y2=\"21.1\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"25.6\" y1=\"20.1\" x2=\"35.4\" y2=\"16.3\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"35.4\" y1=\"16.3\" x2=\"44.6\" y2=\"18.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"139.6\" y1=\"20.1\" x2=\"156.6\" y2=\"20.9\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"156.6\" y1=\"20.9\" x2=\"173.6\" y2=\"21.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"173.6\" y1=\"21.6\" x2=\"178.1\" y2=\"21.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"117.6\" y1=\"20.1\" x2=\"107.6\" y2=\"23.3\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"107.6\" y1=\"23.3\" x2=\"98.6\" y2=\"20.1\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"139.6\" y1=\"20.1\" x2=\"117.6\" y2=\"20.1\" stroke=\"#2b2622\" stroke-width=\"3.12\" stroke-linecap=\"round\"/><circle cx=\"109.7\" cy=\"19.6\" r=\"4.60\" fill=\"#2b2622\"/><line x1=\"139.6\" y1=\"20.1\" x2=\"155.1\" y2=\"13.1\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"155.1\" y1=\"13.1\" x2=\"170.6\" y2=\"6.2\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"170.6\" y1=\"6.2\" x2=\"174.7\" y2=\"4.2\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"117.6\" y1=\"20.1\" x2=\"127.4\" y2=\"16.3\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"127.4\" y1=\"16.3\" x2=\"136.6\" y2=\"18.6\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><path d=\"M88.9,12.2 H93.9\" stroke=\"#b4583a\" stroke-width=\"0.9\" stroke-linecap=\"round\"/><path d=\"M95.9,12.2 L93.2,10.2 L93.2,14.2 Z\" fill=\"#b4583a\"/></svg>"
+    },
+    "pompes_chaise": {
+      "id": "pompes_chaise",
+      "name": "Pompes inclinées sur chaise",
+      "cue": "Mains au bord de l'assise, chaise calée contre un mur. Corps gainé, on descend la poitrine vers la chaise.",
+      "youtube_id": "6q6gUVFISZo",
+      "youtube_url": "https://www.youtube.com/watch?v=6q6gUVFISZo",
+      "diagram_svg": "<svg viewBox=\"0 0 164.8 50.0\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" preserveAspectRatio=\"xMidYMid meet\"><line x1=\"3.4\" y1=\"48.0\" x2=\"161.4\" y2=\"48.0\" stroke=\"#d9cfc4\" stroke-width=\"0.80\" stroke-linecap=\"round\"/><rect x=\"4.4\" y=\"29.0\" width=\"17.0\" height=\"3.0\" fill=\"#d8ccbf\" stroke=\"#bfaf9f\" stroke-width=\"0.3\"/><line x1=\"7.4\" y1=\"48.0\" x2=\"7.4\" y2=\"32.0\" stroke=\"#bfaf9f\" stroke-width=\"1.40\" stroke-linecap=\"round\"/><line x1=\"18.4\" y1=\"48.0\" x2=\"18.4\" y2=\"32.0\" stroke=\"#bfaf9f\" stroke-width=\"1.40\" stroke-linecap=\"round\"/><line x1=\"5.4\" y1=\"29.0\" x2=\"5.4\" y2=\"7.0\" stroke=\"#bfaf9f\" stroke-width=\"1.80\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"25.9\" x2=\"62.7\" y2=\"35.9\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"62.7\" y1=\"35.9\" x2=\"76.4\" y2=\"46.0\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"76.4\" y1=\"46.0\" x2=\"78.4\" y2=\"47.6\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"32.2\" y1=\"12.9\" x2=\"25.3\" y2=\"20.9\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"25.3\" y1=\"20.9\" x2=\"19.4\" y2=\"29.0\" stroke=\"#d9d0c7\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"32.2\" y1=\"12.9\" x2=\"50.0\" y2=\"25.9\" stroke=\"#a69a90\" stroke-width=\"3.12\" stroke-linecap=\"round\"/><circle cx=\"25.8\" cy=\"8.1\" r=\"4.60\" fill=\"#a69a90\"/><line x1=\"50.0\" y1=\"25.9\" x2=\"63.7\" y2=\"35.9\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"63.7\" y1=\"35.9\" x2=\"77.4\" y2=\"46.0\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"77.4\" y1=\"46.0\" x2=\"79.4\" y2=\"47.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"32.2\" y1=\"12.9\" x2=\"26.3\" y2=\"20.9\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"26.3\" y1=\"20.9\" x2=\"20.4\" y2=\"29.0\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><rect x=\"91.4\" y=\"29.0\" width=\"17.0\" height=\"3.0\" fill=\"#d8ccbf\" stroke=\"#bfaf9f\" stroke-width=\"0.3\"/><line x1=\"94.4\" y1=\"48.0\" x2=\"94.4\" y2=\"32.0\" stroke=\"#bfaf9f\" stroke-width=\"1.40\" stroke-linecap=\"round\"/><line x1=\"105.4\" y1=\"48.0\" x2=\"105.4\" y2=\"32.0\" stroke=\"#bfaf9f\" stroke-width=\"1.40\" stroke-linecap=\"round\"/><line x1=\"92.4\" y1=\"29.0\" x2=\"92.4\" y2=\"7.0\" stroke=\"#bfaf9f\" stroke-width=\"1.80\" stroke-linecap=\"round\"/><line x1=\"128.1\" y1=\"32.6\" x2=\"142.7\" y2=\"39.3\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"142.7\" y1=\"39.3\" x2=\"158.4\" y2=\"46.0\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"158.4\" y1=\"46.0\" x2=\"160.4\" y2=\"47.6\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"107.9\" y1=\"24.0\" x2=\"115.9\" y2=\"29.4\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"115.9\" y1=\"29.4\" x2=\"106.4\" y2=\"29.0\" stroke=\"#a69a90\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"107.9\" y1=\"24.0\" x2=\"128.1\" y2=\"32.6\" stroke=\"#2b2622\" stroke-width=\"3.12\" stroke-linecap=\"round\"/><circle cx=\"100.5\" cy=\"20.9\" r=\"4.60\" fill=\"#2b2622\"/><line x1=\"128.1\" y1=\"32.6\" x2=\"143.7\" y2=\"39.3\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"143.7\" y1=\"39.3\" x2=\"159.4\" y2=\"46.0\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"159.4\" y1=\"46.0\" x2=\"161.4\" y2=\"47.6\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"107.9\" y1=\"24.0\" x2=\"116.9\" y2=\"29.4\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><line x1=\"116.9\" y1=\"29.4\" x2=\"107.4\" y2=\"29.0\" stroke=\"#2b2622\" stroke-width=\"2.50\" stroke-linecap=\"round\"/><path d=\"M80.9,19.0 H85.9\" stroke=\"#b4583a\" stroke-width=\"0.9\" stroke-linecap=\"round\"/><path d=\"M87.9,19.0 L85.2,17.0 L85.2,21.0 Z\" fill=\"#b4583a\"/></svg>"
     },
     "pompes_genoux": {
       "id": "pompes_genoux",
@@ -343,8 +351,8 @@
       "title": "Séance A",
       "focus": "Fessiers, cuisses, gainage",
       "duration_min": [
-        35,
-        45
+        25,
+        40
       ],
       "items": [
         {
@@ -353,9 +361,9 @@
               "month": 1,
               "exercise": "squat_chaise",
               "dose": {
-                "text": "3 × 12–15",
-                "sets": 3,
-                "target": "12–15",
+                "text": "2 × 10",
+                "sets": 2,
+                "target": "10",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -363,11 +371,11 @@
             },
             {
               "month": 2,
-              "exercise": "squat",
+              "exercise": "squat_chaise",
               "dose": {
-                "text": "4 × 15",
-                "sets": 4,
-                "target": "15",
+                "text": "3 × 12",
+                "sets": 3,
+                "target": "12",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -377,12 +385,12 @@
               "month": 3,
               "exercise": "squat",
               "dose": {
-                "text": "4 × 12, descente sur 4 s",
-                "sets": 4,
+                "text": "3 × 12",
+                "sets": 3,
                 "target": "12",
                 "unit": "reps",
                 "per_side": false,
-                "note": "descente sur 4 s"
+                "note": null
               }
             }
           ]
@@ -393,9 +401,9 @@
               "month": 1,
               "exercise": "pont",
               "dose": {
-                "text": "4 × 15",
-                "sets": 4,
-                "target": "15",
+                "text": "2 × 12",
+                "sets": 2,
+                "target": "12",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -403,7 +411,7 @@
             },
             {
               "month": 2,
-              "exercise": "pont_chaise",
+              "exercise": "pont",
               "dose": {
                 "text": "3 × 15",
                 "sets": 3,
@@ -415,13 +423,13 @@
             },
             {
               "month": 3,
-              "exercise": "pont_1j",
+              "exercise": "pont_chaise",
               "dose": {
-                "text": "3 × 10 / jambe",
+                "text": "3 × 12",
                 "sets": 3,
-                "target": "10",
+                "target": "12",
                 "unit": "reps",
-                "per_side": true,
+                "per_side": false,
                 "note": null
               }
             }
@@ -433,9 +441,9 @@
               "month": 1,
               "exercise": "fentes",
               "dose": {
-                "text": "3 × 10 / jambe",
-                "sets": 3,
-                "target": "10",
+                "text": "2 × 8 / jambe",
+                "sets": 2,
+                "target": "8",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -445,9 +453,9 @@
               "month": 2,
               "exercise": "fentes",
               "dose": {
-                "text": "4 × 12 / jambe",
-                "sets": 4,
-                "target": "12",
+                "text": "3 × 10 / jambe",
+                "sets": 3,
+                "target": "10",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -455,11 +463,11 @@
             },
             {
               "month": 3,
-              "exercise": "bulgares",
+              "exercise": "fentes",
               "dose": {
-                "text": "3 × 10 / jambe",
+                "text": "3 × 12 / jambe",
                 "sets": 3,
-                "target": "10",
+                "target": "12",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -471,6 +479,18 @@
           "months": [
             {
               "month": 1,
+              "exercise": "abduction",
+              "dose": {
+                "text": "2 × 12 / côté",
+                "sets": 2,
+                "target": "12",
+                "unit": "reps",
+                "per_side": true,
+                "note": null
+              }
+            },
+            {
+              "month": 2,
               "exercise": "abduction",
               "dose": {
                 "text": "3 × 15 / côté",
@@ -482,7 +502,7 @@
               }
             },
             {
-              "month": 2,
+              "month": 3,
               "exercise": "abduction",
               "dose": {
                 "text": "3 × 20 / côté",
@@ -492,18 +512,6 @@
                 "per_side": true,
                 "note": null
               }
-            },
-            {
-              "month": 3,
-              "exercise": "abduction",
-              "dose": {
-                "text": "3 × 20 / côté, pause 2 s en haut",
-                "sets": 3,
-                "target": "20",
-                "unit": "reps",
-                "per_side": true,
-                "note": "pause 2 s en haut"
-              }
             }
           ]
         },
@@ -511,11 +519,11 @@
           "months": [
             {
               "month": 1,
-              "exercise": "pompes_genoux",
+              "exercise": "pompes_chaise",
               "dose": {
-                "text": "3 × 8–12",
-                "sets": 3,
-                "target": "8–12",
+                "text": "2 × 6–10",
+                "sets": 2,
+                "target": "6–10",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -523,10 +531,10 @@
             },
             {
               "month": 2,
-              "exercise": "pompes_genoux",
+              "exercise": "pompes_chaise",
               "dose": {
-                "text": "4 × 10–12",
-                "sets": 4,
+                "text": "3 × 10–12",
+                "sets": 3,
                 "target": "10–12",
                 "unit": "reps",
                 "per_side": false,
@@ -535,14 +543,14 @@
             },
             {
               "month": 3,
-              "exercise": "pompes",
+              "exercise": "pompes_genoux",
               "dose": {
-                "text": "4 séries, max propre",
-                "sets": 4,
-                "target": "max",
+                "text": "3 × 5–8",
+                "sets": 3,
+                "target": "5–8",
                 "unit": "reps",
                 "per_side": false,
-                "note": "max propre"
+                "note": null
               }
             }
           ]
@@ -551,6 +559,30 @@
           "months": [
             {
               "month": 1,
+              "exercise": "planche",
+              "dose": {
+                "text": "2 × 15–20 s",
+                "sets": 2,
+                "target": "15–20",
+                "unit": "seconds",
+                "per_side": false,
+                "note": null
+              }
+            },
+            {
+              "month": 2,
+              "exercise": "planche",
+              "dose": {
+                "text": "3 × 20–30 s",
+                "sets": 3,
+                "target": "20–30",
+                "unit": "seconds",
+                "per_side": false,
+                "note": null
+              }
+            },
+            {
+              "month": 3,
               "exercise": "planche",
               "dose": {
                 "text": "3 × 30–45 s",
@@ -560,30 +592,6 @@
                 "per_side": false,
                 "note": null
               }
-            },
-            {
-              "month": 2,
-              "exercise": "planche",
-              "dose": {
-                "text": "3 × 45–60 s",
-                "sets": 3,
-                "target": "45–60",
-                "unit": "seconds",
-                "per_side": false,
-                "note": null
-              }
-            },
-            {
-              "month": 3,
-              "exercise": "planche_touches",
-              "dose": {
-                "text": "3 × 20 touches",
-                "sets": 3,
-                "target": "20",
-                "unit": "taps",
-                "per_side": false,
-                "note": null
-              }
             }
           ]
         },
@@ -591,6 +599,18 @@
           "months": [
             {
               "month": 1,
+              "exercise": "dead_bug",
+              "dose": {
+                "text": "2 × 8 / côté",
+                "sets": 2,
+                "target": "8",
+                "unit": "reps",
+                "per_side": true,
+                "note": null
+              }
+            },
+            {
+              "month": 2,
               "exercise": "dead_bug",
               "dose": {
                 "text": "3 × 10 / côté",
@@ -602,7 +622,7 @@
               }
             },
             {
-              "month": 2,
+              "month": 3,
               "exercise": "dead_bug",
               "dose": {
                 "text": "3 × 12 / côté",
@@ -611,18 +631,6 @@
                 "unit": "reps",
                 "per_side": true,
                 "note": null
-              }
-            },
-            {
-              "month": 3,
-              "exercise": "dead_bug",
-              "dose": {
-                "text": "3 × 12 / côté, pause 2 s",
-                "sets": 3,
-                "target": "12",
-                "unit": "reps",
-                "per_side": true,
-                "note": "pause 2 s"
               }
             }
           ]
@@ -633,8 +641,8 @@
       "title": "Séance B",
       "focus": "Fessiers, cuisses, bras, dos",
       "duration_min": [
-        35,
-        45
+        25,
+        40
       ],
       "items": [
         {
@@ -643,9 +651,9 @@
               "month": 1,
               "exercise": "sdt_1j",
               "dose": {
-                "text": "3 × 10 / jambe",
-                "sets": 3,
-                "target": "10",
+                "text": "2 × 8 / jambe",
+                "sets": 2,
+                "target": "8",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -655,9 +663,9 @@
               "month": 2,
               "exercise": "sdt_1j",
               "dose": {
-                "text": "4 × 10 / jambe",
-                "sets": 4,
-                "target": "10",
+                "text": "3 × 8 / jambe",
+                "sets": 3,
+                "target": "8",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -667,12 +675,12 @@
               "month": 3,
               "exercise": "sdt_1j",
               "dose": {
-                "text": "4 × 10 / jambe, descente lente",
-                "sets": 4,
+                "text": "3 × 10 / jambe",
+                "sets": 3,
                 "target": "10",
                 "unit": "reps",
                 "per_side": true,
-                "note": "descente lente"
+                "note": null
               }
             }
           ]
@@ -683,9 +691,9 @@
               "month": 1,
               "exercise": "montees",
               "dose": {
-                "text": "3 × 10 / jambe",
-                "sets": 3,
-                "target": "10",
+                "text": "2 × 8 / jambe",
+                "sets": 2,
+                "target": "8",
                 "unit": "reps",
                 "per_side": true,
                 "note": null
@@ -695,8 +703,8 @@
               "month": 2,
               "exercise": "montees",
               "dose": {
-                "text": "4 × 10 / jambe",
-                "sets": 4,
+                "text": "3 × 10 / jambe",
+                "sets": 3,
                 "target": "10",
                 "unit": "reps",
                 "per_side": true,
@@ -707,12 +715,12 @@
               "month": 3,
               "exercise": "montees",
               "dose": {
-                "text": "4 × 12 / jambe, descente lente",
-                "sets": 4,
+                "text": "3 × 12 / jambe",
+                "sets": 3,
                 "target": "12",
                 "unit": "reps",
                 "per_side": true,
-                "note": "descente lente"
+                "note": null
               }
             }
           ]
@@ -721,6 +729,18 @@
           "months": [
             {
               "month": 1,
+              "exercise": "kickback",
+              "dose": {
+                "text": "2 × 12 / côté",
+                "sets": 2,
+                "target": "12",
+                "unit": "reps",
+                "per_side": true,
+                "note": null
+              }
+            },
+            {
+              "month": 2,
               "exercise": "kickback",
               "dose": {
                 "text": "3 × 15 / côté",
@@ -732,7 +752,7 @@
               }
             },
             {
-              "month": 2,
+              "month": 3,
               "exercise": "kickback",
               "dose": {
                 "text": "3 × 20 / côté",
@@ -742,18 +762,6 @@
                 "per_side": true,
                 "note": null
               }
-            },
-            {
-              "month": 3,
-              "exercise": "kickback",
-              "dose": {
-                "text": "3 × 20 / côté, pause 2 s en haut",
-                "sets": 3,
-                "target": "20",
-                "unit": "reps",
-                "per_side": true,
-                "note": "pause 2 s en haut"
-              }
             }
           ]
         },
@@ -763,9 +771,9 @@
               "month": 1,
               "exercise": "chaise_mur",
               "dose": {
-                "text": "3 × 30–45 s",
-                "sets": 3,
-                "target": "30–45",
+                "text": "2 × 20–30 s",
+                "sets": 2,
+                "target": "20–30",
                 "unit": "seconds",
                 "per_side": false,
                 "note": null
@@ -773,6 +781,18 @@
             },
             {
               "month": 2,
+              "exercise": "chaise_mur",
+              "dose": {
+                "text": "3 × 30–40 s",
+                "sets": 3,
+                "target": "30–40",
+                "unit": "seconds",
+                "per_side": false,
+                "note": null
+              }
+            },
+            {
+              "month": 3,
               "exercise": "chaise_mur",
               "dose": {
                 "text": "3 × 45–60 s",
@@ -782,18 +802,6 @@
                 "per_side": false,
                 "note": null
               }
-            },
-            {
-              "month": 3,
-              "exercise": "chaise_mur",
-              "dose": {
-                "text": "3 × 60–75 s",
-                "sets": 3,
-                "target": "60–75",
-                "unit": "seconds",
-                "per_side": false,
-                "note": null
-              }
             }
           ]
         },
@@ -803,9 +811,9 @@
               "month": 1,
               "exercise": "dips",
               "dose": {
-                "text": "3 × 8–12",
-                "sets": 3,
-                "target": "8–12",
+                "text": "2 × 5–8",
+                "sets": 2,
+                "target": "5–8",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -815,9 +823,9 @@
               "month": 2,
               "exercise": "dips",
               "dose": {
-                "text": "4 × 10",
-                "sets": 4,
-                "target": "10",
+                "text": "3 × 8",
+                "sets": 3,
+                "target": "8",
                 "unit": "reps",
                 "per_side": false,
                 "note": null
@@ -825,10 +833,10 @@
             },
             {
               "month": 3,
-              "exercise": "dips_tendues",
+              "exercise": "dips",
               "dose": {
-                "text": "4 × 10",
-                "sets": 4,
+                "text": "3 × 10",
+                "sets": 3,
                 "target": "10",
                 "unit": "reps",
                 "per_side": false,
@@ -841,6 +849,18 @@
           "months": [
             {
               "month": 1,
+              "exercise": "y",
+              "dose": {
+                "text": "2 × 10",
+                "sets": 2,
+                "target": "10",
+                "unit": "reps",
+                "per_side": false,
+                "note": null
+              }
+            },
+            {
+              "month": 2,
               "exercise": "y",
               "dose": {
                 "text": "3 × 12",
@@ -852,7 +872,7 @@
               }
             },
             {
-              "month": 2,
+              "month": 3,
               "exercise": "y",
               "dose": {
                 "text": "3 × 14",
@@ -862,18 +882,6 @@
                 "per_side": false,
                 "note": null
               }
-            },
-            {
-              "month": 3,
-              "exercise": "y",
-              "dose": {
-                "text": "3 × 14, pause 2 s",
-                "sets": 3,
-                "target": "14",
-                "unit": "reps",
-                "per_side": false,
-                "note": "pause 2 s"
-              }
             }
           ]
         },
@@ -881,6 +889,18 @@
           "months": [
             {
               "month": 1,
+              "exercise": "gainage_lat",
+              "dose": {
+                "text": "2 × 10–20 s / côté, genoux au sol",
+                "sets": 2,
+                "target": "10–20",
+                "unit": "seconds",
+                "per_side": true,
+                "note": "genoux au sol"
+              }
+            },
+            {
+              "month": 2,
               "exercise": "gainage_lat",
               "dose": {
                 "text": "3 × 20–30 s / côté",
@@ -892,24 +912,12 @@
               }
             },
             {
-              "month": 2,
-              "exercise": "gainage_lat",
-              "dose": {
-                "text": "3 × 35–45 s / côté",
-                "sets": 3,
-                "target": "35–45",
-                "unit": "seconds",
-                "per_side": true,
-                "note": null
-              }
-            },
-            {
               "month": 3,
               "exercise": "gainage_lat",
               "dose": {
-                "text": "3 × 50–60 s / côté",
+                "text": "3 × 30–40 s / côté",
                 "sets": 3,
-                "target": "50–60",
+                "target": "30–40",
                 "unit": "seconds",
                 "per_side": true,
                 "note": null
@@ -988,27 +996,27 @@
       {
         "week": 1,
         "reps": 8,
-        "run_s": 60,
-        "walk_s": 120,
+        "run_s": 90,
+        "walk_s": 60,
         "deload": false
       },
       {
         "week": 2,
         "reps": 8,
-        "run_s": 60,
-        "walk_s": 120,
+        "run_s": 90,
+        "walk_s": 60,
         "deload": false
       },
       {
         "week": 3,
-        "reps": 7,
+        "reps": 6,
         "run_s": 120,
         "walk_s": 60,
         "deload": false
       },
       {
         "week": 4,
-        "reps": 7,
+        "reps": 6,
         "run_s": 120,
         "walk_s": 60,
         "deload": true
@@ -1016,60 +1024,60 @@
       {
         "week": 5,
         "reps": 5,
-        "run_s": 240,
+        "run_s": 180,
         "walk_s": 60,
         "deload": false
       },
       {
         "week": 6,
-        "reps": 5,
+        "reps": 4,
         "run_s": 240,
-        "walk_s": 60,
+        "walk_s": 90,
         "deload": false
       },
       {
         "week": 7,
         "reps": 3,
-        "run_s": 480,
-        "walk_s": 60,
+        "run_s": 360,
+        "walk_s": 90,
         "deload": false
       },
       {
         "week": 8,
         "reps": 3,
-        "run_s": 480,
-        "walk_s": 60,
+        "run_s": 360,
+        "walk_s": 90,
         "deload": true
       },
       {
         "week": 9,
-        "reps": 2,
-        "run_s": 720,
-        "walk_s": 60,
+        "reps": 3,
+        "run_s": 420,
+        "walk_s": 90,
         "deload": false
       },
       {
         "week": 10,
         "reps": 2,
-        "run_s": 720,
-        "walk_s": 60,
+        "run_s": 600,
+        "walk_s": 120,
         "deload": false
       },
       {
         "week": 11,
         "reps": 1,
-        "run_s": 1500,
+        "run_s": 900,
         "walk_s": 0,
-        "run_s_max": 1800,
+        "run_s_max": 1200,
         "continuous": true,
         "deload": false
       },
       {
         "week": 12,
         "reps": 1,
-        "run_s": 1500,
+        "run_s": 1200,
         "walk_s": 0,
-        "run_s_max": 1800,
+        "run_s_max": 1500,
         "continuous": true,
         "deload": false
       }
@@ -1079,7 +1087,7 @@
         "month": 1,
         "mode": "maison",
         "reps": 6,
-        "work_s": 30,
+        "work_s": 20,
         "rest_s": 90,
         "moves": [
           "montées de genoux",
@@ -1092,17 +1100,17 @@
       {
         "month": 2,
         "mode": "course",
-        "reps": 8,
+        "reps": 6,
         "work_s": 30,
-        "rest_s": 75,
+        "rest_s": 90,
         "rest_mode": "marche"
       },
       {
         "month": 3,
         "mode": "course",
-        "reps": 10,
+        "reps": 8,
         "work_s": 30,
-        "rest_s": 60,
+        "rest_s": 75,
         "rest_mode": "marche"
       }
     ]

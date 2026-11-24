@@ -26,6 +26,7 @@
 .goal h3 {
   margin-bottom: 6px;
   font-size: 1.375rem;
+  font-weight: 750;
 }
 
 .affiner {
@@ -79,4 +80,29 @@
 
 .steps {
   margin-top: 12px;
+}
+
+.mealsLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px var(--coral);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mealsLink > span {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  font-weight: 500;
+}
+
+.mealsLink strong {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
 }
