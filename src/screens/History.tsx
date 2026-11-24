@@ -19,13 +19,13 @@ export function History() {
   const completeWeeks = weeks.filter((week) => week.complete).length
   const entries = [...state.log].reverse()
   const { week } = sessionContext(state.startDate, today)
-  const checkIn = state.startDate && <CheckInCard checkIns={state.checkIns} week={week} />
+  const checkInCard = state.startDate && <CheckInCard checkIns={state.checkIns} week={week} />
 
   if (entries.length === 0) {
     return (
       <div className={styles.page}>
         <h1>Suivi</h1>
-        {checkIn}
+        {checkInCard}
         <div className={`card ${styles.empty}`}>
           <OtterMark size={96} />
           <p>Rien pour l'instant. Chaque séance terminée apparaîtra ici, avec ton ressenti.</p>
@@ -40,7 +40,7 @@ export function History() {
   return (
     <div className={styles.page}>
       <h1>Suivi</h1>
-      {checkIn}
+      {checkInCard}
       <p className={styles.summary}>
         {completeWeeks} {completeWeeks > 1 ? 'semaines complètes' : 'semaine complète'} sur {TOTAL_WEEKS}
       </p>

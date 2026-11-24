@@ -33,7 +33,6 @@
   color: var(--mute);
 }
 
-/* Seven squares, coloured like the day's session, as on the Programme screen. */
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
