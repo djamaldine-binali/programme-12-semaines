@@ -1,4 +1,3 @@
-import { ClipboardCheck } from 'lucide-react'
 import { adviceFor } from '../lib/checkIn'
 import type { CheckIn } from '../lib/storage'
 import styles from './CheckInCard.module.css'
@@ -15,12 +14,9 @@ export function CheckInCard({ checkIns, week }: { checkIns: CheckIn[]; week: num
 
   return (
     <section aria-labelledby="check-in-title" className="card">
-      <div className={styles.head}>
-        <span className={styles.icon}>
-          <ClipboardCheck size={22} aria-hidden="true" />
-        </span>
-        <h2 id="check-in-title">{advice ? titles[advice.tone] : `Bilan de la semaine ${week}`}</h2>
-      </div>
+      <h2 id="check-in-title" className={styles.title}>
+        {advice ? titles[advice.tone] : `Bilan de la semaine ${week}`}
+      </h2>
       {advice ? (
         <ul className={styles.messages}>
           {advice.messages.map((message) => (

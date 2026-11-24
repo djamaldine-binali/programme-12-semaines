@@ -24,8 +24,7 @@
 .safety {
   padding: 16px;
   border-radius: var(--radius-small);
-  background: var(--surface);
-  box-shadow: inset 4px 0 0 var(--coral);
+  background: var(--sun-soft);
 }
 
 .safety strong {

@@ -88,8 +88,7 @@
   gap: 14px;
   padding: 16px 18px;
   border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: inset 0 0 0 2px var(--coral);
+  background: var(--sun-soft);
   color: var(--ink);
   text-decoration: none;
 }

@@ -1,7 +1,6 @@
 :root {
   color-scheme: light dark;
 
-  /* Soleil franc: flat sun yellow, plain coral for actions, plum ink. No gradients. */
   --bg: light-dark(#fffaf3, #1e1527);
   --surface: light-dark(#ffffff, #2a1f35);
   --ink: light-dark(#2b1b3d, #fff6ec);

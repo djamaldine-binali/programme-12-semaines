@@ -1,5 +1,4 @@
-import { Apple, Check, ChevronRight, Coffee, Footprints, Salad, UtensilsCrossed, type LucideIcon } from 'lucide-react'
-import { ActivityIcon } from '../components/ActivityIcon'
+import { Check, ChevronRight, Footprints } from 'lucide-react'
 import { CheckInCard } from '../components/CheckInCard'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
@@ -7,7 +6,7 @@ import { OtterMark } from '../components/OtterMark'
 import { WaterTracker } from '../components/WaterTracker'
 import { useNow } from '../lib/useNow'
 import { useWater } from '../lib/useWater'
-import { meals, type MealSlot } from '../data/meals'
+import { meals } from '../data/meals'
 import { program } from '../data/program'
 import { activityInfo } from '../lib/activities'
 import { formatLongDate, formatNumber } from '../lib/format'
@@ -22,13 +21,6 @@ function weekState(week: number, current: number): 'done' | 'current' | undefine
   if (week < current) return 'done'
   if (week === current) return 'current'
   return undefined
-}
-
-const mealIcons: Record<MealSlot, LucideIcon> = {
-  'Petit-déjeuner': Coffee,
-  Déjeuner: Salad,
-  Collation: Apple,
-  Dîner: UtensilsCrossed,
 }
 
 function greeting(hour: number): string {
@@ -74,12 +66,6 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
       </header>
 
       <section className={`card ${styles.session}`} aria-labelledby="today-activity">
-        <div className={styles.sessionHead}>
-          <span className={`${styles.badge} ${styles[info.tone]}`}>
-            <ActivityIcon kind={info.kind} />
-          </span>
-          <p className={styles.eyebrow}>Ta séance du jour</p>
-        </div>
         <h1 id="today-activity" className={styles.activityTitle}>
           {info.title}
         </h1>
@@ -127,13 +113,9 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
         </div>
         <ul className={styles.menuList}>
           {todayMeals.map((meal) => {
-            const Icon = mealIcons[meal.slot]
             return (
               <li key={meal.slot}>
                 <a href={`#/repas/recette/${meal.recipe}`}>
-                  <span className={styles.menuIcon}>
-                    <Icon size={20} aria-hidden="true" />
-                  </span>
                   <span>
                     <span className={styles.menuSlot}>{meal.slot}</span>
                     <span className={styles.menuTitle}>{meals.recipes[meal.recipe].title}</span>

@@ -50,7 +50,6 @@
   width: 100%;
 }
 
-/* The main call to action: plain coral, nothing else on the screen looks like it. */
 .primary {
   background: var(--coral-strong);
   color: var(--on-accent);

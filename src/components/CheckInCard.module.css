@@ -1,18 +1,5 @@
-.head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.title {
   margin-bottom: 10px;
-}
-
-.icon {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: var(--sand);
-  color: var(--violet);
 }
 
 .muted {
