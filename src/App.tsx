@@ -79,12 +79,10 @@ export function App() {
 
   // Each new screen announces itself: focus its title, like a page load would.
   // Not on the first load, where the browser already starts at the top of the page.
-  const firstRoute = useRef(true)
+  const shownRoute = useRef(route)
   useEffect(() => {
-    if (firstRoute.current) {
-      firstRoute.current = false
-      return
-    }
+    if (shownRoute.current === route) return
+    shownRoute.current = route
     const heading = document.querySelector<HTMLElement>('main h1')
     if (!heading) return
     heading.tabIndex = -1
