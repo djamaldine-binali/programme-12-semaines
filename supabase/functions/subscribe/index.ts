@@ -9,7 +9,10 @@ const body = z.object({
     endpoint: z.string().max(1000).regex(pushHosts),
     keys: z.object({ p256dh: z.string().max(200), auth: z.string().max(100) }),
   }),
-  timezone: z.string().max(64).refine((zone) => Intl.supportedValuesOf('timeZone').includes(zone)),
+  timezone: z
+    .string()
+    .max(64)
+    .refine((zone) => Intl.supportedValuesOf('timeZone').includes(zone)),
   hours: z.array(z.number().int().min(0).max(23)).min(1).max(12),
 })
 

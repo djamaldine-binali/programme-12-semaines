@@ -1,0 +1,18 @@
+name: Keep the reminders project awake
+
+# Free Supabase projects pause after a quiet week; one real query a day keeps the water reminders running.
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    if: vars.VITE_PUSH_FUNCTIONS_URL != ''
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl --fail --silent --show-error -X POST "${{ vars.VITE_PUSH_FUNCTIONS_URL }}/unsubscribe" \
+            -H 'Content-Type: application/json' -d '{"endpoint":"keepalive"}'
