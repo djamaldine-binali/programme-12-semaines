@@ -2,10 +2,11 @@ import { Check } from 'lucide-react'
 import buttons from '../components/buttons.module.css'
 import { SettingsLink } from '../components/SettingsLink'
 import { WeekList } from '../components/WeekList'
+import { meals } from '../data/meals'
 import { program } from '../data/program'
 import { activityInfo } from '../lib/activities'
 import { formatLongDate, formatNumber } from '../lib/format'
-import { stepsGoal, type DayKey, type ProgramDay } from '../lib/schedule'
+import { stepsGoal, weekdayOf, type DayKey, type ProgramDay } from '../lib/schedule'
 import { useAppState } from '../state/appStateContext'
 import { OtherSessions } from './OtherSessions'
 import styles from './Today.module.css'
@@ -23,6 +24,7 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
   const info = activityInfo(day.activity, day.week, state.runShift)
   const doneToday = state.log.some((entry) => entry.day === today && entry.kind === info.kind)
   const isPostureOrRest = day.activity === 'posture_ou_repos'
+  const todayMeals = meals.days[weekdayOf(today)].meals
 
   return (
     <div className={styles.stack}>
@@ -60,6 +62,18 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
       <p className={styles.note}>
         <strong>Pas du mois {day.month}&nbsp;:</strong> {formatNumber(stepsGoal(day.month))} par jour.
       </p>
+
+      <section aria-labelledby="menu-title" className={styles.menu}>
+        <h2 id="menu-title">Au menu aujourd'hui</h2>
+        <ul>
+          {todayMeals.map((meal) => (
+            <li key={meal.slot}>
+              <span className={styles.menuSlot}>{meal.slot}</span> {meals.recipes[meal.recipe].title}
+            </li>
+          ))}
+        </ul>
+        <a href="#/repas">Recettes et courses</a>
+      </section>
 
       <WeekList startDate={startDate} week={day.week} today={today} />
 

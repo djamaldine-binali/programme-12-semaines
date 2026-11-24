@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import { program } from '../data/program'
 import type { Tip } from '../data/types'
 import { formatNumber } from '../lib/format'
@@ -53,6 +54,13 @@ export function Tips() {
 
       <section aria-labelledby="food-title">
         <h2 id="food-title">Bien manger, simplement</h2>
+        <a href="#/repas" className={styles.mealsLink}>
+          <span>
+            <strong>Repas de la semaine</strong>
+            <span>Menus jour par jour, recettes et listes de courses avec les prix.</span>
+          </span>
+          <ChevronRight size={22} aria-hidden="true" />
+        </a>
         <TipList tips={program.nutrition} />
       </section>
 

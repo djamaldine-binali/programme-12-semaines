@@ -1,0 +1,1622 @@
+{
+  "source": {
+    "store": "Intermarché Super Septèmes-les-Vallons",
+    "checked_on": "2026-11-23"
+  },
+  "recipes": {
+    "porridge": {
+      "title": "Porridge banane cannelle",
+      "minutes": 5,
+      "equipment": "Micro-ondes",
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "50 g de flocons d'avoine",
+          "two": "100 g de flocons d'avoine"
+        },
+        {
+          "one": "200 ml de lait demi-écrémé",
+          "two": "400 ml de lait demi-écrémé"
+        },
+        {
+          "one": "1 banane",
+          "two": "2 bananes"
+        },
+        {
+          "one": "1 pincée de cannelle",
+          "two": "1 pincée de cannelle"
+        }
+      ],
+      "steps": [
+        "Mets les flocons et le lait dans un grand bol.",
+        "Fais chauffer 2 minutes au micro-ondes, remue, puis encore 30 secondes. À la casserole : 4 minutes à feu doux en remuant.",
+        "Ajoute la banane en rondelles et la cannelle."
+      ],
+      "note": null
+    },
+    "tartines": {
+      "title": "Tartines de chèvre, œuf dur et pomme",
+      "minutes": 12,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "2 tranches de pain de mie complet",
+          "two": "4 tranches de pain de mie complet"
+        },
+        {
+          "one": "20 g de chèvre",
+          "two": "40 g de chèvre"
+        },
+        {
+          "one": "1 œuf",
+          "two": "2 œufs"
+        },
+        {
+          "one": "1 pomme",
+          "two": "2 pommes"
+        }
+      ],
+      "steps": [
+        "Plonge l'œuf dans l'eau bouillante pour 9 minutes, puis passe-le sous l'eau froide et écale-le.",
+        "Fais griller le pain, étale le chèvre et pose l'œuf en rondelles dessus.",
+        "La pomme se croque à côté ou s'emporte pour plus tard."
+      ],
+      "note": "Tu peux cuire plusieurs œufs d'un coup : ils se gardent 3 jours au frigo dans leur coquille."
+    },
+    "bol-fromage-blanc": {
+      "title": "Bol fromage blanc, avoine, pomme et miel",
+      "minutes": 5,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "200 g de fromage blanc 0 %",
+          "two": "400 g de fromage blanc 0 %"
+        },
+        {
+          "one": "30 g de flocons d'avoine",
+          "two": "60 g de flocons d'avoine"
+        },
+        {
+          "one": "1 pomme",
+          "two": "2 pommes"
+        },
+        {
+          "one": "1 cuillère à café de miel",
+          "two": "2 cuillères à café de miel"
+        }
+      ],
+      "steps": ["Mets le fromage blanc dans un bol.", "Ajoute la pomme en petits dés, les flocons et le miel."],
+      "note": null
+    },
+    "pancakes": {
+      "title": "Pancakes banane avoine",
+      "minutes": 15,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 banane bien mûre",
+          "two": "2 bananes bien mûres"
+        },
+        {
+          "one": "1 œuf",
+          "two": "2 œufs"
+        },
+        {
+          "one": "40 g de flocons d'avoine",
+          "two": "80 g de flocons d'avoine"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "1 cuillère à café d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Écrase la banane à la fourchette, puis mélange-la avec l'œuf et les flocons.",
+        "Huile une poêle avec un essuie-tout, à feu moyen.",
+        "Verse de petites louches de pâte et compte 2 minutes par face, jusqu'à ce qu'elles soient dorées."
+      ],
+      "note": null
+    },
+    "oeufs-brouilles": {
+      "title": "Œufs brouillés sur pain complet",
+      "minutes": 10,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "2 œufs",
+          "two": "4 œufs"
+        },
+        {
+          "one": "2 tranches de pain de mie complet",
+          "two": "4 tranches de pain de mie complet"
+        },
+        {
+          "one": "1 tomate",
+          "two": "2 tomates"
+        },
+        {
+          "one": "1 tranche de jambon blanc",
+          "two": "2 tranches de jambon blanc"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "1 cuillère à café d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Bats les œufs avec une pincée de sel et de poivre.",
+        "Verse-les dans une poêle huilée à feu doux et remue sans arrêt 2 à 3 minutes : retire-les quand ils sont encore un peu crémeux.",
+        "Sers sur le pain grillé, avec le jambon et la tomate en tranches."
+      ],
+      "note": null
+    },
+    "yaourt-pomme": {
+      "title": "Yaourt nature et pomme",
+      "minutes": 1,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 yaourt nature",
+          "two": "2 yaourts nature"
+        },
+        {
+          "one": "1 pomme",
+          "two": "2 pommes"
+        }
+      ],
+      "steps": [],
+      "note": null
+    },
+    "banane-course": {
+      "title": "Une banane avant la course",
+      "minutes": 1,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 banane",
+          "two": "2 bananes"
+        }
+      ],
+      "steps": [],
+      "note": "Mange-la environ une heure avant de courir."
+    },
+    "yaourt-cookies": {
+      "title": "Yaourt nature et 2 cookies",
+      "minutes": 1,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 yaourt nature",
+          "two": "2 yaourts nature"
+        },
+        {
+          "one": "2 cookies avoine maison",
+          "two": "4 cookies avoine maison"
+        }
+      ],
+      "steps": [],
+      "note": null
+    },
+    "fromage-blanc-cookies": {
+      "title": "Fromage blanc et 2 cookies",
+      "minutes": 1,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "150 g de fromage blanc 0 %",
+          "two": "300 g de fromage blanc 0 %"
+        },
+        {
+          "one": "2 cookies avoine maison",
+          "two": "4 cookies avoine maison"
+        }
+      ],
+      "steps": [],
+      "note": null
+    },
+    "pomme": {
+      "title": "Une pomme",
+      "minutes": 1,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 pomme",
+          "two": "2 pommes"
+        }
+      ],
+      "steps": [],
+      "note": null
+    },
+    "cookies": {
+      "title": "Cookies avoine, banane et chocolat",
+      "minutes": 25,
+      "equipment": "Four",
+      "yield": {
+        "one": "10 cookies pour la semaine",
+        "two": "20 cookies pour la semaine"
+      },
+      "ingredients": [
+        {
+          "one": "2 bananes bien mûres",
+          "two": "4 bananes bien mûres"
+        },
+        {
+          "one": "120 g de flocons d'avoine",
+          "two": "240 g de flocons d'avoine"
+        },
+        {
+          "one": "40 g de pépites de chocolat",
+          "two": "80 g de pépites de chocolat"
+        },
+        {
+          "one": "1 pincée de cannelle",
+          "two": "1 pincée de cannelle"
+        }
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C.",
+        "Écrase les bananes à la fourchette, ajoute les flocons, la cannelle et les pépites. La pâte est collante, c'est normal.",
+        "Forme des boules, aplatis-les sur une plaque huilée en laissant un peu d'espace entre elles.",
+        "Fais cuire 12 à 15 minutes, jusqu'à ce que les bords soient dorés. Ils durcissent en refroidissant."
+      ],
+      "note": "Garde-les au frigo dans une boîte fermée et mange-les dans les 4 jours."
+    },
+    "sandwich-chevre": {
+      "title": "Sandwich chèvre, miel et poivron grillé",
+      "minutes": 15,
+      "equipment": "Airfryer ou poêle",
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "3 tranches de pain de mie complet",
+          "two": "6 tranches de pain de mie complet"
+        },
+        {
+          "one": "50 g de chèvre",
+          "two": "100 g de chèvre"
+        },
+        {
+          "one": "1 cuillère à café de miel",
+          "two": "2 cuillères à café de miel"
+        },
+        {
+          "one": "½ poivron",
+          "two": "1 poivron"
+        },
+        {
+          "one": "1 carotte",
+          "two": "2 carottes"
+        }
+      ],
+      "steps": [
+        "Coupe le poivron en lanières et fais-le griller 8 minutes à l'airfryer à 200 °C, ou à la poêle sans matière grasse.",
+        "Fais griller le pain. Étale le chèvre, ajoute le poivron et un filet de miel.",
+        "Râpe la carotte pour l'accompagner, avec une pincée de sel."
+      ],
+      "note": null
+    },
+    "poulet-curry": {
+      "title": "Poulet au curry et riz",
+      "minutes": 30,
+      "equipment": null,
+      "yield": {
+        "one": "Le dîner et le déjeuner de demain",
+        "two": "Le dîner et le déjeuner de demain, pour deux"
+      },
+      "ingredients": [
+        {
+          "one": "220 g de filet de poulet",
+          "two": "440 g de filet de poulet"
+        },
+        {
+          "one": "180 g de riz",
+          "two": "360 g de riz"
+        },
+        {
+          "one": "1 oignon",
+          "two": "2 oignons"
+        },
+        {
+          "one": "200 g de tomates pelées",
+          "two": "400 g de tomates pelées"
+        },
+        {
+          "one": "80 g de crème fraîche légère",
+          "two": "160 g de crème fraîche légère"
+        },
+        {
+          "one": "2 cuillères à café de curry",
+          "two": "1 cuillère à soupe de curry"
+        },
+        {
+          "one": "2 cuillères à café d'huile d'olive",
+          "two": "1 cuillère à soupe d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Fais cuire le riz 10 à 12 minutes dans l'eau bouillante salée.",
+        "Coupe le poulet en dés et l'oignon en lamelles. Fais-les dorer 6 à 8 minutes dans une sauteuse avec l'huile.",
+        "Ajoute le curry, remue 30 secondes, puis les tomates pelées écrasées. Laisse mijoter 10 minutes.",
+        "Hors du feu, ajoute la crème. Mets la moitié dans une boîte pour demain midi."
+      ],
+      "note": null
+    },
+    "chakchouka": {
+      "title": "Chakchouka",
+      "minutes": 25,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "1 poivron",
+          "two": "2 poivrons"
+        },
+        {
+          "one": "½ oignon",
+          "two": "1 oignon"
+        },
+        {
+          "one": "200 g de tomates pelées",
+          "two": "400 g de tomates pelées"
+        },
+        {
+          "one": "3 œufs",
+          "two": "6 œufs"
+        },
+        {
+          "one": "1 pincée de cumin",
+          "two": "2 pincées de cumin"
+        },
+        {
+          "one": "quelques brins de persil",
+          "two": "quelques brins de persil"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "2 cuillères à café d'huile d'olive"
+        },
+        {
+          "one": "2 tranches de pain de mie complet",
+          "two": "4 tranches de pain de mie complet"
+        }
+      ],
+      "steps": [
+        "Fais revenir l'oignon et le poivron en lanières 8 minutes à la poêle avec l'huile.",
+        "Ajoute les tomates pelées écrasées, le cumin, du sel et du poivre. Laisse compoter 10 minutes.",
+        "Creuse des petits puits, casse les œufs dedans, couvre et laisse cuire 5 à 6 minutes : le blanc doit être pris.",
+        "Parsème de persil et sers avec le pain grillé pour saucer."
+      ],
+      "note": null
+    },
+    "salade-thon": {
+      "title": "Salade thon, pois chiches et crudités",
+      "minutes": 10,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "130 g de pois chiches",
+          "two": "260 g de pois chiches"
+        },
+        {
+          "one": "105 g de thon au naturel",
+          "two": "210 g de thon au naturel"
+        },
+        {
+          "one": "1 tomate",
+          "two": "2 tomates"
+        },
+        {
+          "one": "½ concombre",
+          "two": "1 concombre"
+        },
+        {
+          "one": "1 cuillère à soupe d'huile d'olive",
+          "two": "2 cuillères à soupe d'huile d'olive"
+        },
+        {
+          "one": "un filet de citron",
+          "two": "un filet de citron"
+        }
+      ],
+      "steps": [
+        "Rince et égoutte les pois chiches.",
+        "Coupe la tomate et le concombre en dés, émiette le thon.",
+        "Mélange le tout avec l'huile, le citron, du sel et du poivre."
+      ],
+      "note": null
+    },
+    "shawarma": {
+      "title": "Crispy shawarma de poulet, sauce à l'ail et frites maison",
+      "minutes": 40,
+      "equipment": "Airfryer",
+      "yield": {
+        "one": "Le dîner, et le poulet du wrap de demain",
+        "two": "Le dîner, et le poulet des wraps de demain, pour deux"
+      },
+      "ingredients": [
+        {
+          "one": "220 g de filet de poulet",
+          "two": "440 g de filet de poulet"
+        },
+        {
+          "one": "1 cuillère à café de cumin",
+          "two": "2 cuillères à café de cumin"
+        },
+        {
+          "one": "1 cuillère à café de paprika",
+          "two": "2 cuillères à café de paprika"
+        },
+        {
+          "one": "½ cuillère à café de curry",
+          "two": "1 cuillère à café de curry"
+        },
+        {
+          "one": "2 yaourts nature",
+          "two": "4 yaourts nature"
+        },
+        {
+          "one": "½ cuillère à café d'ail en semoule",
+          "two": "1 cuillère à café d'ail en semoule"
+        },
+        {
+          "one": "un filet de citron",
+          "two": "un filet de citron"
+        },
+        {
+          "one": "2 pommes de terre",
+          "two": "4 pommes de terre"
+        },
+        {
+          "one": "1 cuillère à soupe d'huile d'olive",
+          "two": "2 cuillères à soupe d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Coupe le poulet en fines lanières et mélange-le avec le cumin, le paprika, le curry, la moitié de l'huile, du sel et du poivre. Laisse mariner pendant que tu fais les frites.",
+        "Coupe les pommes de terre en frites, rince-les, sèche-les bien et mélange-les avec le reste de l'huile. Airfryer à 200 °C, 18 à 20 minutes, en secouant deux fois.",
+        "Fais saisir le poulet à feu vif dans une poêle bien chaude, 6 à 8 minutes, jusqu'à ce qu'il soit doré et croustillant sur les bords.",
+        "Sauce : mélange les yaourts avec l'ail, le citron et une pincée de sel.",
+        "Garde la moitié du poulet et de la sauce dans une boîte pour le wrap de demain midi."
+      ],
+      "note": null
+    },
+    "wrap-shawarma": {
+      "title": "Wrap shawarma",
+      "minutes": 5,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "Le poulet et la sauce gardés d'hier soir",
+          "two": "Le poulet et la sauce gardés d'hier soir"
+        },
+        {
+          "one": "2 tortillas de blé",
+          "two": "4 tortillas de blé"
+        },
+        {
+          "one": "½ concombre",
+          "two": "1 concombre"
+        },
+        {
+          "one": "1 tomate",
+          "two": "2 tomates"
+        }
+      ],
+      "steps": [
+        "Réchauffe le poulet 1 minute à la poêle ou au micro-ondes.",
+        "Garnis les tortillas de sauce, de concombre en bâtonnets, de tomate en rondelles et de poulet, puis roule-les bien serré."
+      ],
+      "note": null
+    },
+    "chorba": {
+      "title": "Chorba et bricks au thon",
+      "minutes": 50,
+      "equipment": "Airfryer",
+      "yield": {
+        "one": "Le dîner et le déjeuner de demain",
+        "two": "Le dîner et le déjeuner de demain, pour deux"
+      },
+      "ingredients": [
+        {
+          "one": "160 g de filet de poulet",
+          "two": "320 g de filet de poulet"
+        },
+        {
+          "one": "1 oignon",
+          "two": "2 oignons"
+        },
+        {
+          "one": "1 carotte",
+          "two": "2 carottes"
+        },
+        {
+          "one": "1 courgette",
+          "two": "2 courgettes"
+        },
+        {
+          "one": "200 g de tomates pelées",
+          "two": "400 g de tomates pelées"
+        },
+        {
+          "one": "1 cuillère à soupe de concentré de tomates",
+          "two": "1 cuillère à soupe de concentré de tomates"
+        },
+        {
+          "one": "120 g de pois chiches",
+          "two": "240 g de pois chiches"
+        },
+        {
+          "one": "60 g de vermicelles",
+          "two": "120 g de vermicelles"
+        },
+        {
+          "one": "1 cuillère à café de ras el hanout",
+          "two": "2 cuillères à café de ras el hanout"
+        },
+        {
+          "one": "½ botte de persil",
+          "two": "1 botte de persil"
+        },
+        {
+          "one": "1 cube de bouillon",
+          "two": "1 cube de bouillon"
+        },
+        {
+          "one": "2 cuillères à café d'huile d'olive",
+          "two": "1 cuillère à soupe d'huile d'olive"
+        },
+        {
+          "one": "2 feuilles de brick",
+          "two": "4 feuilles de brick"
+        },
+        {
+          "one": "80 g de thon au naturel",
+          "two": "160 g de thon au naturel"
+        },
+        {
+          "one": "1 œuf",
+          "two": "2 œufs"
+        }
+      ],
+      "steps": [
+        "Coupe le poulet en petits dés, l'oignon, la carotte et la courgette en petits cubes.",
+        "Fais revenir le poulet et l'oignon 5 minutes dans une grande casserole avec la moitié de l'huile. Ajoute le ras el hanout, le concentré et les tomates pelées écrasées.",
+        "Verse 1 litre d'eau par personne avec le cube, ajoute la carotte et la courgette. Laisse cuire 25 minutes à feu doux.",
+        "Ajoute les pois chiches rincés et les vermicelles, 8 minutes de plus. Parsème de persil haché.",
+        "Bricks : mélange le thon émietté avec l'œuf battu et un peu de persil. Plie chaque feuille en deux, garnis, roule en cigare, badigeonne du reste d'huile et fais dorer 8 minutes à l'airfryer à 200 °C.",
+        "Garde la moitié de la chorba et une brick par personne pour demain midi."
+      ],
+      "note": null
+    },
+    "assassina": {
+      "title": "Spaghetti all'assassina et mozzarella",
+      "minutes": 30,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "80 g de spaghetti",
+          "two": "160 g de spaghetti"
+        },
+        {
+          "one": "150 g de tomates pelées (le reste de la boîte)",
+          "two": "300 g de tomates pelées (le reste de la boîte)"
+        },
+        {
+          "one": "½ cuillère à café d'ail en semoule",
+          "two": "1 cuillère à café d'ail en semoule"
+        },
+        {
+          "one": "1 pincée de piment de Cayenne, plus si tu aimes",
+          "two": "2 pincées de piment de Cayenne, plus si tu aimes"
+        },
+        {
+          "one": "2 cuillères à café d'huile d'olive",
+          "two": "4 cuillères à café d'huile d'olive"
+        },
+        {
+          "one": "½ mozzarella",
+          "two": "1 mozzarella"
+        },
+        {
+          "one": "1 tomate",
+          "two": "2 tomates"
+        }
+      ],
+      "steps": [
+        "Mixe ou écrase finement les tomates pelées, puis mélange-les avec deux fois leur volume d'eau et une pincée de sel. Garde ce bouillon au chaud.",
+        "Dans une grande poêle, chauffe l'huile avec l'ail et le piment 30 secondes, puis pose les spaghetti crus bien à plat avec une louche de bouillon.",
+        "Laisse-les griller sans remuer jusqu'à ce que le bouillon soit absorbé, retourne-les, ajoute une louche, et ainsi de suite pendant 15 à 18 minutes. Ils doivent être cuits et croustillants par endroits.",
+        "Sers avec la mozzarella déchirée par-dessus, comme une burrata, et la tomate en salade."
+      ],
+      "note": "Le plat de Bari : les pâtes cuisent dans la poêle comme un risotto et grillent un peu, c'est ce qui leur donne leur goût."
+    },
+    "patate-douce": {
+      "title": "Patate douce rôtie, viande hachée et guacamole",
+      "minutes": 40,
+      "equipment": "Airfryer ou four",
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "½ patate douce",
+          "two": "1 patate douce"
+        },
+        {
+          "one": "100 g de steak haché 5 % surgelé",
+          "two": "200 g de steak haché 5 % surgelé"
+        },
+        {
+          "one": "½ avocat",
+          "two": "1 avocat"
+        },
+        {
+          "one": "½ tomate",
+          "two": "1 tomate"
+        },
+        {
+          "one": "¼ d'oignon",
+          "two": "½ oignon"
+        },
+        {
+          "one": "¼ de citron",
+          "two": "¼ de citron"
+        },
+        {
+          "one": "1 pincée de cumin",
+          "two": "2 pincées de cumin"
+        },
+        {
+          "one": "1 pincée de paprika",
+          "two": "2 pincées de paprika"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "2 cuillères à café d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Coupe la patate douce en gros cubes, mélange-les avec l'huile, le paprika et du sel. Airfryer à 200 °C, 18 à 20 minutes, ou four à 220 °C, 30 minutes.",
+        "Fais cuire la viande sans la décongeler à la poêle, en l'émiettant à la spatule jusqu'à ce qu'elle ne soit plus rose. Ajoute le cumin, du sel et du poivre.",
+        "Guacamole : écrase l'avocat avec le citron, la tomate et l'oignon hachés fin, et une pincée de sel.",
+        "Sers la patate douce, la viande et le guacamole ensemble."
+      ],
+      "note": "Prends l'avocat encore un peu ferme lundi : il sera mûr samedi."
+    },
+    "steak-poivre": {
+      "title": "Steak, frites maison et sauce au poivre",
+      "minutes": 35,
+      "equipment": "Airfryer",
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "100 g de steak haché 5 % surgelé",
+          "two": "200 g de steak haché 5 % surgelé"
+        },
+        {
+          "one": "2 pommes de terre",
+          "two": "4 pommes de terre"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "2 cuillères à café d'huile d'olive"
+        },
+        {
+          "one": "40 g de crème fraîche légère",
+          "two": "80 g de crème fraîche légère"
+        },
+        {
+          "one": "½ cuillère à café de poivre moulu",
+          "two": "1 cuillère à café de poivre moulu"
+        },
+        {
+          "one": "1 carotte",
+          "two": "2 carottes"
+        }
+      ],
+      "steps": [
+        "Coupe les pommes de terre en frites, rince-les, sèche-les bien et mélange-les avec l'huile et du sel. Airfryer à 200 °C, 18 à 20 minutes, en secouant deux fois.",
+        "Saisis le steak sans le décongeler 1 minute par face à feu vif, puis 5 à 6 minutes à feu doux en le retournant. Réserve-le.",
+        "Dans la même poêle, à feu doux, mets la crème et le poivre avec une pincée de sel, et décolle les sucs 1 minute.",
+        "Sers le steak nappé de sauce, avec les frites et la carotte râpée."
+      ],
+      "note": null
+    },
+    "cordon-bleu": {
+      "title": "Cordon bleu maison et tagliatelles",
+      "minutes": 35,
+      "equipment": "Airfryer",
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "130 g de filet de poulet",
+          "two": "260 g de filet de poulet"
+        },
+        {
+          "one": "½ tranche de jambon blanc",
+          "two": "½ tranche de jambon blanc"
+        },
+        {
+          "one": "20 g de mozzarella",
+          "two": "40 g de mozzarella"
+        },
+        {
+          "one": "1 œuf",
+          "two": "1 œuf"
+        },
+        {
+          "one": "25 g de chapelure",
+          "two": "50 g de chapelure"
+        },
+        {
+          "one": "70 g de tagliatelles",
+          "two": "140 g de tagliatelles"
+        },
+        {
+          "one": "150 g de haricots verts",
+          "two": "300 g de haricots verts"
+        },
+        {
+          "one": "2 cuillères à café d'huile d'olive",
+          "two": "4 cuillères à café d'huile d'olive"
+        }
+      ],
+      "steps": [
+        "Ouvre le filet de poulet en deux dans l'épaisseur sans le séparer, comme un livre. Garnis de jambon et de mozzarella, puis referme.",
+        "Passe-le dans l'œuf battu puis dans la chapelure, et badigeonne-le de la moitié de l'huile.",
+        "Fais-le cuire 15 à 18 minutes à l'airfryer à 190 °C, en le retournant à mi-cuisson. Il doit être bien cuit à cœur.",
+        "Pendant ce temps, fais cuire les tagliatelles et réchauffe les haricots verts avec le reste de l'huile."
+      ],
+      "note": "Le poulet de dimanche s'achète lundi avec le reste : mets-le au congélateur le jour des courses et sors-le au frigo samedi soir."
+    },
+    "veloute": {
+      "title": "Velouté de légumes et tartine de chèvre",
+      "minutes": 35,
+      "equipment": null,
+      "yield": null,
+      "ingredients": [
+        {
+          "one": "2 carottes",
+          "two": "4 carottes"
+        },
+        {
+          "one": "150 g de haricots verts (le reste de la boîte)",
+          "two": "300 g de haricots verts (le reste de la boîte)"
+        },
+        {
+          "one": "1 pomme de terre",
+          "two": "2 pommes de terre"
+        },
+        {
+          "one": "½ oignon",
+          "two": "1 oignon"
+        },
+        {
+          "one": "1 cube de bouillon",
+          "two": "1 cube de bouillon"
+        },
+        {
+          "one": "1 cuillère à café d'huile d'olive",
+          "two": "1 cuillère à café d'huile d'olive"
+        },
+        {
+          "one": "1 tranche de pain de mie complet",
+          "two": "2 tranches de pain de mie complet"
+        },
+        {
+          "one": "25 g de chèvre",
+          "two": "50 g de chèvre"
+        }
+      ],
+      "steps": [
+        "Coupe les légumes en morceaux et fais-les revenir 3 minutes dans une casserole avec l'huile.",
+        "Couvre d'eau à hauteur, ajoute le cube et laisse cuire 20 minutes.",
+        "Mixe en ajoutant un peu d'eau de cuisson si c'est trop épais.",
+        "Fais griller le pain avec le chèvre dessus, 3 minutes à l'airfryer ou au four."
+      ],
+      "note": null
+    }
+  },
+  "days": [
+    {
+      "day": "lundi",
+      "why": "Séance de renfo : des protéines à chaque repas aident tes muscles à se réparer.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "porridge",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "sandwich-chevre",
+          "note": null
+        },
+        {
+          "slot": "Collation",
+          "recipe": "yaourt-pomme",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "poulet-curry",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "mardi",
+      "why": "Course : le riz du curry à midi et une banane une heure avant de courir, pour avoir de l'énergie sans te sentir lourde. Ce soir, prépare aussi les cookies de la semaine.",
+      "prep": "cookies",
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "tartines",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "poulet-curry",
+          "note": "Les restes d'hier soir"
+        },
+        {
+          "slot": "Collation",
+          "recipe": "banane-course",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "chakchouka",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "mercredi",
+      "why": "Renfo : poulet shawarma et frites maison ce soir, à l'airfryer. Garde la moitié du poulet pour demain.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "bol-fromage-blanc",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "salade-thon",
+          "note": null
+        },
+        {
+          "slot": "Collation",
+          "recipe": "yaourt-cookies",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "shawarma",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "jeudi",
+      "why": "Journée plus calme : le wrap avec le poulet d'hier, et une chorba qui fait aussi le repas de demain.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "porridge",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "wrap-shawarma",
+          "note": null
+        },
+        {
+          "slot": "Collation",
+          "recipe": "yaourt-pomme",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "chorba",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "vendredi",
+      "why": "Renfo : la chorba et sa brick à midi, les pâtes all'assassina le soir.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "tartines",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "chorba",
+          "note": "Les restes d'hier soir"
+        },
+        {
+          "slot": "Collation",
+          "recipe": "fromage-blanc-cookies",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "assassina",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "samedi",
+      "why": "Samedi sportif : des pancakes pour démarrer, et steak frites sauce au poivre le soir.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "pancakes",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "patate-douce",
+          "note": null
+        },
+        {
+          "slot": "Collation",
+          "recipe": "yaourt-cookies",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "steak-poivre",
+          "note": null
+        }
+      ]
+    },
+    {
+      "day": "dimanche",
+      "why": "Repos : le cordon bleu maison à midi, un velouté léger le soir.",
+      "prep": null,
+      "meals": [
+        {
+          "slot": "Petit-déjeuner",
+          "recipe": "oeufs-brouilles",
+          "note": null
+        },
+        {
+          "slot": "Déjeuner",
+          "recipe": "cordon-bleu",
+          "note": null
+        },
+        {
+          "slot": "Collation",
+          "recipe": "pomme",
+          "note": null
+        },
+        {
+          "slot": "Dîner",
+          "recipe": "veloute",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "shopping": {
+    "one": {
+      "sections": [
+        {
+          "title": "Fruits et légumes",
+          "items": [
+            {
+              "product": "Bananes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 1,
+              "price_cents": 60
+            },
+            {
+              "product": "Bananes",
+              "pack": "lot de 5",
+              "quantity": 1,
+              "price_cents": 249
+            },
+            {
+              "product": "Poivrons",
+              "pack": "en vrac, à la pièce",
+              "quantity": 2,
+              "price_cents": 100
+            },
+            {
+              "product": "Carottes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 5,
+              "price_cents": 29
+            },
+            {
+              "product": "Pommes",
+              "pack": "sachet de 2 kg (environ 10 pommes)",
+              "quantity": 1,
+              "price_cents": 299
+            },
+            {
+              "product": "Oignons jaunes",
+              "pack": "filet de 1,5 kg (environ 10 oignons)",
+              "quantity": 1,
+              "price_cents": 169
+            },
+            {
+              "product": "Persil",
+              "pack": "la botte",
+              "quantity": 1,
+              "price_cents": 119
+            },
+            {
+              "product": "Tomates",
+              "pack": "en vrac, à la pièce",
+              "quantity": 5,
+              "price_cents": 33
+            },
+            {
+              "product": "Concombre",
+              "pack": "à la pièce",
+              "quantity": 1,
+              "price_cents": 99
+            },
+            {
+              "product": "Citron",
+              "pack": "en vrac, à la pièce",
+              "quantity": 1,
+              "price_cents": 52
+            },
+            {
+              "product": "Pommes de terre",
+              "pack": "en vrac, à la pièce",
+              "quantity": 5,
+              "price_cents": 30
+            },
+            {
+              "product": "Courgettes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 1,
+              "price_cents": 66
+            },
+            {
+              "product": "Patate douce",
+              "pack": "en vrac, à la pièce (environ 500 g)",
+              "quantity": 1,
+              "price_cents": 125
+            },
+            {
+              "product": "Avocat",
+              "pack": "à la pièce",
+              "quantity": 1,
+              "price_cents": 129
+            }
+          ]
+        },
+        {
+          "title": "Viandes et poissons",
+          "items": [
+            {
+              "product": "Filet de poulet",
+              "pack": "Notre Sélection, barquette de 1 kg",
+              "quantity": 1,
+              "price_cents": 889
+            },
+            {
+              "product": "Thon au naturel",
+              "pack": "Odyssée, boîte de 185 g égouttés",
+              "quantity": 1,
+              "price_cents": 281
+            },
+            {
+              "product": "Jambon blanc",
+              "pack": "Monique Ranou, 4 tranches",
+              "quantity": 1,
+              "price_cents": 170
+            }
+          ]
+        },
+        {
+          "title": "Crèmerie",
+          "items": [
+            {
+              "product": "Lait demi-écrémé",
+              "pack": "Pâturages, brique de 1 L",
+              "quantity": 1,
+              "price_cents": 101
+            },
+            {
+              "product": "Fromage de chèvre Sainte-Maure",
+              "pack": "Pâturages, 200 g",
+              "quantity": 1,
+              "price_cents": 206
+            },
+            {
+              "product": "Yaourts nature",
+              "pack": "Pâturages, 4 pots de 125 g",
+              "quantity": 2,
+              "price_cents": 65
+            },
+            {
+              "product": "Crème fraîche légère 15 %",
+              "pack": "Bridélice, pot de 20 cl",
+              "quantity": 1,
+              "price_cents": 80
+            },
+            {
+              "product": "Œufs plein air",
+              "pack": "Volaé, boîte de 12",
+              "quantity": 1,
+              "price_cents": 292
+            },
+            {
+              "product": "Fromage blanc 0 %",
+              "pack": "Pâturages, 8 pots de 100 g",
+              "quantity": 1,
+              "price_cents": 181
+            },
+            {
+              "product": "Mozzarella",
+              "pack": "Pâturages, sachet de 125 g",
+              "quantity": 1,
+              "price_cents": 93
+            }
+          ]
+        },
+        {
+          "title": "Épicerie",
+          "items": [
+            {
+              "product": "Flocons d'avoine",
+              "pack": "Chabrior, paquet de 500 g",
+              "quantity": 1,
+              "price_cents": 79
+            },
+            {
+              "product": "Pain de mie complet",
+              "pack": "Chabrior, sachet de 550 g (environ 20 tranches)",
+              "quantity": 1,
+              "price_cents": 132
+            },
+            {
+              "product": "Tomates pelées au jus",
+              "pack": "Saint Eloi, boîte de 765 g",
+              "quantity": 1,
+              "price_cents": 142
+            },
+            {
+              "product": "Pois chiches",
+              "pack": "Top Budget, boîte de 265 g égouttés",
+              "quantity": 1,
+              "price_cents": 58
+            },
+            {
+              "product": "Tortillas de blé",
+              "pack": "Itinéraire des Saveurs, paquet de 8",
+              "quantity": 1,
+              "price_cents": 184
+            },
+            {
+              "product": "Vermicelles",
+              "pack": "Panzani, paquet de 500 g",
+              "quantity": 1,
+              "price_cents": 116
+            },
+            {
+              "product": "Feuilles de brick",
+              "pack": "La Pastilla, sachet de 10",
+              "quantity": 1,
+              "price_cents": 89
+            },
+            {
+              "product": "Tagliatelles",
+              "pack": "Fiorini, paquet de 500 g",
+              "quantity": 1,
+              "price_cents": 128
+            },
+            {
+              "product": "Haricots verts extra-fins",
+              "pack": "Saint Eloi, boîte de 440 g égouttés",
+              "quantity": 1,
+              "price_cents": 138
+            },
+            {
+              "product": "Pépites de chocolat noir",
+              "pack": "Vahiné, sachet de 100 g",
+              "quantity": 1,
+              "price_cents": 212
+            }
+          ]
+        },
+        {
+          "title": "Surgelés",
+          "items": [
+            {
+              "product": "Steak haché pur bœuf 5 % surgelé",
+              "pack": "Jean Rozé, boîte de 400 g",
+              "quantity": 1,
+              "price_cents": 747
+            }
+          ]
+        }
+      ],
+      "leftovers": [
+        "Flocons d'avoine : 210 g",
+        "Pain de mie complet : × 8",
+        "Yaourts nature : × 2",
+        "Pommes : × 4",
+        "Filet de poulet : 270 g au congélateur",
+        "Oignons jaunes : × 6",
+        "Œufs plein air : × 2",
+        "Fromage blanc 0 % : 450 g",
+        "Tortillas de blé : × 6",
+        "Vermicelles : 440 g",
+        "Feuilles de brick : × 8",
+        "Steak haché pur bœuf 5 % surgelé : 200 g au congélateur",
+        "Tagliatelles : 430 g",
+        "Pépites de chocolat noir : 60 g"
+      ]
+    },
+    "two": {
+      "sections": [
+        {
+          "title": "Fruits et légumes",
+          "items": [
+            {
+              "product": "Bananes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 2,
+              "price_cents": 60
+            },
+            {
+              "product": "Bananes",
+              "pack": "lot de 5",
+              "quantity": 2,
+              "price_cents": 249
+            },
+            {
+              "product": "Poivrons",
+              "pack": "en vrac, à la pièce",
+              "quantity": 3,
+              "price_cents": 100
+            },
+            {
+              "product": "Carottes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 10,
+              "price_cents": 29
+            },
+            {
+              "product": "Pommes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 2,
+              "price_cents": 60
+            },
+            {
+              "product": "Pommes",
+              "pack": "sachet de 2 kg (environ 10 pommes)",
+              "quantity": 1,
+              "price_cents": 299
+            },
+            {
+              "product": "Oignons jaunes",
+              "pack": "filet de 1,5 kg (environ 10 oignons)",
+              "quantity": 1,
+              "price_cents": 169
+            },
+            {
+              "product": "Persil",
+              "pack": "la botte",
+              "quantity": 2,
+              "price_cents": 119
+            },
+            {
+              "product": "Tomates",
+              "pack": "en vrac, à la pièce",
+              "quantity": 9,
+              "price_cents": 33
+            },
+            {
+              "product": "Concombre",
+              "pack": "à la pièce",
+              "quantity": 2,
+              "price_cents": 99
+            },
+            {
+              "product": "Citron",
+              "pack": "en vrac, à la pièce",
+              "quantity": 2,
+              "price_cents": 52
+            },
+            {
+              "product": "Pommes de terre",
+              "pack": "en vrac, à la pièce",
+              "quantity": 10,
+              "price_cents": 30
+            },
+            {
+              "product": "Courgettes",
+              "pack": "en vrac, à la pièce",
+              "quantity": 2,
+              "price_cents": 66
+            },
+            {
+              "product": "Patate douce",
+              "pack": "en vrac, à la pièce (environ 500 g)",
+              "quantity": 1,
+              "price_cents": 125
+            },
+            {
+              "product": "Avocat",
+              "pack": "à la pièce",
+              "quantity": 1,
+              "price_cents": 129
+            }
+          ]
+        },
+        {
+          "title": "Viandes et poissons",
+          "items": [
+            {
+              "product": "Filet de poulet",
+              "pack": "Volaé, barquette de 480 g environ",
+              "quantity": 1,
+              "price_cents": 662
+            },
+            {
+              "product": "Filet de poulet",
+              "pack": "Notre Sélection, barquette de 1 kg",
+              "quantity": 1,
+              "price_cents": 889
+            },
+            {
+              "product": "Thon au naturel",
+              "pack": "Odyssée, boîte de 185 g égouttés",
+              "quantity": 2,
+              "price_cents": 281
+            },
+            {
+              "product": "Jambon blanc",
+              "pack": "Monique Ranou, 4 tranches",
+              "quantity": 1,
+              "price_cents": 170
+            }
+          ]
+        },
+        {
+          "title": "Crèmerie",
+          "items": [
+            {
+              "product": "Lait demi-écrémé",
+              "pack": "Pâturages, brique de 1 L",
+              "quantity": 1,
+              "price_cents": 101
+            },
+            {
+              "product": "Fromage de chèvre Sainte-Maure",
+              "pack": "Pâturages, bûche de 400 g",
+              "quantity": 1,
+              "price_cents": 393
+            },
+            {
+              "product": "Yaourts nature",
+              "pack": "Pâturages, 4 pots de 125 g",
+              "quantity": 3,
+              "price_cents": 65
+            },
+            {
+              "product": "Crème fraîche légère 15 %",
+              "pack": "Top Budget, pot de 497 g",
+              "quantity": 1,
+              "price_cents": 124
+            },
+            {
+              "product": "Œufs plein air",
+              "pack": "Volaé, boîte de 12",
+              "quantity": 2,
+              "price_cents": 292
+            },
+            {
+              "product": "Fromage blanc 0 %",
+              "pack": "Pâturages, 8 pots de 100 g",
+              "quantity": 1,
+              "price_cents": 181
+            },
+            {
+              "product": "Mozzarella",
+              "pack": "Pâturages, sachet de 125 g",
+              "quantity": 2,
+              "price_cents": 93
+            }
+          ]
+        },
+        {
+          "title": "Épicerie",
+          "items": [
+            {
+              "product": "Flocons d'avoine",
+              "pack": "Chabrior, paquet de 500 g",
+              "quantity": 2,
+              "price_cents": 79
+            },
+            {
+              "product": "Pain de mie complet",
+              "pack": "Chabrior, sachet de 550 g (environ 20 tranches)",
+              "quantity": 2,
+              "price_cents": 132
+            },
+            {
+              "product": "Tomates pelées au jus",
+              "pack": "Saint Eloi, boîte de 765 g",
+              "quantity": 2,
+              "price_cents": 142
+            },
+            {
+              "product": "Pois chiches",
+              "pack": "Top Budget, boîte de 265 g égouttés",
+              "quantity": 2,
+              "price_cents": 58
+            },
+            {
+              "product": "Tortillas de blé",
+              "pack": "Itinéraire des Saveurs, paquet de 8",
+              "quantity": 1,
+              "price_cents": 184
+            },
+            {
+              "product": "Vermicelles",
+              "pack": "Panzani, paquet de 500 g",
+              "quantity": 1,
+              "price_cents": 116
+            },
+            {
+              "product": "Feuilles de brick",
+              "pack": "La Pastilla, sachet de 10",
+              "quantity": 1,
+              "price_cents": 89
+            },
+            {
+              "product": "Tagliatelles",
+              "pack": "Fiorini, paquet de 500 g",
+              "quantity": 1,
+              "price_cents": 128
+            },
+            {
+              "product": "Haricots verts extra-fins",
+              "pack": "Saint Eloi, boîte de 440 g égouttés",
+              "quantity": 2,
+              "price_cents": 138
+            },
+            {
+              "product": "Pépites de chocolat noir",
+              "pack": "Vahiné, sachet de 100 g",
+              "quantity": 1,
+              "price_cents": 212
+            }
+          ]
+        },
+        {
+          "title": "Surgelés",
+          "items": [
+            {
+              "product": "Steak haché pur bœuf 5 % surgelé",
+              "pack": "Jean Rozé, boîte de 400 g",
+              "quantity": 1,
+              "price_cents": 747
+            }
+          ]
+        }
+      ],
+      "leftovers": [
+        "Flocons d'avoine : 420 g",
+        "Pain de mie complet : × 16",
+        "Oignons jaunes : × 3",
+        "Œufs plein air : × 5",
+        "Fromage blanc 0 % : 100 g",
+        "Tortillas de blé : × 4",
+        "Vermicelles : 380 g",
+        "Feuilles de brick : × 6",
+        "Tagliatelles : 360 g"
+      ]
+    },
+    "tips": [
+      "Fais les courses le lundi. Garde au frigo le poulet du lundi, et mets tout de suite au congélateur, en portions, celui de mercredi, jeudi et dimanche. Sors chaque portion au frigo la veille au soir.",
+      "Prends les bananes et l'avocat encore un peu fermes : ils mûriront pendant la semaine.",
+      "Une boîte de tomates entamée se garde au frigo dans une boîte fermée, pas dans la boîte en métal."
+    ]
+  },
+  "pantry": [
+    {
+      "product": "Huile d'olive vierge extra",
+      "pack": "Bouton d'Or, bouteille de 1 L",
+      "price_cents": 910
+    },
+    {
+      "product": "Riz long grain",
+      "pack": "Saint Eloi, paquet de 1 kg",
+      "price_cents": 180
+    },
+    {
+      "product": "Spaghetti",
+      "pack": "Fiorini, sachet de 1 kg",
+      "price_cents": 133
+    },
+    {
+      "product": "Chapelure",
+      "pack": "Tipiak, boîte de 275 g",
+      "price_cents": 71
+    },
+    {
+      "product": "Miel de fleurs",
+      "pack": "Lune de Miel, flacon de 500 g",
+      "price_cents": 468
+    },
+    {
+      "product": "Double concentré de tomates",
+      "pack": "Top Budget, tube de 200 g",
+      "price_cents": 116
+    },
+    {
+      "product": "Ail en semoule",
+      "pack": "Bouton d'Or, pot de 58 g",
+      "price_cents": 100
+    },
+    {
+      "product": "Piment de Cayenne moulu",
+      "pack": "Bouton d'Or, pot de 36 g",
+      "price_cents": 119
+    },
+    {
+      "product": "Cannelle moulue",
+      "pack": "Bouton d'Or, pot de 35 g",
+      "price_cents": 82
+    },
+    {
+      "product": "Paprika doux",
+      "pack": "Ducros, flacon de 40 g",
+      "price_cents": 178
+    },
+    {
+      "product": "Cumin moulu",
+      "pack": "Bouton d'Or, pot de 40 g",
+      "price_cents": 79
+    },
+    {
+      "product": "Curry en poudre",
+      "pack": "Ducros, flacon de 47 g",
+      "price_cents": 212
+    },
+    {
+      "product": "Ras el hanout",
+      "pack": "Bouton d'Or, pot de 42 g",
+      "price_cents": 293
+    },
+    {
+      "product": "Poivre noir moulu",
+      "pack": "Top Budget, pot de 90 g",
+      "price_cents": 116
+    },
+    {
+      "product": "Bouillon en cubes",
+      "pack": "Maggi, boîte de 32 cubes",
+      "price_cents": 123
+    }
+  ]
+}

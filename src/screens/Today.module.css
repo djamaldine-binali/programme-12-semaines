@@ -128,3 +128,29 @@
   color: var(--ink);
   text-decoration: none;
 }
+
+.menu h2 {
+  margin-bottom: 8px;
+}
+
+.menu ul {
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li + li {
+  margin-top: 4px;
+}
+
+.menuSlot {
+  color: var(--mute);
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--coral-strong);
+  font-weight: 600;
+}
