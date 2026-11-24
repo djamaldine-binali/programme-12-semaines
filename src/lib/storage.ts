@@ -11,6 +11,19 @@ export interface LogEntry {
   finishedAt: string
 }
 
+/** 1 good, 2 so-so, 3 bad. */
+export type CheckInLevel = 1 | 2 | 3
+
+export interface CheckIn {
+  week: number
+  day: DayKey
+  energy: CheckInLevel
+  hunger: CheckInLevel
+  sleep: CheckInLevel
+  sessions: CheckInLevel
+  recovery: CheckInLevel
+}
+
 export type RestSeconds = 60 | 75 | 90
 export type Theme = 'auto' | 'light' | 'dark'
 export type Servings = 1 | 2
@@ -30,6 +43,8 @@ export interface SavedState {
   log: LogEntry[]
   /** Weeks the Tuesday runs lag behind the calendar after repeating or going back a step. */
   runShift: number
+  /** Weekly check-ins: how she feels, never weight or calories. */
+  checkIns: CheckIn[]
 }
 
 const STORAGE_KEY = 'p12'
@@ -40,6 +55,7 @@ export const defaultState: SavedState = {
   settings: { restSeconds: 75, sound: true, vibration: true, theme: 'auto', servings: 1 },
   log: [],
   runShift: 0,
+  checkIns: [],
 }
 
 const sessionKinds: SessionKind[] = [
@@ -55,6 +71,18 @@ const feelings: Feeling[] = ['facile', 'ok', 'dur']
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
+}
+
+const checkInFields = ['energy', 'hunger', 'sleep', 'sessions', 'recovery'] as const
+
+function isCheckIn(value: unknown): value is CheckIn {
+  return (
+    isRecord(value) &&
+    Number.isInteger(value.week) &&
+    typeof value.day === 'string' &&
+    isDayKey(value.day) &&
+    checkInFields.every((field) => [1, 2, 3].includes(value[field] as number))
+  )
 }
 
 function isLogEntry(value: unknown): value is LogEntry {
@@ -99,7 +127,9 @@ export function parseState(raw: string): SavedState | null {
   const log = Array.isArray(data.log) ? data.log.filter(isLogEntry) : []
   const runShift = Number.isInteger(data.runShift) && (data.runShift as number) >= 0 ? (data.runShift as number) : 0
 
-  return { version: 1, startDate, settings: parseSettings(data.settings), log, runShift }
+  const checkIns = Array.isArray(data.checkIns) ? data.checkIns.filter(isCheckIn) : []
+
+  return { version: 1, startDate, settings: parseSettings(data.settings), log, runShift, checkIns }
 }
 
 // Storage can throw (private browsing, quota, disabled site data): the app then simply forgets on reload.
@@ -122,6 +152,11 @@ export function saveState(state: SavedState): void {
 
 export function withLogEntry(state: SavedState, entry: LogEntry): SavedState {
   return { ...state, log: [...state.log, entry] }
+}
+
+/** One check-in per week: answering again replaces the week's answers. */
+export function withCheckIn(state: SavedState, checkIn: CheckIn): SavedState {
+  return { ...state, checkIns: [...state.checkIns.filter((entry) => entry.week !== checkIn.week), checkIn] }
 }
 
 export function withFeeling(state: SavedState, finishedAt: string, feeling: Feeling): SavedState {

@@ -1,5 +1,6 @@
 import { Apple, Check, ChevronRight, Coffee, Footprints, Salad, UtensilsCrossed, type LucideIcon } from 'lucide-react'
 import { ActivityIcon } from '../components/ActivityIcon'
+import { CheckInCard } from '../components/CheckInCard'
 import buttons from '../components/buttons.module.css'
 import { WeekList } from '../components/WeekList'
 import { OtterMark } from '../components/OtterMark'
@@ -101,6 +102,10 @@ export function TodayPlan({ startDate, day, today }: TodayPlanProps) {
         </div>
         {water.ready && <WaterTracker water={water} now={now} />}
       </section>
+
+      {day.weekday >= 5 && !state.checkIns.some((checkIn) => checkIn.week === day.week) && (
+        <CheckInCard checkIns={state.checkIns} week={day.week} />
+      )}
 
       <p className={styles.steps}>
         <Footprints size={20} aria-hidden="true" />

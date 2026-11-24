@@ -11,7 +11,7 @@ interface Tab {
 const tabs: Tab[] = [
   { label: "Aujourd'hui", icon: Sun, paths: ['/', '/reglages', '/eau'] },
   { label: 'Programme', icon: CalendarRange, paths: ['/programme', '/bibliotheque'] },
-  { label: 'Suivi', icon: ListChecks, paths: ['/suivi'] },
+  { label: 'Suivi', icon: ListChecks, paths: ['/suivi', '/bilan'] },
   { label: 'Conseils', icon: BookOpen, paths: ['/conseils', '/repas'] },
 ]
 
