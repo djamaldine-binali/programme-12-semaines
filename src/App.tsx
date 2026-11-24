@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { BrandBar } from './components/BrandBar'
 import { TabBar } from './components/TabBar'
 import { useRoute } from './lib/router'
+import { CheckIn } from './screens/CheckIn'
 import { History } from './screens/History'
 import { ExerciseSheet } from './screens/ExerciseSheet'
 import { Intervals } from './screens/Intervals'
@@ -57,6 +58,8 @@ function screenFor(route: string): ReactNode {
       return <Program />
     case '/suivi':
       return <History />
+    case '/bilan':
+      return <CheckIn />
     case '/conseils':
       return <Tips />
     case '/eau':

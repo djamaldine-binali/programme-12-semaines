@@ -39,6 +39,15 @@ describe('parseState', () => {
     expect(saved(3)?.settings.servings).toBe(1)
   })
 
+  it('keeps valid weekly check-ins and drops broken ones', () => {
+    const valid = { week: 2, day: '2027-01-10', energy: 1, hunger: 2, sleep: 3, sessions: 1, recovery: 2 }
+    const parsed = parseState(
+      JSON.stringify({ version: 1, startDate: null, log: [], runShift: 0, checkIns: [valid, { ...valid, energy: 7 }] }),
+    )
+    expect(parsed?.checkIns).toEqual([valid])
+    expect(parseState(JSON.stringify({ version: 1, log: [] }))?.checkIns).toEqual([])
+  })
+
   it('rejects impossible dates and a start date that is not a Monday', () => {
     const parsed = parseState(
       JSON.stringify({

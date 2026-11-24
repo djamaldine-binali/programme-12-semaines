@@ -50,6 +50,16 @@
   gap: 8px;
 }
 
+.choiceStack {
+  display: grid;
+  gap: 8px;
+}
+
+.choiceStack .choice {
+  place-items: center start;
+  padding: 0 16px;
+}
+
 .choice {
   position: relative;
   display: grid;

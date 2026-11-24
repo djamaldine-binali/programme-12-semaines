@@ -1,10 +1,11 @@
 import buttons from '../components/buttons.module.css'
+import { CheckInCard } from '../components/CheckInCard'
 import { OtterMark } from '../components/OtterMark'
 import { Check } from 'lucide-react'
 import { sessionKindLabels, sessionKindTones } from '../lib/activities'
 import { formatLongDate } from '../lib/format'
 import { SESSIONS_PER_WEEK, startedWeeks } from '../lib/progress'
-import { TOTAL_WEEKS } from '../lib/schedule'
+import { sessionContext, TOTAL_WEEKS } from '../lib/schedule'
 import { useToday } from '../lib/useToday'
 import { useAppState } from '../state/appStateContext'
 import styles from './History.module.css'
@@ -17,15 +18,18 @@ export function History() {
   const weeks = state.startDate ? startedWeeks(state.startDate, today, state.log) : []
   const completeWeeks = weeks.filter((week) => week.complete).length
   const entries = [...state.log].reverse()
+  const { week } = sessionContext(state.startDate, today)
+  const checkIn = state.startDate && <CheckInCard checkIns={state.checkIns} week={week} />
 
   if (entries.length === 0) {
     return (
       <div className={styles.page}>
         <h1>Suivi</h1>
+        {checkIn}
         <div className={`card ${styles.empty}`}>
           <OtterMark size={96} />
           <p>Rien pour l'instant. Chaque séance terminée apparaîtra ici, avec ton ressenti.</p>
-          <a href="#/" className={`${buttons.button} ${buttons.renfo}`}>
+          <a href="#/" className={`${buttons.button} ${buttons.primary}`}>
             Voir la séance du jour
           </a>
         </div>
@@ -36,6 +40,7 @@ export function History() {
   return (
     <div className={styles.page}>
       <h1>Suivi</h1>
+      {checkIn}
       <p className={styles.summary}>
         {completeWeeks} {completeWeeks > 1 ? 'semaines complètes' : 'semaine complète'} sur {TOTAL_WEEKS}
       </p>
