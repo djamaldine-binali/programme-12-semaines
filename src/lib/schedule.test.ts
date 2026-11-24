@@ -7,6 +7,7 @@ import {
   runStepFor,
   sessionContext,
   toDayKey,
+  mondayOf,
   upcomingMonday,
   weekPlan,
 } from './schedule'
@@ -115,6 +116,14 @@ describe('daylight saving time (Europe/Paris)', () => {
     const start = '2027-10-25'
     const lateSunday = new Date(2027, 9, 31, 23, 30)
     expect(programDay(start, toDayKey(lateSunday))).toMatchObject({ week: 1, weekday: 6 })
+  })
+})
+
+describe('mondayOf', () => {
+  it('gives the Monday of the week, so the program can start any day', () => {
+    expect(mondayOf('2027-01-04')).toBe('2027-01-04')
+    expect(mondayOf('2027-01-07')).toBe('2027-01-04')
+    expect(mondayOf('2027-01-10')).toBe('2027-01-04')
   })
 })
 

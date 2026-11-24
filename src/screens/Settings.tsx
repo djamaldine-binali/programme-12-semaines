@@ -4,7 +4,7 @@ import buttons from '../components/buttons.module.css'
 import { ConfirmDialog } from '../components/ConfirmDialog'
 import { StartDateField } from '../components/StartDateField'
 import { navigate } from '../lib/router'
-import { isValidStartDate, upcomingMonday } from '../lib/schedule'
+import { isDayKey, mondayOf } from '../lib/schedule'
 import { playCue, unlockAudio } from '../lib/sound'
 import { defaultState, parseState, type RestSeconds, type SavedState, type Theme } from '../lib/storage'
 import { useToday } from '../lib/useToday'
@@ -39,7 +39,7 @@ function downloadProgress(state: SavedState, today: string) {
 function StartDateSection() {
   const { state, update } = useAppState()
   const today = useToday()
-  const [startDate, setStartDate] = useState(state.startDate ?? upcomingMonday(today))
+  const [startDate, setStartDate] = useState(state.startDate ?? today)
 
   return (
     <section className={`card ${styles.section}`} aria-labelledby="start-title">
@@ -48,8 +48,8 @@ function StartDateSection() {
       <button
         type="button"
         className={`${buttons.button} ${buttons.secondary}`}
-        disabled={!isValidStartDate(startDate) || startDate === state.startDate}
-        onClick={() => update((previous) => ({ ...previous, startDate }))}
+        disabled={!isDayKey(startDate) || mondayOf(startDate) === state.startDate}
+        onClick={() => update((previous) => ({ ...previous, startDate: mondayOf(startDate) }))}
       >
         Enregistrer la date
       </button>

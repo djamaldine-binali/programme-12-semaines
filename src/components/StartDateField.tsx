@@ -1,12 +1,12 @@
 import { useId } from 'react'
 import { formatLongDate } from '../lib/format'
-import { isValidStartDate, type DayKey } from '../lib/schedule'
+import { addDays, isDayKey, mondayOf, weekdayOf, type DayKey } from '../lib/schedule'
 import styles from './StartDateField.module.css'
 
 export function StartDateField({ value, onChange }: { value: DayKey; onChange: (value: DayKey) => void }) {
   const inputId = useId()
   const messageId = useId()
-  const valid = isValidStartDate(value)
+  const valid = isDayKey(value)
 
   return (
     <div className={styles.field}>
@@ -21,11 +21,13 @@ export function StartDateField({ value, onChange }: { value: DayKey; onChange: (
       />
       {valid ? (
         <p id={messageId} className={styles.hint}>
-          Tu commences le {formatLongDate(value)}.
+          {weekdayOf(value) === 0
+            ? `Ta semaine 1 commence le ${formatLongDate(value)}.`
+            : `Ta semaine 1 va du ${formatLongDate(mondayOf(value))} au ${formatLongDate(addDays(mondayOf(value), 6))}. Les séances des jours passés restent disponibles.`}
         </p>
       ) : (
         <p id={messageId} className={styles.error}>
-          Choisis un lundi&nbsp;: le programme suit la semaine du lundi au dimanche.
+          Choisis une date dans le calendrier.
         </p>
       )}
     </div>
